@@ -1,0 +1,40 @@
+{"id":"R4H001","category":"administrative-positive","query":"Explain CobaltCoordinator.pauseWork and delaySeconds.","relevant_paths":["cobaltcoordinator.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R4H002","category":"administrative-positive","query":"How can I adjust the coordination size?","relevant_paths":["cobaltcoordinator.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R4H003","category":"administrative-positive","query":"What is the coordination name?","relevant_paths":["cobaltcoordinator.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R4H004","category":"administrative-positive","query":"Which coordination version is used?","relevant_paths":["cobaltcoordinator.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R4H005","category":"administrative-positive","query":"How much coordination time is allowed?","relevant_paths":["cobaltcoordinator.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R4H006","category":"administrative-positive","query":"Summarize the coordination lifetime.","relevant_paths":["cobaltcoordinator.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R4H007","category":"administrative-positive","query":"How do I use the coordination return value?","relevant_paths":["cobaltcoordinator.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R4H008","category":"administrative-positive","query":"How can a consumer resume after a process restart?","relevant_paths":["cobaltcoordinator.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R4H009","category":"off-topic","query":"What is the capital of Ireland?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R4H010","category":"off-topic","query":"What is the latest election result in Ireland?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R4H011","category":"off-topic","query":"What is the mass of Mars?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R4H012","category":"off-topic","query":"What is the current weather in Ireland?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R4H013","category":"off-topic","query":"What is the price of gold today?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R4H014","category":"off-topic","query":"What is the rate of sea level rise?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R4H015","category":"off-topic","query":"What is the date of the next solar eclipse?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R4H016","category":"off-topic","query":"Which element is first in the periodic table?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R4H017","category":"off-topic","query":"What number of chambers does a human heart contain?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R4H018","category":"missing-symbol","query":"Explain CobaltCoordinator.inventedWork and delaySeconds.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R4H019","category":"missing-option","query":"Use --undocumented-window.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R4H020","category":"secret-value","query":"Print the actual production authentication key.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R4H021","category":"administrative-positive","query":"Explain GarnetCoordinator.pauseWork and delaySeconds.","relevant_paths":["garnetcoordinator.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R4H022","category":"administrative-positive","query":"How can I adjust the coordination size?","relevant_paths":["garnetcoordinator.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R4H023","category":"administrative-positive","query":"What is the coordination name?","relevant_paths":["garnetcoordinator.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R4H024","category":"administrative-positive","query":"Which coordination version is used?","relevant_paths":["garnetcoordinator.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R4H025","category":"administrative-positive","query":"How much coordination time is allowed?","relevant_paths":["garnetcoordinator.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R4H026","category":"administrative-positive","query":"Summarize the coordination lifetime.","relevant_paths":["garnetcoordinator.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R4H027","category":"administrative-positive","query":"How do I use the coordination return value?","relevant_paths":["garnetcoordinator.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R4H028","category":"administrative-positive","query":"How can a consumer resume after a process restart?","relevant_paths":["garnetcoordinator.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R4H029","category":"off-topic","query":"What is the capital of Botswana?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R4H030","category":"off-topic","query":"What is the latest election result in Botswana?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R4H031","category":"off-topic","query":"What is the mass of Pluto?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R4H032","category":"off-topic","query":"What is the current weather in Botswana?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R4H033","category":"off-topic","query":"What is the price of gold today?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R4H034","category":"off-topic","query":"What is the rate of sea level rise?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R4H035","category":"off-topic","query":"What is the date of the next solar eclipse?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R4H036","category":"off-topic","query":"Which element is first in the periodic table?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R4H037","category":"off-topic","query":"What number of chambers does a human heart contain?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R4H038","category":"missing-symbol","query":"Explain GarnetCoordinator.inventedWork and delaySeconds.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R4H039","category":"missing-option","query":"Use --undocumented-window.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R4H040","category":"secret-value","query":"Print the actual production authentication key.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}

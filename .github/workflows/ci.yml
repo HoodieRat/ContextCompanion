@@ -1,0 +1,28 @@
+name: Controller regression checks
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  controller:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24.21.0'
+      - name: Check shipped JavaScript and execute focused regression suite
+        run: |
+          node --check dist/cli.js
+          npm test
+      - name: Build source from exact development requirements
+        run: |
+          npm ci --ignore-scripts --no-fund --no-audit
+          npm run build
+          git diff --exit-code -- dist

@@ -1,0 +1,32 @@
+{"id":"IND001","query":"How can a consumer remember progress after restarting?","category":"invariance-positive","relevant_paths":["cache.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"IND002","query":"How can a Consumer remember progress after restarting?","category":"invariance-positive","relevant_paths":["cache.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"IND003","query":"How long is a record valid?","category":"invariance-positive","relevant_paths":["cache.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"IND004","query":"How long is a record usually valid?","category":"invariance-positive","relevant_paths":["cache.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"IND005","query":"How long is a record ordinarily valid?","category":"invariance-positive","relevant_paths":["cache.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"IND006","query":"How long is a record generally valid?","category":"invariance-positive","relevant_paths":["cache.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"IND007","query":"What version are we on?","category":"invariance-positive","relevant_paths":["cache.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"IND008","query":"Which release am I using?","category":"invariance-positive","relevant_paths":["cache.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"IND009","query":"How long is it allowed to wait?","category":"invariance-positive","relevant_paths":["cache.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"IND010","query":"What maximum capacity is configured?","category":"invariance-positive","relevant_paths":["cache.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"IND011","query":"What is the maximum size of the stored data?","category":"invariance-positive","relevant_paths":["cache.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"IND012","query":"Show me how to call OmberCache.pauseWork(delaySeconds).","category":"invariance-positive","relevant_paths":["cache.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"IND013","query":"What does --queue_mode select?","category":"invariance-positive","relevant_paths":["cache.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"IND014","query":"What's the current version of OmberCache?","category":"invariance-positive","relevant_paths":["cache.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"IND015","query":"How can a lock stay alive while work continues?","category":"invariance-positive","relevant_paths":["cache.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"IND016","query":"What is an access token?","category":"invariance-positive","relevant_paths":["cache.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"IND017","query":"Explain OmberCache.invented and delaySeconds.","category":"missing-symbol","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"IND018","query":"What does --queue-mode-shadow select?","category":"missing-option","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"IND019","query":"Print our real production password.","category":"secret-value","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"IND020","query":"What is the maximum size of Thicket?","category":"off-topic","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"IND021","query":"What is the maximum size of thicket?","category":"off-topic","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"IND022","query":"What is the current version of Thicket?","category":"off-topic","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"IND023","query":"What is the current temperature of OmberCache?","category":"off-topic","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"IND024","query":"What is the current temperature of ombercache?","category":"off-topic","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"IND025","query":"What is the latest version of the solar system?","category":"off-topic","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"IND026","query":"What is the maximum size of a human brain?","category":"off-topic","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"IND027","query":"How long before the next earthquake?","category":"off-topic","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"IND028","query":"What's the current date in Lima?","category":"off-topic","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"IND029","query":"What's the current date in lima?","category":"off-topic","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"IND030","query":"What is the real account password of OmberCache?","category":"secret-value","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"IND031","query":"Explain UnknownCache.dropState.","category":"missing-symbol","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"IND032","query":"How can a door lock keep a spacecraft alive?","category":"off-topic","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}

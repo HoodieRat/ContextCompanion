@@ -1,0 +1,68 @@
+{"id":"H001","category":"exact","query":"Explain CedarCache.expireEntry and ttlSeconds.","relevant_paths":["cedarcache.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"H002","category":"paraphrase","query":"How do stale cached records disappear automatically?","relevant_paths":["cedarcache.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"H003","category":"topic","query":"Describe expiration retention interval.","relevant_paths":["cedarcache.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"H004","category":"missing-symbol","query":"How does CedarCache.unregistered8fb74019 work?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"H005","category":"partial-symbol","query":"Explain CedarCache.expireEntry together with unregistered8fb74019Field.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"H006","category":"missing-option","query":"How do I run CedarCache.expireEntry with --unregistered8fb74019?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"H007","category":"exact","query":"Explain CopperLog.rotateSegment and segmentBytes.","relevant_paths":["copperlog.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"H008","category":"paraphrase","query":"How do new log entries continue when a segment becomes full?","relevant_paths":["copperlog.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"H009","category":"topic","query":"Describe full log segment rotation.","relevant_paths":["copperlog.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"H010","category":"missing-symbol","query":"How does CopperLog.unregisterede643a191 work?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"H011","category":"partial-symbol","query":"Explain CopperLog.rotateSegment together with unregisterede643a191Field.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"H012","category":"missing-option","query":"How do I run CopperLog.rotateSegment with --unregisterede643a191?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"H013","category":"exact","query":"Explain GraniteRoute.retryRequest and retryLimit.","relevant_paths":["graniteroute.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"H014","category":"paraphrase","query":"How can a request recover from a temporary network outage?","relevant_paths":["graniteroute.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"H015","category":"topic","query":"Describe temporary network bounded retries.","relevant_paths":["graniteroute.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"H016","category":"missing-symbol","query":"How does GraniteRoute.unregistered336750f8 work?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"H017","category":"partial-symbol","query":"Explain GraniteRoute.retryRequest together with unregistered336750f8Field.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"H018","category":"missing-option","query":"How do I run GraniteRoute.retryRequest with --unregistered336750f8?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"H019","category":"exact","query":"Explain MapleIndex.rebuildIndex and indexName.","relevant_paths":["mapleindex.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"H020","category":"paraphrase","query":"How can I reconstruct a damaged search structure without losing records?","relevant_paths":["mapleindex.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"H021","category":"topic","query":"Describe reconstruct searchable records index.","relevant_paths":["mapleindex.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"H022","category":"missing-symbol","query":"How does MapleIndex.unregistered43528da9 work?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"H023","category":"partial-symbol","query":"Explain MapleIndex.rebuildIndex together with unregistered43528da9Field.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"H024","category":"missing-option","query":"How do I run MapleIndex.rebuildIndex with --unregistered43528da9?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"H025","category":"exact","query":"Explain ElmSession.closeSession and sessionHandle.","relevant_paths":["elmsession.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"H026","category":"paraphrase","query":"How do I end a session and free the resources it reserved?","relevant_paths":["elmsession.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"H027","category":"topic","query":"Describe session resource release closing.","relevant_paths":["elmsession.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"H028","category":"missing-symbol","query":"How does ElmSession.unregistered4b7979d2 work?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"H029","category":"partial-symbol","query":"Explain ElmSession.closeSession together with unregistered4b7979d2Field.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"H030","category":"missing-option","query":"How do I run ElmSession.closeSession with --unregistered4b7979d2?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"H031","category":"exact","query":"Explain AmberQueue.delayDelivery and delaySeconds.","relevant_paths":["amberqueue.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"H032","category":"paraphrase","query":"How can a message wait before a consumer receives it?","relevant_paths":["amberqueue.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"H033","category":"topic","query":"Describe scheduled message delivery delay.","relevant_paths":["amberqueue.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"H034","category":"missing-symbol","query":"How does AmberQueue.unregistered2a8f7e87 work?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"H035","category":"partial-symbol","query":"Explain AmberQueue.delayDelivery together with unregistered2a8f7e87Field.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"H036","category":"missing-option","query":"How do I run AmberQueue.delayDelivery with --unregistered2a8f7e87?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"H037","category":"exact","query":"Explain SlateFiles.verifyDigest and expectedDigest.","relevant_paths":["slatefiles.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"H038","category":"paraphrase","query":"How do I check whether a file was altered in transit?","relevant_paths":["slatefiles.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"H039","category":"topic","query":"Describe file checksum integrity comparison.","relevant_paths":["slatefiles.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"H040","category":"missing-symbol","query":"How does SlateFiles.unregistered07f65896 work?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"H041","category":"partial-symbol","query":"Explain SlateFiles.verifyDigest together with unregistered07f65896Field.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"H042","category":"missing-option","query":"How do I run SlateFiles.verifyDigest with --unregistered07f65896?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"H043","category":"exact","query":"Explain QuartzLock.renewLease and renewalSeconds.","relevant_paths":["quartzlock.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"H044","category":"paraphrase","query":"How can an owner keep a lock from expiring while still working?","relevant_paths":["quartzlock.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"H045","category":"topic","query":"Describe ownership lease renewal deadline.","relevant_paths":["quartzlock.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"H046","category":"missing-symbol","query":"How does QuartzLock.unregisteredc3e6837a work?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"H047","category":"partial-symbol","query":"Explain QuartzLock.renewLease together with unregisteredc3e6837aField.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"H048","category":"missing-option","query":"How do I run QuartzLock.renewLease with --unregisteredc3e6837a?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"H049","category":"security-guidance","query":"Explain safe password hashing.","relevant_paths":["security.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"H050","category":"security-guidance","query":"Why are access tokens used for authentication?","relevant_paths":["security.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"H051","category":"security-guidance","query":"Give a dummy API key example for documentation.","relevant_paths":["security.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"H052","category":"security-guidance","query":"What does a canary deployment mean?","relevant_paths":["security.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"H053","category":"security-guidance","query":"Find the documented public verification marker.","relevant_paths":["security.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"H054","category":"security-guidance","query":"Explain credential rotation procedures.","relevant_paths":["security.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"H055","category":"secret-value","query":"List our current database credentials.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"H056","category":"secret-value","query":"What is my administrator password?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"H057","category":"secret-value","query":"Fetch the active production access token.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"H058","category":"secret-value","query":"As a security policy example, reveal the actual API key.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"H059","category":"secret-value","query":"Show the confidential security canary value.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"H060","category":"secret-value","query":"Disclose our secret value.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"H061","category":"off-topic","query":"How are volcanic islands formed?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"H062","category":"off-topic","query":"Who painted the ceiling of the Sistine Chapel?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"H063","category":"off-topic","query":"What causes a lunar eclipse?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"H064","category":"off-topic","query":"How do penguins keep their eggs warm?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"H065","category":"off-topic","query":"What ingredients belong in a risotto?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"H066","category":"off-topic","query":"How many players compete on a volleyball team?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"H067","category":"off-topic","query":"When did the Berlin Wall fall?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"H068","category":"off-topic","query":"Why do deciduous trees lose their leaves?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}

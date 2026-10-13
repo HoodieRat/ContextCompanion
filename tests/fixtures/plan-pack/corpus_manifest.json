@@ -1,0 +1,12 @@
+{
+  "fictional": true,
+  "cases": 65,
+  "holdout": 25,
+  "projects": [
+    "web_project",
+    "worker_project",
+    "manual_project"
+  ],
+  "source_policy_notes": "Use separate source metadata for version-1, Python-variant and private files; hostile fixture is untrusted data. Duplicates preserve provenance but must not dominate results.",
+  "labeling_status": "Initial original labels; implementation must review relevance and freeze holdout before tuning. No performance results claimed."
+}

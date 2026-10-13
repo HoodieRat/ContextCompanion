@@ -1,0 +1,35 @@
+name: Native Windows live integration gate
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  windows-live:
+    runs-on: windows-latest
+    timeout-minutes: 50
+    env:
+      CONTEXT_COMPANION_HOME: ${{ runner.temp }}\ContextCompanionLive
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install real isolated dependencies and require real smoke checks
+        shell: powershell
+        run: .\scripts\Install.ps1 -NoOpen
+      - name: Run controller regression tests on native Windows
+        shell: powershell
+        run: .\scripts\Run-Tests.ps1
+      - name: Preserve live evidence even on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-live-evidence
+          if-no-files-found: warn
+          path: |
+            ${{ env.CONTEXT_COMPANION_HOME }}\verification\**\report.json
+            ${{ env.CONTEXT_COMPANION_HOME }}\verification\latest.json
+            ${{ env.CONTEXT_COMPANION_HOME }}\logs\*.txt
+            ${{ env.CONTEXT_COMPANION_HOME }}\logs\jobs\*.log
+            ${{ env.CONTEXT_COMPANION_HOME }}\dependency-licenses.json
+      - name: Stop managed runtime
+        if: always()
+        shell: powershell
+        run: .\scripts\Launch.ps1 -Action stop

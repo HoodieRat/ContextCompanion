@@ -1,0 +1,46 @@
+node_modules/
+*.tsbuildinfo
+.env
+.env.*
+!.env.example
+.runtime/
+runtime/
+models/
+state.json
+state.previous.json
+installation.json
+daemon.json
+daemon.lock
+logs/
+backups/
+.context-companion/
+.serena/cache/
+.serena/logs/
+
+# Private/local work products; publish only a reviewed, clean staging tree.
+.codex/
+.serena/
+tmp/
+output/
+evidence/
+downloads/
+npm-cache/
+uv-cache/
+browsers/
+publish/
+*.log
+*.sqlite
+*.sqlite3
+*.db
+*.pem
+*.key
+*.pfx
+*.p12
+
+# context-companion:begin
+.codex/config.toml
+.codex/hooks.json
+.context-companion/
+.serena/cache/
+.serena/logs/
+# context-companion:end

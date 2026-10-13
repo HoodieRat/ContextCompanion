@@ -1,0 +1,15 @@
+{
+  "caseHashes": {
+    "development": "4f510027449db00f5898538a543d2c9ccb9f0126d53e90b1d13fb24675f5b2b7",
+    "holdout": "2bd0d117c3908a3ae3901d2009d264a7589e7f74c19a32bff44115a8d0c59a43"
+  },
+  "metadata": {
+    "library": "",
+    "ecosystem": "generic",
+    "languages": [],
+    "platforms": [],
+    "kind": "project_context",
+    "reliability": "user",
+    "reliabilityEvidence": "Independent synthetic behavioral grammar and agenda cases; same-author holdout limitations retained"
+  }
+}

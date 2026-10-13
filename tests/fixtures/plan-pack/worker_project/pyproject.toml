@@ -1,0 +1,4 @@
+[project]
+name = "fictional-worker-fixture"
+version = "0.1.0"
+dependencies = ["harbor-worker==4.1"]

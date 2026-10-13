@@ -1,0 +1,29 @@
+{
+  "at": "2026-10-11T22:45:37.845Z",
+  "caseHashes": {
+    "development": "0be5cb66e0a7308246763f92d7b5307a68de50ca406ada204107af97163318cb",
+    "holdout": "4b24d8afd01680726c93c4f554093527fe905b7827078b752224515aae2dbf23"
+  },
+  "counts": {
+    "development": {
+      "total": 48,
+      "positive": 22,
+      "negative": 26
+    },
+    "holdout": {
+      "total": 48,
+      "positive": 22,
+      "negative": 26
+    }
+  },
+  "metadata": {
+    "library": "",
+    "ecosystem": "generic",
+    "languages": [],
+    "platforms": [],
+    "kind": "project_context",
+    "reliability": "user",
+    "reliabilityEvidence": "Independent same-author diagnostic-support fixtures"
+  },
+  "limitation": "Fresh disjoint vocabulary, source families and unexecuted holdout; same-author templates, not external blind validation. No holdout-driven implementation, assertion, threshold, label, deadline or routing changes."
+}

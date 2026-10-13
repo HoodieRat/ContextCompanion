@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-11T10:56:24.685Z",
+  "caseHashes": {
+    "development": "664665142681e81a0c2502e67be7ceb1e4b72a4d40295dc1041e294022a3fbef",
+    "holdout": "283046c8694744499c2a5ebbccf6cbd499233aa1015e303459eef8c710e2eefa"
+  },
+  "counts": {
+    "development": {
+      "total": 16,
+      "positive": 8,
+      "negative": 8
+    },
+    "holdout": {
+      "total": 16,
+      "positive": 8,
+      "negative": 8
+    }
+  },
+  "purpose": "Independent lexical development cases reused only as development; fresh disjoint named source, values, paths and modified sibling negative questions. No original or other fresh question text inspected.",
+  "limitations": "Same-author synthetic sibling templates with shared lexical cores; not an external blind benchmark. Development sources duplicate identity development intentionally; fresh source and questions were never evaluated before the implementation freeze."
+}

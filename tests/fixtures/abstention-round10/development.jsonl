@@ -1,0 +1,36 @@
+{"id":"G2D001","query":"How do I use pooling idle channels without constructing new channels?","category":"supported-behavior","expected_status":"ok","relevant_paths":["resources.md"],"forbidden_paths":[]}
+{"id":"G2D002","query":"Which mechanism is used for producing delayed notifications to listeners?","category":"supported-behavior","expected_status":"ok","relevant_paths":["resources.md"],"forbidden_paths":[]}
+{"id":"G2D003","query":"What is eager evaluation?","category":"supported-behavior","expected_status":"ok","relevant_paths":["evaluation.md"],"forbidden_paths":[]}
+{"id":"G2D004","query":"What is lazy evaluation?","category":"supported-behavior","expected_status":"ok","relevant_paths":["evaluation.md"],"forbidden_paths":[]}
+{"id":"G2D005","query":"What is delayed delivery?","category":"supported-behavior","expected_status":"ok","relevant_paths":["evaluation.md"],"forbidden_paths":[]}
+{"id":"G2D006","query":"What is demand-driven processing?","category":"supported-behavior","expected_status":"ok","relevant_paths":["evaluation.md"],"forbidden_paths":[]}
+{"id":"G2D007","query":"What is push-oriented delivery?","category":"supported-behavior","expected_status":"ok","relevant_paths":["evaluation.md"],"forbidden_paths":[]}
+{"id":"G2D008","query":"What is deferred calculation used for?","category":"supported-behavior","expected_status":"ok","relevant_paths":["evaluation.md"],"forbidden_paths":[]}
+{"id":"G2D009","query":"How can a subscription deliver notifications?","category":"supported-behavior","expected_status":"ok","relevant_paths":["resources.md"],"forbidden_paths":[]}
+{"id":"G2D010","query":"Explain producing values for listeners.","category":"supported-behavior","expected_status":"ok","relevant_paths":["resources.md"],"forbidden_paths":[]}
+{"id":"G2D011","query":"How do I reuse an idle resource without rebuilding it?","category":"supported-behavior","expected_status":"ok","relevant_paths":["resources.md"],"forbidden_paths":[]}
+{"id":"G2D012","query":"What is the difference between lazy and eager evaluation?","category":"supported-behavior","expected_status":"ok","relevant_paths":["evaluation.md"],"forbidden_paths":[]}
+{"id":"G2D013","query":"What should the next session pick up?","category":"complete-agenda","expected_status":"ok","relevant_paths":["handoff.md"],"forbidden_paths":[]}
+{"id":"G2D014","query":"What should the next session carry forward?","category":"complete-agenda","expected_status":"ok","relevant_paths":["handoff.md"],"forbidden_paths":[]}
+{"id":"G2D015","query":"What should the next session focus on?","category":"complete-agenda","expected_status":"ok","relevant_paths":["handoff.md"],"forbidden_paths":[]}
+{"id":"G2D016","query":"What should the next session resume?","category":"complete-agenda","expected_status":"ok","relevant_paths":["handoff.md"],"forbidden_paths":[]}
+{"id":"G2D017","query":"What should the next session prioritize?","category":"complete-agenda","expected_status":"ok","relevant_paths":["handoff.md"],"forbidden_paths":[]}
+{"id":"G2D018","query":"What should the next session tackle?","category":"complete-agenda","expected_status":"ok","relevant_paths":["handoff.md"],"forbidden_paths":[]}
+{"id":"G2D019","query":"What is Caldera used for?","category":"unsupported-owner-field-or-object","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["resources.md","evaluation.md","handoff.md"]}
+{"id":"G2D020","query":"What is Caldera evaluation?","category":"unsupported-owner-field-or-object","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["resources.md","evaluation.md","handoff.md"]}
+{"id":"G2D021","query":"How does Caldera deliver notifications?","category":"unsupported-owner-field-or-object","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["resources.md","evaluation.md","handoff.md"]}
+{"id":"G2D022","query":"Explain Caldera calculation.","category":"unsupported-owner-field-or-object","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["resources.md","evaluation.md","handoff.md"]}
+{"id":"G2D023","query":"What is the capacity of Sorrel?","category":"unsupported-owner-field-or-object","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["resources.md","evaluation.md","handoff.md"]}
+{"id":"G2D024","query":"What is the temperature of Sorrel?","category":"unsupported-owner-field-or-object","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["resources.md","evaluation.md","handoff.md"]}
+{"id":"G2D025","query":"What is delayed orbital teleportation?","category":"unsupported-owner-field-or-object","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["resources.md","evaluation.md","handoff.md"]}
+{"id":"G2D026","query":"What is demand-driven weather control?","category":"unsupported-owner-field-or-object","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["resources.md","evaluation.md","handoff.md"]}
+{"id":"G2D027","query":"How do I use pooling lunar oceans without constructing new channels?","category":"unsupported-owner-field-or-object","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["resources.md","evaluation.md","handoff.md"]}
+{"id":"G2D028","query":"Which mechanism is used for producing signals from Jupiter?","category":"unsupported-owner-field-or-object","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["resources.md","evaluation.md","handoff.md"]}
+{"id":"G2D029","query":"What is the difference between lazy evaluation and perpetual motion?","category":"unsupported-owner-field-or-object","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["resources.md","evaluation.md","handoff.md"]}
+{"id":"G2D030","query":"What is Beijing used for?","category":"unsupported-owner-field-or-object","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["resources.md","evaluation.md","handoff.md"]}
+{"id":"G2D031","query":"What should the next session pick up to reverse entropy?","category":"extra-agenda-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["resources.md","evaluation.md","handoff.md"]}
+{"id":"G2D032","query":"What should the next session carry forward to reverse entropy?","category":"extra-agenda-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["resources.md","evaluation.md","handoff.md"]}
+{"id":"G2D033","query":"What should the next session focus on to reverse entropy?","category":"extra-agenda-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["resources.md","evaluation.md","handoff.md"]}
+{"id":"G2D034","query":"What should the next session resume to reverse entropy?","category":"extra-agenda-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["resources.md","evaluation.md","handoff.md"]}
+{"id":"G2D035","query":"What should the next session prioritize to reverse entropy?","category":"extra-agenda-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["resources.md","evaluation.md","handoff.md"]}
+{"id":"G2D036","query":"What should the next session tackle to reverse entropy?","category":"extra-agenda-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["resources.md","evaluation.md","handoff.md"]}

@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-11T07:42:20.986Z",
+  "caseHashes": {
+    "development": "67a96325bb7e99bc8e74d48f50abc82072108e163d6fcb9a9846fd256e31c403",
+    "holdout": "364166f843fcfda63573c7de66d6098525f61894188f7c5421b53d058aa011a7"
+  },
+  "counts": {
+    "development": {
+      "total": 20,
+      "positive": 10,
+      "negative": 10
+    },
+    "holdout": {
+      "total": 20,
+      "positive": 10,
+      "negative": 10
+    }
+  },
+  "purpose": "Independent context-dilution development and fresh holdout before bounded query-time support windows. Original Q024/Q065 query text uninspected.",
+  "limitations": "Same-author sibling synthetic paraphrases and disjoint named documents, not external blind evaluation. Dense administrative filler tests evidence dilution, not arbitrary document fidelity."
+}

@@ -1,0 +1,40 @@
+{"id":"R3D001","category":"scope-positive","query":"How does Acacia import records?","relevant_paths":["acacia.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R3D002","category":"scope-positive","query":"Can Acacia clients use Go on Windows?","relevant_paths":["acacia.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R3D003","category":"scope-positive","query":"Explain the CLI bulk import.","relevant_paths":["acacia.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R3D004","category":"scope-positive","query":"How are capital letters in record names handled?","relevant_paths":["acacia.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R3D005","category":"scope-positive","query":"What current date is stored with each import?","relevant_paths":["acacia.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R3D006","category":"scope-positive","query":"What is the rate of imports?","relevant_paths":["acacia.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R3D007","category":"scope-positive","query":"How can interrupted work resume without repeating completed batches?","relevant_paths":["acacia.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R3D008","category":"scope-positive","query":"What happens after a failed validation?","relevant_paths":["acacia.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R3D009","category":"off-topic","query":"What is the capital of Senegal?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R3D010","category":"off-topic","query":"What is the mass of Neptune?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R3D011","category":"off-topic","query":"What is the current weather in Senegal?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R3D012","category":"off-topic","query":"What is the latest election result in Senegal?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R3D013","category":"off-topic","query":"What is the price of gold today?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R3D014","category":"off-topic","query":"What is the date of the next solar eclipse?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R3D015","category":"off-topic","query":"What is the size of the largest dinosaur?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R3D016","category":"off-topic","query":"What is the rate of sea level rise?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R3D017","category":"off-topic","query":"What is the time until the next earthquake?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R3D018","category":"off-topic","query":"What is the current weather?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R3D019","category":"off-topic","query":"Who won the latest election?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R3D020","category":"off-topic","query":"What is the cost of a kilogram of copper?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R3D021","category":"scope-positive","query":"How does Willow import records?","relevant_paths":["willow.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R3D022","category":"scope-positive","query":"Can Willow clients use Java on Windows?","relevant_paths":["willow.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R3D023","category":"scope-positive","query":"Explain the CLI bulk import.","relevant_paths":["willow.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R3D024","category":"scope-positive","query":"How are capital letters in record names handled?","relevant_paths":["willow.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R3D025","category":"scope-positive","query":"What current date is stored with each import?","relevant_paths":["willow.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R3D026","category":"scope-positive","query":"What is the rate of imports?","relevant_paths":["willow.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R3D027","category":"scope-positive","query":"How can interrupted work resume without repeating completed batches?","relevant_paths":["willow.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R3D028","category":"scope-positive","query":"What happens after a failed validation?","relevant_paths":["willow.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R3D029","category":"off-topic","query":"What is the capital of Iceland?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R3D030","category":"off-topic","query":"What is the mass of Saturn?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R3D031","category":"off-topic","query":"What is the current weather in Iceland?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R3D032","category":"off-topic","query":"What is the latest election result in Iceland?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R3D033","category":"off-topic","query":"What is the price of gold today?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R3D034","category":"off-topic","query":"What is the date of the next solar eclipse?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R3D035","category":"off-topic","query":"What is the size of the largest dinosaur?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R3D036","category":"off-topic","query":"What is the rate of sea level rise?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R3D037","category":"off-topic","query":"What is the time until the next earthquake?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R3D038","category":"off-topic","query":"What is the current weather?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R3D039","category":"off-topic","query":"Who won the latest election?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R3D040","category":"off-topic","query":"What is the cost of a kilogram of copper?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}

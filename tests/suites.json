@@ -1,0 +1,37 @@
+{
+  "baseline": [
+    "request-operation.test.mjs",
+    "communication-emission.test.mjs",
+    "communication-scope.test.mjs",
+    "cross-source-ranking.test.mjs",
+    "behavioral-context.test.mjs",
+    "contextual-resource.test.mjs",
+    "evidence-support.test.mjs",
+    "grounded-query.test.mjs",
+    "integration.test.mjs",
+    "retrieval.test.mjs",
+    "returned-span-support.test.mjs",
+    "security-scanner.test.mjs",
+    "state-memory.test.mjs",
+    "targeted-communication.test.mjs",
+    "targeted-hook-repeat.test.mjs",
+    "targeted-text-retry.test.mjs",
+    "windows-launchers.test.mjs",
+    "workflow.test.mjs",
+    "api-context.test.mjs",
+    "api-condition.test.mjs",
+    "python-api-identifiers.test.mjs",
+    "grounded-cold-start.test.mjs"
+  ],
+  "research": [
+    "abstention.test.mjs",
+    "agenda-word-order.test.mjs",
+    "behavioral-grammar.test.mjs",
+    "component-support.test.mjs",
+    "composition-grammar.test.mjs",
+    "descriptive-grammar.test.mjs",
+    "markup-support.test.mjs",
+    "referent-binding.test.mjs",
+    "support-scoping.test.mjs"
+  ]
+}

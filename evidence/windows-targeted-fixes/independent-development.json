@@ -1,0 +1,67 @@
+{
+  "at": "2026-10-12T10:14:11.569Z",
+  "scope": "Independent development; no holdout input; current real pinned embeddings",
+  "cases": [
+    {
+      "id": "I01",
+      "query": "What is postponed forwarding?",
+      "text": "CloverRelay waits to send outgoing notes until a subscriber asks for them.",
+      "expected": "ok"
+    },
+    {
+      "id": "I02",
+      "query": "What is postponed levitation?",
+      "text": "CloverRelay waits to send outgoing notes until a subscriber asks for them.",
+      "expected": "no_results"
+    },
+    {
+      "id": "I03",
+      "query": "What is staged dissemination?",
+      "text": "PoppyBuffer collects signal packets in memory, then delivers those packets to its subscriber.",
+      "expected": "ok"
+    },
+    {
+      "id": "I04",
+      "query": "What is staged resurrection?",
+      "text": "PoppyBuffer collects signal packets in memory, then delivers those packets to its subscriber.",
+      "expected": "no_results"
+    },
+    {
+      "id": "I05",
+      "query": "What is queued delivery?",
+      "text": "WillowRelay holds parcels in a queue. It hands them to the collector once demand arrives.",
+      "expected": "ok"
+    },
+    {
+      "id": "I06",
+      "query": "What is queued alchemy?",
+      "text": "WillowRelay holds parcels in a queue. It hands them to the collector once demand arrives.",
+      "expected": "no_results"
+    },
+    {
+      "id": "I07",
+      "query": "What is buffered forwarding?",
+      "text": "Messages are sent immediately. There is no queue or buffer; nothing is retained.",
+      "expected": "no_results"
+    },
+    {
+      "id": "I08",
+      "query": "What is deferred transmission?",
+      "text": "The relay stores emitted signals. It does not send those signals until a listener asks for them.",
+      "expected": "ok"
+    },
+    {
+      "id": "I09",
+      "query": "What is deferred transmission?",
+      "text": "A durable file waits until recovery.\n\nA separate reporter sends messages immediately.",
+      "expected": "no_results"
+    },
+    {
+      "id": "I10",
+      "query": "What is deferred orbital transmission?",
+      "text": "CloverRelay waits to send outgoing notes until a subscriber asks for them.",
+      "expected": "no_results"
+    }
+  ],
+  "caseHash": "add338480a3cacad03939168fb666854d6915ea20901fd0933f1e31815ad05e4"
+}

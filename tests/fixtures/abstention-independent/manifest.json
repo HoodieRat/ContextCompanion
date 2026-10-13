@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-11T02:32:36.950Z",
+  "purpose": "Created before production edits. New family-disjoint development and held-out synthetic cases; original cases not read. Never regenerate or tune after holdout.",
+  "counts": {
+    "development": {
+      "total": 68,
+      "positive": 30,
+      "negative": 38,
+      "families": 8
+    },
+    "holdout": {
+      "total": 68,
+      "positive": 30,
+      "negative": 38,
+      "families": 8
+    }
+  },
+  "caseHashes": {
+    "development": "2e2865785ea0d392a79fee02232253d6fa5402c6c21dea290af46c85beebeb20",
+    "holdout": "ead48184a48558a9461d6539509d792a835e39dd37c8da0fca287f438090c5d3"
+  },
+  "limitations": "Same-author templated synthetic evaluation, not an external human benchmark. Operation/product families and documents are disjoint; security query categories have sibling templates. No universal answerability claim."
+}

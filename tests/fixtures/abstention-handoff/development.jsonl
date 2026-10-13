@@ -1,0 +1,8 @@
+{"id":"HND001","query":"What should a following session finish?","expected_status":"ok","relevant_paths":["handoff.md"],"category":"handoff-paraphrase","forbidden_paths":[]}
+{"id":"HND002","query":"What work should a later session continue?","expected_status":"ok","relevant_paths":["handoff.md"],"category":"handoff-paraphrase","forbidden_paths":[]}
+{"id":"HND003","query":"What does the handoff ask the following session to do?","expected_status":"ok","relevant_paths":["handoff.md"],"category":"handoff-paraphrase","forbidden_paths":[]}
+{"id":"HND004","query":"What should the following session work on?","expected_status":"ok","relevant_paths":["handoff.md"],"category":"handoff-paraphrase","forbidden_paths":[]}
+{"id":"HND005","query":"What activity should a following session undertake to reverse aging?","expected_status":"no_results","relevant_paths":[],"category":"unsupported-planning","forbidden_paths":[]}
+{"id":"HND006","query":"What should a later session do to control the weather?","expected_status":"no_results","relevant_paths":[],"category":"unsupported-planning","forbidden_paths":[]}
+{"id":"HND007","query":"What is the next session's launch date on Mars?","expected_status":"no_results","relevant_paths":[],"category":"unsupported-planning","forbidden_paths":[]}
+{"id":"HND008","query":"What is Umber's current project version?","expected_status":"no_results","relevant_paths":[],"category":"unsupported-planning","forbidden_paths":[]}

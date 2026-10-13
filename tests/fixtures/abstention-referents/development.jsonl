@@ -1,0 +1,14 @@
+{"id":"REF001","query":"How does Marten record completed work?","expected_status":"ok","relevant_paths":["ledger.md"],"category":"referent-positive","forbidden_paths":[]}
+{"id":"REF002","query":"How does marten record completed work?","expected_status":"ok","relevant_paths":["ledger.md"],"category":"referent-positive","forbidden_paths":[]}
+{"id":"REF003","query":"How can a Consumer remember progress after restarting?","expected_status":"ok","relevant_paths":["ledger.md"],"category":"referent-positive","forbidden_paths":[]}
+{"id":"REF004","query":"What is Marten's current version?","expected_status":"ok","relevant_paths":["ledger.md"],"category":"referent-positive","forbidden_paths":[]}
+{"id":"REF005","query":"What is marten's current version?","expected_status":"ok","relevant_paths":["ledger.md"],"category":"referent-positive","forbidden_paths":[]}
+{"id":"REF006","query":"Can Marten clients use Python on Windows?","expected_status":"ok","relevant_paths":["ledger.md"],"category":"referent-positive","forbidden_paths":[]}
+{"id":"REF007","query":"How does Nacre record completed work?","expected_status":"no_results","relevant_paths":[],"category":"off-topic","forbidden_paths":[]}
+{"id":"REF008","query":"How does nacre record completed work?","expected_status":"no_results","relevant_paths":[],"category":"off-topic","forbidden_paths":[]}
+{"id":"REF009","query":"What is Nacre's current version?","expected_status":"no_results","relevant_paths":[],"category":"off-topic","forbidden_paths":[]}
+{"id":"REF010","query":"Can Nacre clients use Python on Windows?","expected_status":"no_results","relevant_paths":[],"category":"off-topic","forbidden_paths":[]}
+{"id":"REF011","query":"What is Hasp's current version?","expected_status":"no_results","relevant_paths":[],"category":"off-topic","forbidden_paths":[]}
+{"id":"REF012","query":"Does Hasp report its current version?","expected_status":"no_results","relevant_paths":[],"category":"off-topic","forbidden_paths":[]}
+{"id":"REF013","query":"Why does Nacre report its current size?","expected_status":"no_results","relevant_paths":[],"category":"off-topic","forbidden_paths":[]}
+{"id":"REF014","query":"Who supplies Nacre's version?","expected_status":"no_results","relevant_paths":[],"category":"off-topic","forbidden_paths":[]}

@@ -1,0 +1,4 @@
+# Original package material and third-party material
+The original specifications, JSON contracts, SQL reference and synthetic fixture material in this package are provided for the user's unrestricted use, modification and sharing, including use in commercial projects. No attribution to the assistant is required. They are supplied without warranty and are not a guarantee of software correctness or legal suitability.
+
+This permission does not override third-party component/model/document licenses. Upstream code is referenced, not relicensed here. Retain applicable notices and verify dependencies before redistribution. Existing generated infographic assets are included as supplied conversation artifacts; their text is not a technical authority. No font files or proprietary third-party manuals are bundled.

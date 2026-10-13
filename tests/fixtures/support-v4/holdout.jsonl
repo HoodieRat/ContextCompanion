@@ -1,0 +1,16 @@
+{"id":"H001","query":"How is a recorded address recovered after interruption?","category":"returned-support","expected_status":"ok","relevant_paths":["BriarRead.md"],"forbidden_paths":[]}
+{"id":"H002","query":"How is a checkpointed address recovered after interruption?","category":"returned-support","expected_status":"ok","relevant_paths":["BriarRead.md"],"forbidden_paths":[]}
+{"id":"H003","query":"How is a retained milestone restored after the runtime ends?","category":"returned-support","expected_status":"ok","relevant_paths":["JuniperRead.md"],"forbidden_paths":[]}
+{"id":"H004","query":"How is a saved milestone recovered after shutdown?","category":"returned-support","expected_status":"ok","relevant_paths":["JuniperRead.md"],"forbidden_paths":[]}
+{"id":"H005","query":"What is deferred dissemination?","category":"returned-support","expected_status":"ok","relevant_paths":["AsterDispatch.md"],"forbidden_paths":[]}
+{"id":"H006","query":"What is queued communication?","category":"returned-support","expected_status":"ok","relevant_paths":["AsterDispatch.md"],"forbidden_paths":[]}
+{"id":"H007","query":"What is buffered distribution?","category":"returned-support","expected_status":"ok","relevant_paths":["BasaltBatch.md"],"forbidden_paths":[]}
+{"id":"H008","query":"What is staged transport?","category":"returned-support","expected_status":"ok","relevant_paths":["BasaltBatch.md"],"forbidden_paths":[]}
+{"id":"H009","query":"How is a recorded address recovered on Rigel?","category":"unsupported","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["BriarRead.md","JuniperRead.md","AsterDispatch.md","BasaltBatch.md"]}
+{"id":"H010","query":"How is a retained Rigel milestone restored after shutdown?","category":"unsupported","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["BriarRead.md","JuniperRead.md","AsterDispatch.md","BasaltBatch.md"]}
+{"id":"H011","query":"What is the temperature of BriarRead?","category":"unsupported","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["BriarRead.md","JuniperRead.md","AsterDispatch.md","BasaltBatch.md"]}
+{"id":"H012","query":"What is the capacity of JuniperRead?","category":"unsupported","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["BriarRead.md","JuniperRead.md","AsterDispatch.md","BasaltBatch.md"]}
+{"id":"H013","query":"What is deferred photosynthesis?","category":"unsupported","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["BriarRead.md","JuniperRead.md","AsterDispatch.md","BasaltBatch.md"]}
+{"id":"H014","query":"What is queued levitation?","category":"unsupported","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["BriarRead.md","JuniperRead.md","AsterDispatch.md","BasaltBatch.md"]}
+{"id":"H015","query":"What is buffered distribution and regeneration?","category":"unsupported","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["BriarRead.md","JuniperRead.md","AsterDispatch.md","BasaltBatch.md"]}
+{"id":"H016","query":"What is staged planetary transport?","category":"unsupported","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["BriarRead.md","JuniperRead.md","AsterDispatch.md","BasaltBatch.md"]}

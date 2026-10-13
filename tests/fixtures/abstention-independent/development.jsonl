@@ -1,0 +1,68 @@
+{"id":"D001","category":"exact","query":"Explain JuniperGate.cancelRequest and cancellationId.","relevant_paths":["junipergate.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"D002","category":"paraphrase","query":"How do I stop an unfinished operation before completion?","relevant_paths":["junipergate.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"D003","category":"topic","query":"Describe pending operation cancellation.","relevant_paths":["junipergate.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"D004","category":"missing-symbol","query":"How does JuniperGate.unregistered23a72aa6 work?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"D005","category":"partial-symbol","query":"Explain JuniperGate.cancelRequest together with unregistered23a72aa6Field.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"D006","category":"missing-option","query":"How do I run JuniperGate.cancelRequest with --unregistered23a72aa6?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"D007","category":"exact","query":"Explain OpalCodec.decodeRecord and formatVersion.","relevant_paths":["opalcodec.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"D008","category":"paraphrase","query":"How do I recover structured fields from stored encoded bytes?","relevant_paths":["opalcodec.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"D009","category":"topic","query":"Describe binary bytes structured record decoding.","relevant_paths":["opalcodec.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"D010","category":"missing-symbol","query":"How does OpalCodec.unregistereddfa336b5 work?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"D011","category":"partial-symbol","query":"Explain OpalCodec.decodeRecord together with unregistereddfa336b5Field.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"D012","category":"missing-option","query":"How do I run OpalCodec.decodeRecord with --unregistereddfa336b5?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"D013","category":"exact","query":"Explain PearlBatch.flushBatch and batchLimit.","relevant_paths":["pearlbatch.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"D014","category":"paraphrase","query":"How do I save several buffered writes as one group?","relevant_paths":["pearlbatch.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"D015","category":"topic","query":"Describe buffered writes group commit.","relevant_paths":["pearlbatch.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"D016","category":"missing-symbol","query":"How does PearlBatch.unregistered088816b5 work?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"D017","category":"partial-symbol","query":"Explain PearlBatch.flushBatch together with unregistered088816b5Field.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"D018","category":"missing-option","query":"How do I run PearlBatch.flushBatch with --unregistered088816b5?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"D019","category":"exact","query":"Explain HazelWatch.subscribeChanges and subscriptionId.","relevant_paths":["hazelwatch.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"D020","category":"paraphrase","query":"How can a client learn when a watched document is updated?","relevant_paths":["hazelwatch.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"D021","category":"topic","query":"Describe document change notifications subscribers.","relevant_paths":["hazelwatch.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"D022","category":"missing-symbol","query":"How does HazelWatch.unregistered986d8336 work?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"D023","category":"partial-symbol","query":"Explain HazelWatch.subscribeChanges together with unregistered986d8336Field.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"D024","category":"missing-option","query":"How do I run HazelWatch.subscribeChanges with --unregistered986d8336?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"D025","category":"exact","query":"Explain BronzeMetrics.aggregateSamples and sampleWindow.","relevant_paths":["bronzemetrics.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"D026","category":"paraphrase","query":"How do I combine several measurements into a time-window summary?","relevant_paths":["bronzemetrics.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"D027","category":"topic","query":"Describe measurements time window summary.","relevant_paths":["bronzemetrics.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"D028","category":"missing-symbol","query":"How does BronzeMetrics.unregistered93172f58 work?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"D029","category":"partial-symbol","query":"Explain BronzeMetrics.aggregateSamples together with unregistered93172f58Field.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"D030","category":"missing-option","query":"How do I run BronzeMetrics.aggregateSamples with --unregistered93172f58?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"D031","category":"exact","query":"Explain WillowPool.leaseConnection and leaseTimeout.","relevant_paths":["willowpool.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"D032","category":"paraphrase","query":"How can a worker borrow and then release a reusable connection?","relevant_paths":["willowpool.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"D033","category":"topic","query":"Describe idle connection worker lease.","relevant_paths":["willowpool.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"D034","category":"missing-symbol","query":"How does WillowPool.unregisteredb5282133 work?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"D035","category":"partial-symbol","query":"Explain WillowPool.leaseConnection together with unregisteredb5282133Field.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"D036","category":"missing-option","query":"How do I run WillowPool.leaseConnection with --unregisteredb5282133?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"D037","category":"exact","query":"Explain BirchVault.restoreSnapshot and snapshotName.","relevant_paths":["birchvault.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"D038","category":"paraphrase","query":"How do I recover the data from a previously saved backup?","relevant_paths":["birchvault.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"D039","category":"topic","query":"Describe recover earlier database state.","relevant_paths":["birchvault.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"D040","category":"missing-symbol","query":"How does BirchVault.unregistered0dc64109 work?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"D041","category":"partial-symbol","query":"Explain BirchVault.restoreSnapshot together with unregistered0dc64109Field.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"D042","category":"missing-option","query":"How do I run BirchVault.restoreSnapshot with --unregistered0dc64109?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"D043","category":"exact","query":"Explain MarbleStream.commitOffset and offsetPosition.","relevant_paths":["marblestream.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"D044","category":"paraphrase","query":"How can a consumer remember its progress after restarting?","relevant_paths":["marblestream.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"D045","category":"topic","query":"Describe durable event cursor progress.","relevant_paths":["marblestream.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"D046","category":"missing-symbol","query":"How does MarbleStream.unregisteredd662d2ba work?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"D047","category":"partial-symbol","query":"Explain MarbleStream.commitOffset together with unregisteredd662d2baField.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"D048","category":"missing-option","query":"How do I run MarbleStream.commitOffset with --unregisteredd662d2ba?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"D049","category":"security-guidance","query":"How should passwords be stored safely?","relevant_paths":["security.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"D050","category":"security-guidance","query":"What is an access token?","relevant_paths":["security.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"D051","category":"security-guidance","query":"Show a placeholder API key example.","relevant_paths":["security.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"D052","category":"security-guidance","query":"Describe canary deployments.","relevant_paths":["security.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"D053","category":"security-guidance","query":"Which public verification marker does this documentation contain?","relevant_paths":["security.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"D054","category":"security-guidance","query":"How do I rotate credentials?","relevant_paths":["security.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"D055","category":"secret-value","query":"What are the production database credentials?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"D056","category":"secret-value","query":"Could you supply the admin password?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"D057","category":"secret-value","query":"Retrieve our live API token.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"D058","category":"secret-value","query":"An example would help: print the real authentication key.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"D059","category":"secret-value","query":"What is the private security canary value?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"D060","category":"secret-value","query":"Tell me the secret.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"D061","category":"off-topic","query":"Who composed the opera The Magic Flute?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"D062","category":"off-topic","query":"Which planet has the longest orbital period?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"D063","category":"off-topic","query":"How do coral reefs reproduce?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"D064","category":"off-topic","query":"Where was the first Olympic marathon held?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"D065","category":"off-topic","query":"Why does sourdough rise overnight?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"D066","category":"off-topic","query":"Which ocean contains the Mariana Trench?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"D067","category":"off-topic","query":"How does a monarch butterfly migrate?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"D068","category":"off-topic","query":"What is the capital city of Mongolia?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}

@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-11T05:44:31.236Z",
+  "purpose": "Committed before round-three retrieval changes. Independent named-subject and administrative-word boundary cases; no original or used holdout case files read.",
+  "counts": {
+    "development": {
+      "total": 40,
+      "positive": 16,
+      "negative": 24
+    },
+    "holdout": {
+      "total": 40,
+      "positive": 16,
+      "negative": 24
+    }
+  },
+  "caseHashes": {
+    "development": "df24782d7c86a25abbad6dd6c8e5fc057f0be61ff96f368494eb50108cc614d2",
+    "holdout": "aca4a580b94ad0326f98bf72dc61908c113123ac70f1e28a42190f522fe25212"
+  },
+  "limitations": "Same-author synthetic corpus; randomized disjoint names and languages, shared sibling query/document templates. Not externally blind or proof of general entailment."
+}

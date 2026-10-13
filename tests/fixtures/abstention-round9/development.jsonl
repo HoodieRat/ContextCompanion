@@ -1,0 +1,36 @@
+{"id":"GMD001","query":"How do I avoid constructing a new connection for every request?","category":"supported-behavior","expected_status":"ok","relevant_paths":["channels.md"],"forbidden_paths":[]}
+{"id":"GMD002","query":"What is the purpose of pooling reusable channels?","category":"supported-behavior","expected_status":"ok","relevant_paths":["channels.md"],"forbidden_paths":[]}
+{"id":"GMD003","query":"Describe buffering.","category":"supported-behavior","expected_status":"ok","relevant_paths":["flow.md"],"forbidden_paths":[]}
+{"id":"GMD004","query":"Explain concurrency.","category":"supported-behavior","expected_status":"ok","relevant_paths":["flow.md"],"forbidden_paths":[]}
+{"id":"GMD005","query":"What is blocking?","category":"supported-behavior","expected_status":"ok","relevant_paths":["flow.md"],"forbidden_paths":[]}
+{"id":"GMD006","query":"Describe order and waiting.","category":"supported-behavior","expected_status":"ok","relevant_paths":["flow.md"],"forbidden_paths":[]}
+{"id":"GMD007","query":"How can pending tasks be cancelled?","category":"supported-behavior","expected_status":"ok","relevant_paths":["flow.md"],"forbidden_paths":[]}
+{"id":"GMD008","query":"How do I use a connection pool?","category":"supported-behavior","expected_status":"ok","relevant_paths":["channels.md"],"forbidden_paths":[]}
+{"id":"GMD009","query":"How does the stream deliver items sequentially?","category":"supported-behavior","expected_status":"ok","relevant_paths":["flow.md"],"forbidden_paths":[]}
+{"id":"GMD010","query":"How do consumers run in parallel?","category":"supported-behavior","expected_status":"ok","relevant_paths":["flow.md"],"forbidden_paths":[]}
+{"id":"GMD011","query":"Which mechanism is used for grouping values before delivery?","category":"supported-behavior","expected_status":"ok","relevant_paths":["flow.md"],"forbidden_paths":[]}
+{"id":"GMD012","query":"How can a caller poll without waiting?","category":"supported-behavior","expected_status":"ok","relevant_paths":["flow.md"],"forbidden_paths":[]}
+{"id":"GMD013","query":"What should we do next?","category":"supported-agenda","expected_status":"ok","relevant_paths":["handoff.md"],"forbidden_paths":[]}
+{"id":"GMD014","query":"What are the next steps?","category":"supported-agenda","expected_status":"ok","relevant_paths":["handoff.md"],"forbidden_paths":[]}
+{"id":"GMD015","query":"What remains to be done?","category":"supported-agenda","expected_status":"ok","relevant_paths":["handoff.md"],"forbidden_paths":[]}
+{"id":"GMD016","query":"What is the plan for the next session?","category":"supported-agenda","expected_status":"ok","relevant_paths":["handoff.md"],"forbidden_paths":[]}
+{"id":"GMD017","query":"Summarize the current objective and next steps.","category":"supported-agenda","expected_status":"ok","relevant_paths":["handoff.md"],"forbidden_paths":[]}
+{"id":"GMD018","query":"What should the following session continue?","category":"supported-agenda","expected_status":"ok","relevant_paths":["handoff.md"],"forbidden_paths":[]}
+{"id":"GMD019","query":"How does Fennel buffer values?","category":"unsupported-owner-field-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["channels.md","flow.md","handoff.md","identity.md"]}
+{"id":"GMD020","query":"Explain Fennel concurrency.","category":"unsupported-owner-field-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["channels.md","flow.md","handoff.md","identity.md"]}
+{"id":"GMD021","query":"What is Fennel used for?","category":"unsupported-owner-field-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["channels.md","flow.md","handoff.md","identity.md"]}
+{"id":"GMD022","query":"What is the capacity of Alder?","category":"unsupported-owner-field-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["channels.md","flow.md","handoff.md","identity.md"]}
+{"id":"GMD023","query":"What is the temperature of Alder?","category":"unsupported-owner-field-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["channels.md","flow.md","handoff.md","identity.md"]}
+{"id":"GMD024","query":"How many planets can the stream deliver?","category":"unsupported-owner-field-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["channels.md","flow.md","handoff.md","identity.md"]}
+{"id":"GMD025","query":"Explain buffering of lunar oceans.","category":"unsupported-owner-field-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["channels.md","flow.md","handoff.md","identity.md"]}
+{"id":"GMD026","query":"What should we do next to change gravity?","category":"unsupported-owner-field-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["channels.md","flow.md","handoff.md","identity.md"]}
+{"id":"GMD027","query":"What are the next steps for perpetual motion?","category":"unsupported-owner-field-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["channels.md","flow.md","handoff.md","identity.md"]}
+{"id":"GMD028","query":"What is the next session launch date on Venus?","category":"unsupported-owner-field-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["channels.md","flow.md","handoff.md","identity.md"]}
+{"id":"GMD029","query":"What remains to be done for Fennel?","category":"unsupported-owner-field-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["channels.md","flow.md","handoff.md","identity.md"]}
+{"id":"GMD030","query":"Describe teleportation.","category":"unsupported-owner-field-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["channels.md","flow.md","handoff.md","identity.md"]}
+{"id":"GMD031","query":"What is the current version of UnlistedKit?","category":"unsupported-owner-field-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["channels.md","flow.md","handoff.md","identity.md"]}
+{"id":"GMD032","query":"What registration code does Fennel provide?","category":"unsupported-owner-field-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["channels.md","flow.md","handoff.md","identity.md"]}
+{"id":"GMD033","query":"Call unknown_channel() to pool a connection.","category":"unsupported-owner-field-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["channels.md","flow.md","handoff.md","identity.md"]}
+{"id":"GMD034","query":"What is blocking the rotation of Neptune?","category":"unsupported-owner-field-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["channels.md","flow.md","handoff.md","identity.md"]}
+{"id":"GMD035","query":"Explain order and weather control.","category":"unsupported-owner-field-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["channels.md","flow.md","handoff.md","identity.md"]}
+{"id":"GMD036","query":"How do I pool channels for transmuting lead?","category":"unsupported-owner-field-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["channels.md","flow.md","handoff.md","identity.md"]}

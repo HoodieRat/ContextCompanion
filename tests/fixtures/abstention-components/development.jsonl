@@ -1,0 +1,24 @@
+{"id":"CSD001","query":"How is deferred publication achieved?","category":"supported-object-or-agenda","expected_status":"ok","relevant_paths":["delivery.md"],"forbidden_paths":[]}
+{"id":"CSD002","query":"How is asynchronous dispatch implemented?","category":"supported-object-or-agenda","expected_status":"ok","relevant_paths":["delivery.md"],"forbidden_paths":[]}
+{"id":"CSD003","query":"How is demand-driven propagation performed?","category":"supported-object-or-agenda","expected_status":"ok","relevant_paths":["delivery.md"],"forbidden_paths":[]}
+{"id":"CSD004","query":"How is delayed transmission handled?","category":"supported-object-or-agenda","expected_status":"ok","relevant_paths":["delivery.md"],"forbidden_paths":[]}
+{"id":"CSD005","query":"How is nested execution composed?","category":"supported-object-or-agenda","expected_status":"ok","relevant_paths":["computation.md"],"forbidden_paths":[]}
+{"id":"CSD006","query":"How is parallel coordination achieved?","category":"supported-object-or-agenda","expected_status":"ok","relevant_paths":["computation.md"],"forbidden_paths":[]}
+{"id":"CSD007","query":"How do I arrange work for subsequent emissions being postponed?","category":"supported-object-or-agenda","expected_status":"ok","relevant_paths":["delivery.md"],"forbidden_paths":[]}
+{"id":"CSD008","query":"Which mechanism is used for delivering acknowledged notifications before continuing?","category":"supported-object-or-agenda","expected_status":"ok","relevant_paths":["delivery.md"],"forbidden_paths":[]}
+{"id":"CSD009","query":"What comes next?","category":"supported-object-or-agenda","expected_status":"ok","relevant_paths":["handoff.md"],"forbidden_paths":[]}
+{"id":"CSD010","query":"What should happen next?","category":"supported-object-or-agenda","expected_status":"ok","relevant_paths":["handoff.md"],"forbidden_paths":[]}
+{"id":"CSD011","query":"What should we tackle next?","category":"supported-object-or-agenda","expected_status":"ok","relevant_paths":["handoff.md"],"forbidden_paths":[]}
+{"id":"CSD012","query":"What next?","category":"supported-object-or-agenda","expected_status":"ok","relevant_paths":["handoff.md"],"forbidden_paths":[]}
+{"id":"CSD013","query":"How is delayed orbital teleportation achieved?","category":"unsupported-object-owner-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["delivery.md","computation.md","handoff.md"]}
+{"id":"CSD014","query":"How is asynchronous weather control implemented?","category":"unsupported-object-owner-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["delivery.md","computation.md","handoff.md"]}
+{"id":"CSD015","query":"How is nested planetary rotation composed?","category":"unsupported-object-owner-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["delivery.md","computation.md","handoff.md"]}
+{"id":"CSD016","query":"How is parallel lunar navigation achieved?","category":"unsupported-object-owner-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["delivery.md","computation.md","handoff.md"]}
+{"id":"CSD017","query":"What is Caldera used for?","category":"unsupported-object-owner-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["delivery.md","computation.md","handoff.md"]}
+{"id":"CSD018","query":"How does Caldera dispatch notifications?","category":"unsupported-object-owner-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["delivery.md","computation.md","handoff.md"]}
+{"id":"CSD019","query":"How do I arrange work for predicting lunar weather?","category":"unsupported-object-owner-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["delivery.md","computation.md","handoff.md"]}
+{"id":"CSD020","query":"Which mechanism is used for delivering unknown_channel() notifications?","category":"unsupported-object-owner-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["delivery.md","computation.md","handoff.md"]}
+{"id":"CSD021","query":"What comes next to change gravity?","category":"unsupported-object-owner-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["delivery.md","computation.md","handoff.md"]}
+{"id":"CSD022","query":"What should happen next to reverse aging?","category":"unsupported-object-owner-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["delivery.md","computation.md","handoff.md"]}
+{"id":"CSD023","query":"What should we tackle next on Neptune?","category":"unsupported-object-owner-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["delivery.md","computation.md","handoff.md"]}
+{"id":"CSD024","query":"What next for perpetual motion?","category":"unsupported-object-owner-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["delivery.md","computation.md","handoff.md"]}

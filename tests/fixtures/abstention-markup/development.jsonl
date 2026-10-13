@@ -1,0 +1,12 @@
+{"id":"MKD001","category":"plain-supported","query":"orchard grafting","expected_status":"ok","relevant_paths":["reference-1.md"],"forbidden_paths":[]}
+{"id":"MKD002","category":"plain-unsupported","query":"glacier grafting","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["reference-1.md","reference-2.md","reference-3.md","reference-4.md","reference-5.md","reference-6.md"]}
+{"id":"MKD003","category":"plain-supported","query":"ceramic firing","expected_status":"ok","relevant_paths":["reference-2.md"],"forbidden_paths":[]}
+{"id":"MKD004","category":"plain-unsupported","query":"glacier firing","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["reference-1.md","reference-2.md","reference-3.md","reference-4.md","reference-5.md","reference-6.md"]}
+{"id":"MKD005","category":"escaped-supported","query":"parcel sorting","expected_status":"ok","relevant_paths":["reference-3.md"],"forbidden_paths":[]}
+{"id":"MKD006","category":"escaped-unsupported","query":"glacier sorting","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["reference-1.md","reference-2.md","reference-3.md","reference-4.md","reference-5.md","reference-6.md"]}
+{"id":"MKD007","category":"escaped-supported","query":"thread scheduling","expected_status":"ok","relevant_paths":["reference-4.md"],"forbidden_paths":[]}
+{"id":"MKD008","category":"escaped-unsupported","query":"glacier scheduling","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["reference-1.md","reference-2.md","reference-3.md","reference-4.md","reference-5.md","reference-6.md"]}
+{"id":"MKD009","category":"exclusion-supported","query":"linen weaving","expected_status":"ok","relevant_paths":["reference-5.md"],"forbidden_paths":[]}
+{"id":"MKD010","category":"exclusion-unsupported","query":"glacier weaving","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["reference-1.md","reference-2.md","reference-3.md","reference-4.md","reference-5.md","reference-6.md"]}
+{"id":"MKD011","category":"exclusion-supported","query":"bead stringing","expected_status":"ok","relevant_paths":["reference-6.md"],"forbidden_paths":[]}
+{"id":"MKD012","category":"exclusion-unsupported","query":"glacier stringing","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["reference-1.md","reference-2.md","reference-3.md","reference-4.md","reference-5.md","reference-6.md"]}

@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Context Companion</title><link rel="stylesheet" href="/styles.css"><script src="/app.js" defer></script></head>
+<body>
+<aside class="sidebar">
+  <div class="brand"><span class="mark">CC</span><div>Context Companion<small>Knowledge that moves projects forward</small></div></div>
+  <label for="project-select">Current project</label><select id="project-select" aria-label="Current project"></select>
+  <button id="add-project" class="primary">＋ Add project</button>
+  <nav aria-label="Workspace">
+    <button data-tab="overview" class="active">Overview</button><button data-tab="sources">Knowledge sources</button><button data-tab="retrieval">Search &amp; evidence</button><button data-tab="memory">Development memory</button><button data-tab="activity">Activity &amp; tests</button><button data-tab="settings">Settings &amp; recovery</button>
+  </nav>
+  <div class="principle"><strong>A starting point, not a boundary.</strong><p>Codex can investigate better approaches beyond your library, validate discoveries, and preserve useful findings.</p></div>
+  <small id="runtime-label">Connecting to local controller…</small>
+</aside>
+<main>
+  <header><div><p class="eyebrow">LOCAL • PROJECT-BOUND • REUSABLE</p><h1 id="page-title">Overview</h1><p id="project-path" class="subtle"></p></div><div class="header-actions"><span id="connection" class="pill">Connecting</span><button id="refresh">Refresh</button><button id="connect-codex" class="primary">Connect Codex</button></div></header>
+  <div id="notice" role="status" class="notice" hidden></div>
+  <section id="view" aria-live="polite"></section>
+</main>
+<dialog id="dialog"><form id="dialog-form"><div class="dialog-head"><h2 id="dialog-title"></h2><button type="button" id="dialog-close" aria-label="Close">×</button></div><div id="dialog-fields"></div><div id="dialog-error" role="alert" class="error" hidden></div><footer><button type="button" id="dialog-cancel">Cancel</button><button type="submit" id="dialog-submit" class="primary">Save</button></footer></form></dialog>
+</body></html>

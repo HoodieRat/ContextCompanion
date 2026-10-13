@@ -1,0 +1,15 @@
+{
+  "at": "2026-10-11T08:27:06.291Z",
+  "caseHashes": {
+    "development": "64d198842c6268b05b779ed0967fd4728fe47b647de5cf8b4dd6d437a0658339"
+  },
+  "counts": {
+    "development": {
+      "total": 32,
+      "positive": 16,
+      "negative": 16
+    }
+  },
+  "purpose": "Committed before coherent support correction: ordinary capitalization, auxiliary/adverb variation, supported paraphrases, missing subjects/properties, unrelated evidence cannot lend support. Development only. Fresh round4/5/6 remain unexecuted.",
+  "limitations": "Same-author development, not external blind evaluation. Explicit API identifier spelling remains meaningful and is not varied as if natural-language capitalization."
+}

@@ -1,0 +1,15 @@
+{
+  "at": "2026-10-11T07:30:08.597Z",
+  "caseHashes": {
+    "development": "42f1a6920be8536cd1c23598420a14563e148955d2725c16cd218600ea43b3ce"
+  },
+  "counts": {
+    "development": {
+      "total": 40,
+      "positive": 20,
+      "negative": 20
+    }
+  },
+  "purpose": "Independent development boundary expansion before source corrections. Original Q024 text uninspected. Round4/5 precommitted fresh holdouts remain unexecuted; this fixture has no holdout.",
+  "limitations": "Same-author synthetic development, not external blind data."
+}

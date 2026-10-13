@@ -1,0 +1,15 @@
+{
+  "caseHashes": {
+    "development": "a244460d8927b1ca1483da4306161613839e0860543b35e6b50b211384f459dd",
+    "holdout": "7ec3ba128af881c4ccbc6fc3e272b9a4ceccab5efd2c8393451816eac3d1168e"
+  },
+  "metadata": {
+    "library": "",
+    "ecosystem": "generic",
+    "languages": [],
+    "platforms": [],
+    "kind": "project_context",
+    "reliability": "user",
+    "reliabilityEvidence": "Independent asynchronous behavior and complete agenda grammar. Same-author synthetic sibling holdout."
+  }
+}

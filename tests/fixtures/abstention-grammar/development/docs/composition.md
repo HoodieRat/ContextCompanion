@@ -1,0 +1,2 @@
+# Independent composition reference
+A higher-order function accepts another function. Composition joins computations into a chain. A switch replaces an earlier computation when a new one arrives. Side effects are executed only when requested. A scheduler chooses when work executes. The pipeline passes records through a sequence of transformations. Repeating an identical record is avoided by checking its prior receipt.

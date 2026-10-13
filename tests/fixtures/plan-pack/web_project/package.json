@@ -1,0 +1,7 @@
+{
+  "name": "fictional-web-fixture",
+  "private": true,
+  "dependencies": {
+    "nacre-kit": "^2.0.0"
+  }
+}

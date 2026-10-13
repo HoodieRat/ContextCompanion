@@ -1,0 +1,40 @@
+{"id":"PBD001","query":"What is the default timeout?","category":"property-boundary","expected_status":"ok","relevant_paths":["runtime.md"],"forbidden_paths":[]}
+{"id":"PBD002","query":"How long is a cached record valid?","category":"property-boundary","expected_status":"ok","relevant_paths":["runtime.md"],"forbidden_paths":[]}
+{"id":"PBD003","query":"How long does data stay valid?","category":"property-boundary","expected_status":"ok","relevant_paths":["runtime.md"],"forbidden_paths":[]}
+{"id":"PBD004","query":"What is the cache lifetime in seconds?","category":"property-boundary","expected_status":"ok","relevant_paths":["runtime.md"],"forbidden_paths":[]}
+{"id":"PBD005","query":"What is the time to live?","category":"property-boundary","expected_status":"ok","relevant_paths":["runtime.md"],"forbidden_paths":[]}
+{"id":"PBD006","query":"What is the default expiry time?","category":"property-boundary","expected_status":"ok","relevant_paths":["runtime.md"],"forbidden_paths":[]}
+{"id":"PBD007","query":"What is the configured interval?","category":"property-boundary","expected_status":"ok","relevant_paths":["runtime.md"],"forbidden_paths":[]}
+{"id":"PBD008","query":"How often does processing run?","category":"property-boundary","expected_status":"ok","relevant_paths":["runtime.md"],"forbidden_paths":[]}
+{"id":"PBD009","query":"What is the processing rate?","category":"property-boundary","expected_status":"ok","relevant_paths":["runtime.md"],"forbidden_paths":[]}
+{"id":"PBD010","query":"What is its byte size?","category":"property-boundary","expected_status":"ok","relevant_paths":["runtime.md"],"forbidden_paths":[]}
+{"id":"PBD011","query":"What is the maximum allowed count?","category":"property-boundary","expected_status":"ok","relevant_paths":["runtime.md"],"forbidden_paths":[]}
+{"id":"PBD012","query":"What is the length in characters?","category":"property-boundary","expected_status":"ok","relevant_paths":["runtime.md"],"forbidden_paths":[]}
+{"id":"PBD013","query":"What is the default file name?","category":"property-boundary","expected_status":"ok","relevant_paths":["runtime.md"],"forbidden_paths":[]}
+{"id":"PBD014","query":"What is the latest version?","category":"property-boundary","expected_status":"ok","relevant_paths":["runtime.md"],"forbidden_paths":[]}
+{"id":"PBD015","query":"What is the event time?","category":"property-boundary","expected_status":"ok","relevant_paths":["runtime.md"],"forbidden_paths":[]}
+{"id":"PBD016","query":"What is the creation date?","category":"property-boundary","expected_status":"ok","relevant_paths":["runtime.md"],"forbidden_paths":[]}
+{"id":"PBD017","query":"Which day is recorded?","category":"property-boundary","expected_status":"ok","relevant_paths":["runtime.md"],"forbidden_paths":[]}
+{"id":"PBD018","query":"What value is returned to a caller?","category":"property-boundary","expected_status":"ok","relevant_paths":["runtime.md"],"forbidden_paths":[]}
+{"id":"PBD019","query":"What is the subscription price?","category":"property-boundary","expected_status":"ok","relevant_paths":["runtime.md"],"forbidden_paths":[]}
+{"id":"PBD020","query":"What is the default request rate?","category":"property-boundary","expected_status":"ok","relevant_paths":["runtime.md"],"forbidden_paths":[]}
+{"id":"PBD021","query":"What is the default timeout of a neutron star?","category":"off-topic","expected_status":"no_results","relevant_paths":[],"forbidden_paths":[]}
+{"id":"PBD022","query":"How long is a human life valid?","category":"off-topic","expected_status":"no_results","relevant_paths":[],"forbidden_paths":[]}
+{"id":"PBD023","query":"What is the current time on Jupiter?","category":"off-topic","expected_status":"no_results","relevant_paths":[],"forbidden_paths":[]}
+{"id":"PBD024","query":"What is the cache lifetime of an ocean?","category":"off-topic","expected_status":"no_results","relevant_paths":[],"forbidden_paths":[]}
+{"id":"PBD025","query":"What is the time to live of a dragon?","category":"off-topic","expected_status":"no_results","relevant_paths":[],"forbidden_paths":[]}
+{"id":"PBD026","query":"What is the expiry date of a red giant?","category":"off-topic","expected_status":"no_results","relevant_paths":[],"forbidden_paths":[]}
+{"id":"PBD027","query":"What is the interval between earthquakes?","category":"off-topic","expected_status":"no_results","relevant_paths":[],"forbidden_paths":[]}
+{"id":"PBD028","query":"How often does a volcano erupt?","category":"off-topic","expected_status":"no_results","relevant_paths":[],"forbidden_paths":[]}
+{"id":"PBD029","query":"What is the rate of glacier melting?","category":"off-topic","expected_status":"no_results","relevant_paths":[],"forbidden_paths":[]}
+{"id":"PBD030","query":"What is the byte size of a blue whale?","category":"off-topic","expected_status":"no_results","relevant_paths":[],"forbidden_paths":[]}
+{"id":"PBD031","query":"What is the maximum allowed population?","category":"off-topic","expected_status":"no_results","relevant_paths":[],"forbidden_paths":[]}
+{"id":"PBD032","query":"What is the length of the Pacific?","category":"off-topic","expected_status":"no_results","relevant_paths":[],"forbidden_paths":[]}
+{"id":"PBD033","query":"What is the default name of a black hole?","category":"off-topic","expected_status":"no_results","relevant_paths":[],"forbidden_paths":[]}
+{"id":"PBD034","query":"What is the latest version of the solar system?","category":"off-topic","expected_status":"no_results","relevant_paths":[],"forbidden_paths":[]}
+{"id":"PBD035","query":"What is the event time of the next earthquake?","category":"off-topic","expected_status":"no_results","relevant_paths":[],"forbidden_paths":[]}
+{"id":"PBD036","query":"What is the creation date of Saturn?","category":"off-topic","expected_status":"no_results","relevant_paths":[],"forbidden_paths":[]}
+{"id":"PBD037","query":"Which day was Atlantis founded?","category":"off-topic","expected_status":"no_results","relevant_paths":[],"forbidden_paths":[]}
+{"id":"PBD038","query":"What value is returned by a supernova?","category":"off-topic","expected_status":"no_results","relevant_paths":[],"forbidden_paths":[]}
+{"id":"PBD039","query":"What is the price of platinum?","category":"off-topic","expected_status":"no_results","relevant_paths":[],"forbidden_paths":[]}
+{"id":"PBD040","query":"What is the request rate of a comet?","category":"off-topic","expected_status":"no_results","relevant_paths":[],"forbidden_paths":[]}

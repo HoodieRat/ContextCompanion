@@ -1,0 +1,32 @@
+{"id":"G3D001","query":"What is higher order composition?","category":"supported-grammar","expected_status":"ok","relevant_paths":["composition.md"],"forbidden_paths":[]}
+{"id":"G3D002","query":"What is a higher order function?","category":"supported-grammar","expected_status":"ok","relevant_paths":["composition.md"],"forbidden_paths":[]}
+{"id":"G3D003","query":"What is switching-style composition?","category":"supported-grammar","expected_status":"ok","relevant_paths":["composition.md"],"forbidden_paths":[]}
+{"id":"G3D004","query":"What is flattening nested computations?","category":"supported-grammar","expected_status":"ok","relevant_paths":["composition.md"],"forbidden_paths":[]}
+{"id":"G3D005","query":"What is the purpose of side effects executed only when requested?","category":"supported-grammar","expected_status":"ok","relevant_paths":["composition.md"],"forbidden_paths":[]}
+{"id":"G3D006","query":"How do I avoid a record from being repeated?","category":"supported-grammar","expected_status":"ok","relevant_paths":["composition.md"],"forbidden_paths":[]}
+{"id":"G3D007","query":"How does the scheduler avoid work from running early?","category":"supported-grammar","expected_status":"ok","relevant_paths":["composition.md"],"forbidden_paths":[]}
+{"id":"G3D008","query":"How are records processed by scheduling?","category":"supported-grammar","expected_status":"ok","relevant_paths":["composition.md"],"forbidden_paths":[]}
+{"id":"G3D009","query":"What should the next session pick up next?","category":"supported-grammar","expected_status":"ok","relevant_paths":["handoff.md"],"forbidden_paths":[]}
+{"id":"G3D010","query":"What should another session do next?","category":"supported-grammar","expected_status":"ok","relevant_paths":["handoff.md"],"forbidden_paths":[]}
+{"id":"G3D011","query":"What should the following session work on next?","category":"supported-grammar","expected_status":"ok","relevant_paths":["handoff.md"],"forbidden_paths":[]}
+{"id":"G3D012","query":"What work should the next session resume?","category":"supported-grammar","expected_status":"ok","relevant_paths":["handoff.md"],"forbidden_paths":[]}
+{"id":"G3D013","query":"What does the next session need to do?","category":"supported-grammar","expected_status":"ok","relevant_paths":["handoff.md"],"forbidden_paths":[]}
+{"id":"G3D014","query":"What should the next session focus on?","category":"supported-grammar","expected_status":"ok","relevant_paths":["handoff.md"],"forbidden_paths":[]}
+{"id":"G3D015","query":"What are the next steps for this project?","category":"supported-grammar","expected_status":"ok","relevant_paths":["handoff.md"],"forbidden_paths":[]}
+{"id":"G3D016","query":"What needs to happen next?","category":"supported-grammar","expected_status":"ok","relevant_paths":["handoff.md"],"forbidden_paths":[]}
+{"id":"G3D017","query":"What is higher order lunar navigation?","category":"unsupported-owner-object-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["composition.md","handoff.md"]}
+{"id":"G3D018","query":"What is switching-style weather control?","category":"unsupported-owner-object-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["composition.md","handoff.md"]}
+{"id":"G3D019","query":"What is flattening planetary orbits?","category":"unsupported-owner-object-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["composition.md","handoff.md"]}
+{"id":"G3D020","query":"What is the purpose of Saturn side effects?","category":"unsupported-owner-object-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["composition.md","handoff.md"]}
+{"id":"G3D021","query":"How does Caldera avoid a record from being repeated?","category":"unsupported-owner-object-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["composition.md","handoff.md"]}
+{"id":"G3D022","query":"How does Caldera schedule work?","category":"unsupported-owner-object-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["composition.md","handoff.md"]}
+{"id":"G3D023","query":"How are lunar oceans processed by scheduling?","category":"unsupported-owner-object-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["composition.md","handoff.md"]}
+{"id":"G3D024","query":"What is the capacity of the scheduler?","category":"unsupported-owner-object-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["composition.md","handoff.md"]}
+{"id":"G3D025","query":"What should another session do next to control the tides?","category":"unsupported-owner-object-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["composition.md","handoff.md"]}
+{"id":"G3D026","query":"What should the next session pick up next for teleportation?","category":"unsupported-owner-object-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["composition.md","handoff.md"]}
+{"id":"G3D027","query":"What work should the next session resume on Jupiter?","category":"unsupported-owner-object-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["composition.md","handoff.md"]}
+{"id":"G3D028","query":"What does the next session need to do to reverse aging?","category":"unsupported-owner-object-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["composition.md","handoff.md"]}
+{"id":"G3D029","query":"What should the next session focus on to manufacture gold?","category":"unsupported-owner-object-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["composition.md","handoff.md"]}
+{"id":"G3D030","query":"What are the next steps for an unknown spacecraft?","category":"unsupported-owner-object-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["composition.md","handoff.md"]}
+{"id":"G3D031","query":"What needs to happen next to change gravity?","category":"unsupported-owner-object-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["composition.md","handoff.md"]}
+{"id":"G3D032","query":"What is the project launch date?","category":"unsupported-owner-object-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["composition.md","handoff.md"]}

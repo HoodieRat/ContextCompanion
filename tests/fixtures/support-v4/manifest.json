@@ -1,0 +1,29 @@
+{
+  "at": "2026-10-12T02:43:17.434Z",
+  "caseHashes": {
+    "development": "d623500c5929b3b7d40ca19d9281913f6928031dd8eea1a5b66c9e78ee28246e",
+    "holdout": "59389c6ca5a1586c4f89c8125876c150f00ea9d68af455a03b5d14afd5037aab"
+  },
+  "counts": {
+    "development": {
+      "total": 16,
+      "positive": 8,
+      "negative": 8
+    },
+    "holdout": {
+      "total": 16,
+      "positive": 8,
+      "negative": 8
+    }
+  },
+  "metadata": {
+    "library": "",
+    "ecosystem": "generic",
+    "languages": [],
+    "platforms": [],
+    "kind": "project_context",
+    "reliability": "user",
+    "reliabilityEvidence": "Independent returned-span/topic development fixtures"
+  },
+  "limitation": "Same-author synthetic templates; known support-v3 H021/H024 are regressions, not fresh validation. Freeze this separate holdout before execution; do not alter it based on outcomes."
+}

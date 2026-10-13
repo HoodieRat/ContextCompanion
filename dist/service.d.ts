@@ -1,0 +1,51 @@
+import type { Collection, Project, Job, Memory, EmbeddingProfile } from './types.js';
+import { DevelopmentMemory } from './memory.js';
+import { Store } from './state.js';
+import { Embeddings } from './embeddings.js';
+import { Grounded } from './grounded.js';
+import { Retrieval } from './retrieval.js';
+import { Jobs } from './jobs.js';
+import type { Tool, ToolResult } from './rpc.js';
+export declare const CONTEXT_TOOLS: Tool[];
+export declare class Service {
+    readonly home: string;
+    readonly memory: DevelopmentMemory;
+    readonly store: Store;
+    readonly embeddings: Embeddings;
+    readonly grounded: Grounded;
+    readonly retrieval: Retrieval;
+    readonly jobs: Jobs;
+    private timer?;
+    private scheduled;
+    maintenance: boolean;
+    constructor(home: string);
+    start(): void;
+    close(): void;
+    audit(event: string, data: Record<string, unknown>): void;
+    status(): Promise<Record<string, unknown>>;
+    addProject(input: unknown): Promise<Record<string, unknown>>;
+    link(projectId: string, enable: boolean): Promise<{
+        files: string[];
+        warnings: string[];
+    }>;
+    updateProject(projectId: string, input: unknown): Promise<Project>;
+    removeProject(projectId: string): Promise<void>;
+    addCollection(input: unknown): Promise<Collection>;
+    updateCollection(collectionId: string, input: unknown): Promise<Collection>;
+    attach(projectId: string, collectionId: string, attach: boolean): Project;
+    deleteCollection(collectionId: string): void;
+    memories(projectId: string, agentOnly?: boolean, history?: boolean): Record<string, unknown>[];
+    remember(projectId: string, input: unknown, actor?: 'user' | 'agent', memoryId?: string): Memory;
+    rescan(projectId: string): Promise<unknown>;
+    handoff(projectId: string): Record<string, unknown>;
+    recordCheck(job: Job): void;
+    settings(input: unknown): Promise<EmbeddingProfile>;
+    mcp(projectId: string, name: string, args: Record<string, unknown>, signal?: AbortSignal): Promise<ToolResult>;
+    hook(projectId: string, input: unknown, signal?: AbortSignal): Promise<Record<string, unknown>>;
+    execute(job: Job, signal: AbortSignal): Promise<string>;
+    private schedule;
+    rememberRetrieval(projectId: string, result: unknown): void;
+    prune(): {
+        removed: number;
+    };
+}

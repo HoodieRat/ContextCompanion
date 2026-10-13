@@ -1,0 +1,33 @@
+{
+  "groundedDocs": {
+    "package": "@arabold/docs-mcp-server",
+    "version": "3.2.1",
+    "license": "MIT",
+    "repository": "https://github.com/arabold/docs-mcp-server"
+  },
+  "serena": {
+    "package": "serena-agent",
+    "commit": "1de556f71569f3acfc0743e526dd60aca40a545e",
+    "license": "GPL-3.0-or-later",
+    "repository": "https://github.com/oraios/serena",
+    "python": "3.13"
+  },
+  "embeddings": {
+    "package": "@huggingface/transformers",
+    "version": "3.7.2",
+    "license": "Apache-2.0",
+    "model": "Xenova/all-MiniLM-L6-v2",
+    "dimensions": 384,
+    "dtype": "q8"
+  },
+  "notes": "Installer resolves the model to an immutable Hub revision and records it. npm lockfiles and Python freeze are saved in the isolated runtime after installation. Upstream package pins are not a claim of a fully locked or audited transitive dependency graph.",
+  "node": {
+    "version": "v24.21.0",
+    "source": "https://nodejs.org/dist/v24.21.0/SHASUMS256.txt",
+    "license": "Node.js bundled notices"
+  },
+  "uv": {
+    "version": "0.13.0",
+    "license": "MIT OR Apache-2.0"
+  }
+}

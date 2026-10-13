@@ -1,0 +1,16 @@
+{"id":"PLN001","query":"Which operation starts a session in Cobalt version 4?","expected_status":"ok","relevant_paths":["component.md"],"forbidden_paths":[],"category":"numeric-qualifier"}
+{"id":"PLN002","query":"What session operation is available for Cobalt revision 4?","expected_status":"ok","relevant_paths":["component.md"],"forbidden_paths":[],"category":"numeric-qualifier"}
+{"id":"PLN003","query":"Which operation starts a session in Umber version 4?","expected_status":"no_results","relevant_paths":[],"forbidden_paths":[],"category":"numeric-qualifier"}
+{"id":"PLN004","query":"What session operation is available for Umber revision 4?","expected_status":"no_results","relevant_paths":[],"forbidden_paths":[],"category":"numeric-qualifier"}
+{"id":"PLN005","query":"What is blocking the upcoming step?","expected_status":"ok","relevant_paths":["tasks.md"],"forbidden_paths":[],"category":"progressive-action"}
+{"id":"PLN006","query":"What is preventing the current task from starting?","expected_status":"ok","relevant_paths":["tasks.md"],"forbidden_paths":[],"category":"progressive-action"}
+{"id":"PLN007","query":"What is Umber blocking in the current task?","expected_status":"no_results","relevant_paths":[],"forbidden_paths":[],"category":"absent-actor"}
+{"id":"PLN008","query":"What is UnknownKit preventing in the current task?","expected_status":"no_results","relevant_paths":[],"forbidden_paths":[],"category":"absent-actor"}
+{"id":"PLN009","query":"What should a following session finish?","expected_status":"ok","relevant_paths":["handoff.md"],"forbidden_paths":[],"category":"handoff-paraphrase"}
+{"id":"PLN010","query":"What work should a later session continue?","expected_status":"ok","relevant_paths":["handoff.md"],"forbidden_paths":[],"category":"handoff-paraphrase"}
+{"id":"PLN011","query":"What does the handoff ask the following session to do?","expected_status":"ok","relevant_paths":["handoff.md"],"forbidden_paths":[],"category":"handoff-paraphrase"}
+{"id":"PLN012","query":"What should the following session work on?","expected_status":"ok","relevant_paths":["handoff.md"],"forbidden_paths":[],"category":"handoff-paraphrase"}
+{"id":"PLN013","query":"What activity should a following session undertake to reverse aging?","expected_status":"no_results","relevant_paths":[],"forbidden_paths":[],"category":"unsupported-planning"}
+{"id":"PLN014","query":"What should a later session do to control the weather?","expected_status":"no_results","relevant_paths":[],"forbidden_paths":[],"category":"unsupported-planning"}
+{"id":"PLN015","query":"What is the next session's launch date on Mars?","expected_status":"no_results","relevant_paths":[],"forbidden_paths":[],"category":"unsupported-planning"}
+{"id":"PLN016","query":"What is Umber's current project version?","expected_status":"no_results","relevant_paths":[],"forbidden_paths":[],"category":"unsupported-planning"}

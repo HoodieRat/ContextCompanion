@@ -1,0 +1,14 @@
+{
+  "at": "2026-10-11T13:16:22.022Z",
+  "caseHashes": {
+    "development": "8c5166b9fee37dd7ee844cc54ab622756da004436fbec5b93e04ae0b278a4523"
+  },
+  "counts": {
+    "development": {
+      "total": 8,
+      "positive": 4,
+      "negative": 4
+    }
+  },
+  "purpose": "Dedicated project-context development scope. Planning baseline positive hits were inflated by a separate session-creation API reference; original planning16 remains unchanged. No original/fresh held-out question/outcome inspected."
+}

@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-12T02:57:12.195Z",
+  "caseHashes": {
+    "development": "f32324f9a222bfad456bfeb6bf45b3df5f100cc93a4204142fbfd0800dcbd812"
+  },
+  "counts": {
+    "development": {
+      "total": 8,
+      "positive": 4,
+      "negative": 4
+    }
+  },
+  "metadata": {
+    "library": "",
+    "ecosystem": "generic",
+    "languages": [],
+    "platforms": [],
+    "kind": "project_context",
+    "reliability": "user",
+    "reliabilityEvidence": "Independent strict short-span development cases"
+  },
+  "limitation": "Development only. Fixed assertions/cases/cutoffs; known earlier targets are not fresh validation."
+}

@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-11T23:33:43.237Z",
+  "caseHashes": {
+    "development": "5186ec329465d54ee5dd06259a666bf9816f4d36d09e8ac435aaba93620e96b7"
+  },
+  "counts": {
+    "development": {
+      "total": 12,
+      "positive": 6,
+      "negative": 6
+    }
+  },
+  "metadata": {
+    "library": "",
+    "ecosystem": "generic",
+    "languages": [],
+    "platforms": [],
+    "kind": "project_context",
+    "reliability": "user",
+    "reliabilityEvidence": "Independent development-only actor/resource fixtures"
+  },
+  "limitation": "Additional development cases; not a holdout and not original corpus text. Main support-v3 holdout remains committed and unexecuted."
+}

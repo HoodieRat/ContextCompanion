@@ -1,0 +1,12 @@
+{"id":"A001","query":"How do stale cached records disappear?","category":"contextual-adjective","expected_status":"ok","relevant_paths":["SedgeRetention.md"],"forbidden_paths":[]}
+{"id":"A002","query":"How do old stored entries get removed?","category":"contextual-adjective","expected_status":"ok","relevant_paths":["SedgeRetention.md"],"forbidden_paths":[]}
+{"id":"A003","query":"How do expired stored records get reclaimed?","category":"contextual-adjective","expected_status":"ok","relevant_paths":["SedgeRetention.md"],"forbidden_paths":[]}
+{"id":"A004","query":"How do Vega cached records disappear?","category":"named-actor","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["SedgeRetention.md","YarrowRecovery.md"]}
+{"id":"A005","query":"How does Vega process cached records?","category":"named-actor","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["SedgeRetention.md","YarrowRecovery.md"]}
+{"id":"A006","query":"How does Stale process records?","category":"named-actor","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["SedgeRetention.md","YarrowRecovery.md"]}
+{"id":"A007","query":"How can I recover lost records from an archived copy?","category":"contextual-resource","expected_status":"ok","relevant_paths":["YarrowRecovery.md"],"forbidden_paths":[]}
+{"id":"A008","query":"How do I restore lost data from preserved backups?","category":"contextual-resource","expected_status":"ok","relevant_paths":["YarrowRecovery.md"],"forbidden_paths":[]}
+{"id":"A009","query":"How can lost records be reinstated from a saved snapshot?","category":"contextual-resource","expected_status":"ok","relevant_paths":["YarrowRecovery.md"],"forbidden_paths":[]}
+{"id":"A010","query":"How can I recover lost records from an Orion copy?","category":"named-resource","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["SedgeRetention.md","YarrowRecovery.md"]}
+{"id":"A011","query":"How do I restore lost data from Vega backups?","category":"named-resource","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["SedgeRetention.md","YarrowRecovery.md"]}
+{"id":"A012","query":"How can lost records be reinstated from an Orion snapshot?","category":"named-resource","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["SedgeRetention.md","YarrowRecovery.md"]}

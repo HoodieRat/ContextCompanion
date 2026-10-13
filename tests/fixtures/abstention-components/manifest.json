@@ -1,0 +1,14 @@
+{
+  "caseHashes": {
+    "development": "d16b57cb82bf00bd94db7163dfe6b147e740aa665534dbb8013545dae0b00d2b"
+  },
+  "metadata": {
+    "library": "",
+    "ecosystem": "generic",
+    "languages": [],
+    "platforms": [],
+    "kind": "project_context",
+    "reliability": "user",
+    "reliabilityEvidence": "Independent object paraphrase and agenda development; no holdout selection"
+  }
+}

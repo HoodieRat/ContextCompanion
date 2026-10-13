@@ -1,0 +1,36 @@
+{"id":"GMH001","query":"How can we avoid creating one fresh channel per task?","category":"supported-behavior","expected_status":"ok","relevant_paths":["channels.md"],"forbidden_paths":[]}
+{"id":"GMH002","query":"Explain the benefit of a pool of reusable connections.","category":"supported-behavior","expected_status":"ok","relevant_paths":["channels.md"],"forbidden_paths":[]}
+{"id":"GMH003","query":"What is buffering used for?","category":"supported-behavior","expected_status":"ok","relevant_paths":["flow.md"],"forbidden_paths":[]}
+{"id":"GMH004","query":"Describe concurrent processing.","category":"supported-behavior","expected_status":"ok","relevant_paths":["flow.md"],"forbidden_paths":[]}
+{"id":"GMH005","query":"Explain waiting and order.","category":"supported-behavior","expected_status":"ok","relevant_paths":["flow.md"],"forbidden_paths":[]}
+{"id":"GMH006","query":"What is polling?","category":"supported-behavior","expected_status":"ok","relevant_paths":["flow.md"],"forbidden_paths":[]}
+{"id":"GMH007","query":"Can unfinished tasks be cancelled?","category":"supported-behavior","expected_status":"ok","relevant_paths":["flow.md"],"forbidden_paths":[]}
+{"id":"GMH008","query":"Describe reusing idle connections.","category":"supported-behavior","expected_status":"ok","relevant_paths":["channels.md"],"forbidden_paths":[]}
+{"id":"GMH009","query":"Why use sequential delivery of stream items?","category":"supported-behavior","expected_status":"ok","relevant_paths":["flow.md"],"forbidden_paths":[]}
+{"id":"GMH010","query":"Can consumers work independently?","category":"supported-behavior","expected_status":"ok","relevant_paths":["flow.md"],"forbidden_paths":[]}
+{"id":"GMH011","query":"How are groups of values accumulated before delivery?","category":"supported-behavior","expected_status":"ok","relevant_paths":["flow.md"],"forbidden_paths":[]}
+{"id":"GMH012","query":"How can a polling caller avoid blocking?","category":"supported-behavior","expected_status":"ok","relevant_paths":["flow.md"],"forbidden_paths":[]}
+{"id":"GMH013","query":"What work remains?","category":"supported-agenda","expected_status":"ok","relevant_paths":["handoff.md"],"forbidden_paths":[]}
+{"id":"GMH014","query":"Which tasks should we do next?","category":"supported-agenda","expected_status":"ok","relevant_paths":["handoff.md"],"forbidden_paths":[]}
+{"id":"GMH015","query":"What is next?","category":"supported-agenda","expected_status":"ok","relevant_paths":["handoff.md"],"forbidden_paths":[]}
+{"id":"GMH016","query":"What should we work on next?","category":"supported-agenda","expected_status":"ok","relevant_paths":["handoff.md"],"forbidden_paths":[]}
+{"id":"GMH017","query":"Outline the next steps.","category":"supported-agenda","expected_status":"ok","relevant_paths":["handoff.md"],"forbidden_paths":[]}
+{"id":"GMH018","query":"What is planned for the next session?","category":"supported-agenda","expected_status":"ok","relevant_paths":["handoff.md"],"forbidden_paths":[]}
+{"id":"GMH019","query":"How does Balsam buffer values?","category":"unsupported-owner-field-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["channels.md","flow.md","handoff.md","identity.md"]}
+{"id":"GMH020","query":"Explain Balsam concurrency.","category":"unsupported-owner-field-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["channels.md","flow.md","handoff.md","identity.md"]}
+{"id":"GMH021","query":"What is Balsam used for?","category":"unsupported-owner-field-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["channels.md","flow.md","handoff.md","identity.md"]}
+{"id":"GMH022","query":"What is the capacity of Tamarind?","category":"unsupported-owner-field-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["channels.md","flow.md","handoff.md","identity.md"]}
+{"id":"GMH023","query":"What is the temperature of Tamarind?","category":"unsupported-owner-field-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["channels.md","flow.md","handoff.md","identity.md"]}
+{"id":"GMH024","query":"How many planets can the stream deliver?","category":"unsupported-owner-field-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["channels.md","flow.md","handoff.md","identity.md"]}
+{"id":"GMH025","query":"Explain buffering of lunar oceans.","category":"unsupported-owner-field-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["channels.md","flow.md","handoff.md","identity.md"]}
+{"id":"GMH026","query":"What should we do next to change gravity?","category":"unsupported-owner-field-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["channels.md","flow.md","handoff.md","identity.md"]}
+{"id":"GMH027","query":"What are the next steps for perpetual motion?","category":"unsupported-owner-field-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["channels.md","flow.md","handoff.md","identity.md"]}
+{"id":"GMH028","query":"What is the next session launch date on Venus?","category":"unsupported-owner-field-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["channels.md","flow.md","handoff.md","identity.md"]}
+{"id":"GMH029","query":"What remains to be done for Balsam?","category":"unsupported-owner-field-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["channels.md","flow.md","handoff.md","identity.md"]}
+{"id":"GMH030","query":"Describe teleportation.","category":"unsupported-owner-field-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["channels.md","flow.md","handoff.md","identity.md"]}
+{"id":"GMH031","query":"What is the current version of UnlistedKit?","category":"unsupported-owner-field-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["channels.md","flow.md","handoff.md","identity.md"]}
+{"id":"GMH032","query":"What registration code does Balsam provide?","category":"unsupported-owner-field-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["channels.md","flow.md","handoff.md","identity.md"]}
+{"id":"GMH033","query":"Call unknown_channel() to pool a connection.","category":"unsupported-owner-field-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["channels.md","flow.md","handoff.md","identity.md"]}
+{"id":"GMH034","query":"What is blocking the rotation of Neptune?","category":"unsupported-owner-field-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["channels.md","flow.md","handoff.md","identity.md"]}
+{"id":"GMH035","query":"Explain order and weather control.","category":"unsupported-owner-field-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["channels.md","flow.md","handoff.md","identity.md"]}
+{"id":"GMH036","query":"How do I pool channels for transmuting lead?","category":"unsupported-owner-field-or-goal","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["channels.md","flow.md","handoff.md","identity.md"]}

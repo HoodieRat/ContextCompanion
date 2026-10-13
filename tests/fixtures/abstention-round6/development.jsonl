@@ -1,0 +1,20 @@
+{"id":"R6D001","category":"long-paraphrase","query":"How can a consumer remember progress after restarting?","relevant_paths":["birchjournal.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R6D002","category":"long-paraphrase","query":"Why repeat only brief connectivity problems?","relevant_paths":["birchjournal.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R6D003","category":"long-paraphrase","query":"How can reruns avoid completing the same work twice?","relevant_paths":["birchjournal.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R6D004","category":"long-paraphrase","query":"How can unfinished activity be stopped?","relevant_paths":["birchjournal.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R6D005","category":"long-paraphrase","query":"How can a lock stay alive while work continues?","relevant_paths":["birchjournal.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R6D006","category":"off-topic","query":"How does a human brain remember dreams?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R6D007","category":"off-topic","query":"Why does seawater evaporate?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R6D008","category":"off-topic","query":"How does a black hole bend light?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R6D009","category":"off-topic","query":"What is the current temperature on Neptune?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R6D010","category":"off-topic","query":"What is the maximum age of a red giant?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R6D011","category":"long-paraphrase","query":"How can a consumer remember progress after restarting?","relevant_paths":["cedarjournal.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R6D012","category":"long-paraphrase","query":"Why repeat only brief connectivity problems?","relevant_paths":["cedarjournal.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R6D013","category":"long-paraphrase","query":"How can reruns avoid completing the same work twice?","relevant_paths":["cedarjournal.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R6D014","category":"long-paraphrase","query":"How can unfinished activity be stopped?","relevant_paths":["cedarjournal.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R6D015","category":"long-paraphrase","query":"How can a lock stay alive while work continues?","relevant_paths":["cedarjournal.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R6D016","category":"off-topic","query":"How does a human brain remember dreams?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R6D017","category":"off-topic","query":"Why does seawater evaporate?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R6D018","category":"off-topic","query":"How does a black hole bend light?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R6D019","category":"off-topic","query":"What is the current temperature on Neptune?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R6D020","category":"off-topic","query":"What is the maximum age of a red giant?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}

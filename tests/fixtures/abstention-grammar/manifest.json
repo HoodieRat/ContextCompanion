@@ -1,0 +1,14 @@
+{
+  "caseHashes": {
+    "development": "872612cfd35c5716e93dae722edca15858af9b6296b1ba103c3b59e3be33b519"
+  },
+  "metadata": {
+    "library": "",
+    "ecosystem": "generic",
+    "languages": [],
+    "platforms": [],
+    "kind": "project_context",
+    "reliability": "user",
+    "reliabilityEvidence": "Independent comparative/composition grammar development; no holdout questions"
+  }
+}

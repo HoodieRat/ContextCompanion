@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-11T07:16:27.530Z",
+  "purpose": "Committed before software-property intent correction. Independent subjectless/idiomatic software-property questions and nearby unrelated factual requests. Original Q024 query text not inspected.",
+  "counts": {
+    "development": {
+      "total": 40,
+      "positive": 20,
+      "negative": 20
+    },
+    "holdout": {
+      "total": 40,
+      "positive": 20,
+      "negative": 20
+    }
+  },
+  "caseHashes": {
+    "development": "45d7094c71e79a74d37890bae0dd517f0ba752d10be87000575ddb7a2b9b1800",
+    "holdout": "05fd389a4d49a1ede611e2f8a5d1733f31fbdf781daed622a38a90068d684351"
+  },
+  "limitations": "Same-author synthetic corpus. Random disjoint named documents, sibling but differing positive phrasings, shared negative templates. Not external blind evaluation or general entailment certification."
+}

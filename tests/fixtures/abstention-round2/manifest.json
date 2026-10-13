@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-11T04:08:04.905Z",
+  "purpose": "Committed before round-two production changes. Failed original/fresh query files not read by generator; reused holdouts retired from selection.",
+  "counts": {
+    "development": {
+      "total": 48,
+      "positive": 20,
+      "negative": 28,
+      "families": 4
+    },
+    "holdout": {
+      "total": 48,
+      "positive": 20,
+      "negative": 28,
+      "families": 4
+    }
+  },
+  "caseHashes": {
+    "development": "53b817e70fb81ef04593846971ff9c3101173f56bc5c587df50c92a49778e531",
+    "holdout": "9847e83a1d72b038896fbf76d2f14caf5b0413fa77098aa7f2b37aa175eca303"
+  },
+  "limitations": "Same-author synthetic evaluation. Four operation families disjoint per split; diagnostics/security chapters shared with sibling templates. Scientific trivia deliberately shares ordinary report words. Not an external benchmark or universal entailment certificate."
+}

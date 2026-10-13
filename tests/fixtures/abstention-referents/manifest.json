@@ -1,0 +1,14 @@
+{
+  "at": "2026-10-11T09:11:13.686Z",
+  "caseHashes": {
+    "development": "9ff7c8a72ff3b5d73665531c4e7d103460320bea9fe25e65a103b3f2db02315e"
+  },
+  "counts": {
+    "development": {
+      "total": 14,
+      "positive": 6,
+      "negative": 8
+    }
+  },
+  "purpose": "Independent grammatical subject/possessive development before parser corrections; no old or fresh holdout question read. Same-author synthetic cases."
+}

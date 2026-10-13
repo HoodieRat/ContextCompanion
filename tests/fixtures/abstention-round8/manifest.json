@@ -1,0 +1,16 @@
+{
+  "at": "2026-10-11T11:14:19.813Z",
+  "caseHashes": {
+    "holdout": "fae88b506fe9bab3d6ba3e72aefdeb886efc15e1da91372bc8ac5960218abcf0"
+  },
+  "counts": {
+    "holdout": {
+      "total": 20,
+      "positive": 10,
+      "negative": 10
+    }
+  },
+  "developmentReuse": "abstention-round6/development.jsonl",
+  "purpose": "Fresh replacement for unexecuted but template-exposed round6 holdout. New named documents, paths and sibling paraphrase questions generated only from independent development facts/questions. No original or retired held-out query text used.",
+  "limitations": "Same-author synthetic sibling paraphrases; facts/filler and operation families are shared with development. Not an external blind benchmark. Byte cases/outcomes are not inspected before freeze."
+}

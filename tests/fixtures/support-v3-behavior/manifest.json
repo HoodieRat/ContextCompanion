@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-12T00:10:54.827Z",
+  "caseHashes": {
+    "development": "c144036974529b5987b12a0d2294027d66a9f4b451546b3af91a46b693e9b52a"
+  },
+  "counts": {
+    "development": {
+      "total": 24,
+      "positive": 12,
+      "negative": 12
+    }
+  },
+  "metadata": {
+    "library": "",
+    "ecosystem": "generic",
+    "languages": [],
+    "platforms": [],
+    "kind": "project_context",
+    "reliability": "user",
+    "reliabilityEvidence": "Independent development-only behavior/context fixtures"
+  },
+  "limitation": "Additional development only; source text and queries differ from original regressions. No fresh holdout queries have been executed. Existing cutoffs and assertions remain fixed."
+}

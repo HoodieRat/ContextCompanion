@@ -1,0 +1,30 @@
+{
+  "at": "2026-10-11T06:57:42.045Z",
+  "purpose": "Committed before round-four corrective source changes. Independent valid administrative software questions and nearby unsupported facts. No prior held-out query text read.",
+  "metadata": {
+    "library": "coordination",
+    "ecosystem": "generic",
+    "languages": [],
+    "platforms": [],
+    "kind": "project_context",
+    "reliability": "user",
+    "reliabilityEvidence": "Synthetic independently authored development/holdout reference"
+  },
+  "counts": {
+    "development": {
+      "total": 40,
+      "positive": 16,
+      "negative": 24
+    },
+    "holdout": {
+      "total": 40,
+      "positive": 16,
+      "negative": 24
+    }
+  },
+  "caseHashes": {
+    "development": "d7306f25448f56da7d23c1dcbcae2f611b9de99314b3f808e1fc95065edb5610",
+    "holdout": "096c4f1c51db58fe12300b5bc89c3adc00dfc40ee43b032215d2ab9937cda3f5"
+  },
+  "limitations": "Same-author synthetic corpus, randomized disjoint named documents and shared sibling templates. Not an external blind benchmark; administrative questions are grounded in actual returned text, not just declared metadata."
+}

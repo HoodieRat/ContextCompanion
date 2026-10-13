@@ -1,0 +1,24 @@
+{"id":"IDN001","query":"What is SaffronStore's runtime version?","category":"identity-positive","expected_status":"ok","relevant_paths":["store.md"],"forbidden_paths":[]}
+{"id":"IDN002","query":"What is Saffron's runtime version?","category":"off-topic","expected_status":"no_results","relevant_paths":[],"forbidden_paths":[]}
+{"id":"IDN003","query":"What is saffron's runtime version?","category":"off-topic","expected_status":"no_results","relevant_paths":[],"forbidden_paths":[]}
+{"id":"IDN004","query":"How long does SaffronStore keep records?","category":"identity-positive","expected_status":"ok","relevant_paths":["store.md"],"forbidden_paths":[]}
+{"id":"IDN005","query":"How long does Violet keep records?","category":"off-topic","expected_status":"no_results","relevant_paths":[],"forbidden_paths":[]}
+{"id":"IDN006","query":"How many records does SaffronStore retain?","category":"identity-positive","expected_status":"ok","relevant_paths":["store.md"],"forbidden_paths":[]}
+{"id":"IDN007","query":"How many records does Violet retain?","category":"off-topic","expected_status":"no_results","relevant_paths":[],"forbidden_paths":[]}
+{"id":"IDN008","query":"What is the maximum size of SaffronStore buffer?","category":"identity-positive","expected_status":"ok","relevant_paths":["store.md"],"forbidden_paths":[]}
+{"id":"IDN009","query":"What is the capacity of saffron?","category":"off-topic","expected_status":"no_results","relevant_paths":[],"forbidden_paths":[]}
+{"id":"IDN010","query":"What is the capacity of SaffronStore?","category":"identity-positive","expected_status":"ok","relevant_paths":["store.md"],"forbidden_paths":[]}
+{"id":"IDN011","query":"How do I use JavaScript to record work?","category":"identity-positive","expected_status":"ok","relevant_paths":["store.md"],"forbidden_paths":[]}
+{"id":"IDN012","query":"How do I use Java to record work?","category":"off-topic","expected_status":"no_results","relevant_paths":[],"forbidden_paths":[]}
+{"id":"IDN013","query":"How can I use SaffronStore to record work?","category":"identity-positive","expected_status":"ok","relevant_paths":["store.md"],"forbidden_paths":[]}
+{"id":"IDN014","query":"How can I use Violet to record work?","category":"off-topic","expected_status":"no_results","relevant_paths":[],"forbidden_paths":[]}
+{"id":"IDN015","query":"What is MintStore current version?","category":"off-topic","expected_status":"no_results","relevant_paths":[],"forbidden_paths":[]}
+{"id":"IDN016","query":"What is the runtime version of SaffronStore?","category":"identity-positive","expected_status":"ok","relevant_paths":["store.md"],"forbidden_paths":[]}
+{"id":"IDN017","query":"How can a Consumer remember progress after restarting?","category":"identity-positive","expected_status":"ok","relevant_paths":["store.md"],"forbidden_paths":[]}
+{"id":"IDN018","query":"How could violet record work?","category":"off-topic","expected_status":"no_results","relevant_paths":[],"forbidden_paths":[]}
+{"id":"IDN019","query":"How long is a record usually valid?","category":"identity-positive","expected_status":"ok","relevant_paths":["store.md"],"forbidden_paths":[]}
+{"id":"IDN020","query":"How long is a Record ordinarily valid?","category":"identity-positive","expected_status":"ok","relevant_paths":["store.md"],"forbidden_paths":[]}
+{"id":"IDN021","query":"Explain SaffronStore.recordWork.","category":"identity-positive","expected_status":"ok","relevant_paths":["store.md"],"forbidden_paths":[]}
+{"id":"IDN022","query":"Explain SaffronStore.recordGhost.","category":"off-topic","expected_status":"no_results","relevant_paths":[],"forbidden_paths":[]}
+{"id":"IDN023","query":"What is Saffron's maximum size?","category":"off-topic","expected_status":"no_results","relevant_paths":[],"forbidden_paths":[]}
+{"id":"IDN024","query":"How long can Saffron keep records?","category":"off-topic","expected_status":"no_results","relevant_paths":[],"forbidden_paths":[]}

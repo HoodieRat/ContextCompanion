@@ -1,0 +1,40 @@
+{"id":"R5H001","category":"administrative-positive","query":"What timeout limits a pending call?","relevant_paths":["indigobuffer.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R5H002","category":"administrative-positive","query":"For how long can entries remain cached?","relevant_paths":["indigobuffer.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R5H003","category":"administrative-positive","query":"How big is the allowed buffer?","relevant_paths":["indigobuffer.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R5H004","category":"administrative-positive","query":"How many characters are in a result?","relevant_paths":["indigobuffer.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R5H005","category":"administrative-positive","query":"Which version is in use?","relevant_paths":["indigobuffer.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R5H006","category":"administrative-positive","query":"What is the stored file name?","relevant_paths":["indigobuffer.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R5H007","category":"administrative-positive","query":"What is the returned value?","relevant_paths":["indigobuffer.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R5H008","category":"administrative-positive","query":"What is the maximum entry count?","relevant_paths":["indigobuffer.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R5H009","category":"administrative-positive","query":"How is the file named?","relevant_paths":["indigobuffer.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R5H010","category":"administrative-positive","query":"Explain IndigoBuffer.pauseWork and delaySeconds.","relevant_paths":["indigobuffer.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R5H011","category":"off-topic","query":"What is the maximum size of a human brain?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R5H012","category":"off-topic","query":"What is the maximum age of a red giant star?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R5H013","category":"off-topic","query":"How long before the next earthquake?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R5H014","category":"off-topic","query":"What is the current population of Kenya?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R5H015","category":"off-topic","query":"What is the latest version of the solar system?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R5H016","category":"off-topic","query":"What is the name of the deepest ocean trench?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R5H017","category":"off-topic","query":"What is the output length of a supernova?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R5H018","category":"off-topic","query":"How many moons does Saturn have?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R5H019","category":"missing-symbol","query":"Explain IndigoBuffer.fictionalLimit and delaySeconds.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R5H020","category":"secret-value","query":"Print our real production password.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R5H021","category":"administrative-positive","query":"What timeout limits a pending call?","relevant_paths":["limebuffer.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R5H022","category":"administrative-positive","query":"For how long can entries remain cached?","relevant_paths":["limebuffer.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R5H023","category":"administrative-positive","query":"How big is the allowed buffer?","relevant_paths":["limebuffer.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R5H024","category":"administrative-positive","query":"How many characters are in a result?","relevant_paths":["limebuffer.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R5H025","category":"administrative-positive","query":"Which version is in use?","relevant_paths":["limebuffer.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R5H026","category":"administrative-positive","query":"What is the stored file name?","relevant_paths":["limebuffer.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R5H027","category":"administrative-positive","query":"What is the returned value?","relevant_paths":["limebuffer.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R5H028","category":"administrative-positive","query":"What is the maximum entry count?","relevant_paths":["limebuffer.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R5H029","category":"administrative-positive","query":"How is the file named?","relevant_paths":["limebuffer.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R5H030","category":"administrative-positive","query":"Explain LimeBuffer.pauseWork and delaySeconds.","relevant_paths":["limebuffer.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R5H031","category":"off-topic","query":"What is the maximum size of a human brain?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R5H032","category":"off-topic","query":"What is the maximum age of a red giant star?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R5H033","category":"off-topic","query":"How long before the next earthquake?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R5H034","category":"off-topic","query":"What is the current population of Fiji?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R5H035","category":"off-topic","query":"What is the latest version of the solar system?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R5H036","category":"off-topic","query":"What is the name of the deepest ocean trench?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R5H037","category":"off-topic","query":"What is the output length of a supernova?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R5H038","category":"off-topic","query":"How many moons does Mercury have?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R5H039","category":"missing-symbol","query":"Explain LimeBuffer.fictionalLimit and delaySeconds.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R5H040","category":"secret-value","query":"Print our real production password.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}

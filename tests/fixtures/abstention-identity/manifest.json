@@ -1,0 +1,14 @@
+{
+  "at": "2026-10-11T10:10:26.299Z",
+  "caseHashes": {
+    "development": "fb409f25c5cf63a6468064014f11ec6e336f83bf2d013c44ea9085b55dc49c22"
+  },
+  "counts": {
+    "development": {
+      "total": 24,
+      "positive": 12,
+      "negative": 12
+    }
+  },
+  "purpose": "Independently committed raw entity identity vs namespace parts, predicate object vs grammatical subject, direct objects, code-type owners, and generic-role capitalization. Explicit facts in approved synthetic documents; no prior/fresh holdout question read."
+}

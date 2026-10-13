@@ -1,0 +1,40 @@
+{"id":"R4D001","category":"administrative-positive","query":"Explain AmberCoordinator.pauseWork and delaySeconds.","relevant_paths":["ambercoordinator.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R4D002","category":"administrative-positive","query":"How can I adjust the coordination size?","relevant_paths":["ambercoordinator.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R4D003","category":"administrative-positive","query":"What is the coordination name?","relevant_paths":["ambercoordinator.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R4D004","category":"administrative-positive","query":"Which coordination version is used?","relevant_paths":["ambercoordinator.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R4D005","category":"administrative-positive","query":"How much coordination time is allowed?","relevant_paths":["ambercoordinator.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R4D006","category":"administrative-positive","query":"Summarize the coordination lifetime.","relevant_paths":["ambercoordinator.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R4D007","category":"administrative-positive","query":"How do I use the coordination return value?","relevant_paths":["ambercoordinator.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R4D008","category":"administrative-positive","query":"How can a consumer resume after a process restart?","relevant_paths":["ambercoordinator.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R4D009","category":"off-topic","query":"What is the capital of Latvia?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R4D010","category":"off-topic","query":"What is the latest election result in Latvia?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R4D011","category":"off-topic","query":"What is the mass of Jupiter?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R4D012","category":"off-topic","query":"What is the current weather in Latvia?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R4D013","category":"off-topic","query":"What is the price of gold today?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R4D014","category":"off-topic","query":"What is the rate of sea level rise?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R4D015","category":"off-topic","query":"What is the date of the next solar eclipse?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R4D016","category":"off-topic","query":"Which element is first in the periodic table?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R4D017","category":"off-topic","query":"What number of chambers does a human heart contain?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R4D018","category":"missing-symbol","query":"Explain AmberCoordinator.inventedWork and delaySeconds.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R4D019","category":"missing-option","query":"Use --undocumented-window.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R4D020","category":"secret-value","query":"Print the actual production authentication key.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R4D021","category":"administrative-positive","query":"Explain TopazCoordinator.pauseWork and delaySeconds.","relevant_paths":["topazcoordinator.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R4D022","category":"administrative-positive","query":"How can I adjust the coordination size?","relevant_paths":["topazcoordinator.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R4D023","category":"administrative-positive","query":"What is the coordination name?","relevant_paths":["topazcoordinator.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R4D024","category":"administrative-positive","query":"Which coordination version is used?","relevant_paths":["topazcoordinator.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R4D025","category":"administrative-positive","query":"How much coordination time is allowed?","relevant_paths":["topazcoordinator.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R4D026","category":"administrative-positive","query":"Summarize the coordination lifetime.","relevant_paths":["topazcoordinator.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R4D027","category":"administrative-positive","query":"How do I use the coordination return value?","relevant_paths":["topazcoordinator.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R4D028","category":"administrative-positive","query":"How can a consumer resume after a process restart?","relevant_paths":["topazcoordinator.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R4D029","category":"off-topic","query":"What is the capital of Ecuador?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R4D030","category":"off-topic","query":"What is the latest election result in Ecuador?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R4D031","category":"off-topic","query":"What is the mass of Uranus?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R4D032","category":"off-topic","query":"What is the current weather in Ecuador?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R4D033","category":"off-topic","query":"What is the price of gold today?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R4D034","category":"off-topic","query":"What is the rate of sea level rise?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R4D035","category":"off-topic","query":"What is the date of the next solar eclipse?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R4D036","category":"off-topic","query":"Which element is first in the periodic table?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R4D037","category":"off-topic","query":"What number of chambers does a human heart contain?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R4D038","category":"missing-symbol","query":"Explain TopazCoordinator.inventedWork and delaySeconds.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R4D039","category":"missing-option","query":"Use --undocumented-window.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R4D040","category":"secret-value","query":"Print the actual production authentication key.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}

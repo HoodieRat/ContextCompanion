@@ -1,0 +1,8 @@
+{"id":"S001","query":"What is deferred forwarding?","category":"short-definition","expected_status":"ok","relevant_paths":["CelandineDelivery.md"],"forbidden_paths":[]}
+{"id":"S002","query":"What is delayed forwarding?","category":"short-definition","expected_status":"ok","relevant_paths":["IrisRelay.md"],"forbidden_paths":[]}
+{"id":"S003","query":"What is deferred transport?","category":"short-definition","expected_status":"ok","relevant_paths":["CelandineDelivery.md"],"forbidden_paths":[]}
+{"id":"S004","query":"What is queued transport?","category":"short-definition","expected_status":"ok","relevant_paths":["IrisRelay.md"],"forbidden_paths":[]}
+{"id":"S005","query":"What is deferred respiration?","category":"unsupported","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["CelandineDelivery.md","IrisRelay.md"]}
+{"id":"S006","query":"What is delayed photosynthesis?","category":"unsupported","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["CelandineDelivery.md","IrisRelay.md"]}
+{"id":"S007","query":"What is deferred stellar forwarding?","category":"unsupported","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["CelandineDelivery.md","IrisRelay.md"]}
+{"id":"S008","query":"What is deferred forwarding and resurrection?","category":"unsupported","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["CelandineDelivery.md","IrisRelay.md"]}

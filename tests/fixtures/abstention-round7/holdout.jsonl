@@ -1,0 +1,16 @@
+{"id":"R7H001","query":"journal","expected_status":"ok","relevant_paths":["checkpoint.md"],"mode":"lexical","forbidden_paths":[],"category":"lexical-supported"}
+{"id":"R7H002","query":"durable journal","expected_status":"ok","relevant_paths":["checkpoint.md"],"mode":"lexical","forbidden_paths":[],"category":"lexical-supported"}
+{"id":"R7H003","query":"records","expected_status":"ok","relevant_paths":["checkpoint.md"],"mode":"lexical","forbidden_paths":[],"category":"lexical-supported"}
+{"id":"R7H004","query":"How can a subscriber start after termination","expected_status":"ok","relevant_paths":["checkpoint.md"],"mode":"lexical","forbidden_paths":[],"category":"lexical-supported"}
+{"id":"R7H005","query":"What is the current version","expected_status":"ok","relevant_paths":["checkpoint.md"],"mode":"lexical","forbidden_paths":[],"category":"lexical-supported"}
+{"id":"R7H006","query":"What is the maximum buffer capacity","expected_status":"ok","relevant_paths":["checkpoint.md"],"mode":"lexical","forbidden_paths":[],"category":"lexical-supported"}
+{"id":"R7H007","query":"Harbor35444Store.recordWork","expected_status":"ok","relevant_paths":["checkpoint.md"],"mode":"lexical","forbidden_paths":[],"category":"lexical-supported"}
+{"id":"R7H008","query":"JavaScript","expected_status":"ok","relevant_paths":["checkpoint.md"],"mode":"lexical","forbidden_paths":[],"category":"lexical-supported"}
+{"id":"R7H009","query":"How can I become famous for my work with confidence?","expected_status":"no_results","relevant_paths":[],"mode":"lexical","forbidden_paths":[],"category":"lexical-off-topic"}
+{"id":"R7H010","query":"How can I become immortal while working with confidence?","expected_status":"no_results","relevant_paths":[],"mode":"lexical","forbidden_paths":[],"category":"lexical-off-topic"}
+{"id":"R7H011","query":"How do I attain enlightenment through work with confidence?","expected_status":"no_results","relevant_paths":[],"mode":"lexical","forbidden_paths":[],"category":"lexical-off-topic"}
+{"id":"R7H012","query":"What should I wear while working with confidence?","expected_status":"no_results","relevant_paths":[],"mode":"lexical","forbidden_paths":[],"category":"lexical-off-topic"}
+{"id":"R7H013","query":"How can I become famous while keeping records with confidence?","expected_status":"no_results","relevant_paths":[],"mode":"lexical","forbidden_paths":[],"category":"lexical-off-topic"}
+{"id":"R7H014","query":"How do I find meaning while recording work with confidence?","expected_status":"no_results","relevant_paths":[],"mode":"lexical","forbidden_paths":[],"category":"lexical-off-topic"}
+{"id":"R7H015","query":"How can I attain wisdom while recording work with confidence?","expected_status":"no_results","relevant_paths":[],"mode":"lexical","forbidden_paths":[],"category":"lexical-off-topic"}
+{"id":"R7H016","query":"How can I find spiritual peace while keeping records with confidence?","expected_status":"no_results","relevant_paths":[],"mode":"lexical","forbidden_paths":[],"category":"lexical-off-topic"}

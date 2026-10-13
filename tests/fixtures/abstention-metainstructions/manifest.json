@@ -1,0 +1,14 @@
+{
+  "at": "2026-10-11T11:46:34.729Z",
+  "caseHashes": {
+    "development": "f91e16a2cfc133624ff8ed21acd1e1d25f658ac71d8c94562d206124193cda35"
+  },
+  "counts": {
+    "development": {
+      "total": 8,
+      "positive": 4,
+      "negative": 4
+    }
+  },
+  "purpose": "Independent reproduction of conversational output/tool instructions from the existing native Codex verification prompt. Explicit synthetic receipt facts and absent code identity; no held-out case or outcome inspected."
+}

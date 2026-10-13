@@ -1,0 +1,29 @@
+{
+  "at": "2026-10-11T21:23:23.193Z",
+  "caseHashes": {
+    "development": "026b7f3cd3d5a7b07c4ecca27162973a5be1bc5427e0ed784f61f476d84c56c9",
+    "holdout": "68a0eae14fe0fa638e931d2b71571612103ecf0e92fe424f9f1c89ee7810088e"
+  },
+  "counts": {
+    "development": {
+      "total": 50,
+      "positive": 25,
+      "negative": 25
+    },
+    "holdout": {
+      "total": 50,
+      "positive": 25,
+      "negative": 25
+    }
+  },
+  "metadata": {
+    "library": "",
+    "ecosystem": "generic",
+    "languages": [],
+    "platforms": [],
+    "kind": "project_context",
+    "reliability": "user",
+    "reliabilityEvidence": "Independent same-author synthetic support fixtures"
+  },
+  "limitation": "Fresh, disjoint operation families and unexecuted holdout; same-author templates, not an external blind benchmark. Holdout outcomes cannot drive source, threshold or assertion changes."
+}

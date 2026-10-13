@@ -1,0 +1,20 @@
+{"id":"R8H001","category":"long-paraphrase","query":"How can a subscriber preserve advancement after relaunching?","relevant_paths":["juniper71166journal.md"],"expected_status":"ok","forbidden_paths":[],"mode":"auto"}
+{"id":"R8H002","category":"long-paraphrase","query":"Why retry only short-lived connection errors?","relevant_paths":["juniper71166journal.md"],"expected_status":"ok","forbidden_paths":[],"mode":"auto"}
+{"id":"R8H003","category":"long-paraphrase","query":"How can replays prevent duplicating completed work?","relevant_paths":["juniper71166journal.md"],"expected_status":"ok","forbidden_paths":[],"mode":"auto"}
+{"id":"R8H004","category":"long-paraphrase","query":"How can pending activity be abandoned?","relevant_paths":["juniper71166journal.md"],"expected_status":"ok","forbidden_paths":[],"mode":"auto"}
+{"id":"R8H005","category":"long-paraphrase","query":"How can a mutex remain held while processing continues?","relevant_paths":["juniper71166journal.md"],"expected_status":"ok","forbidden_paths":[],"mode":"auto"}
+{"id":"R8H006","category":"off-topic","query":"How does a dolphin brain remember migrations?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[],"mode":"auto"}
+{"id":"R8H007","category":"off-topic","query":"Why does glaciers melt?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[],"mode":"auto"}
+{"id":"R8H008","category":"off-topic","query":"How does a white dwarf curve light?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[],"mode":"auto"}
+{"id":"R8H009","category":"off-topic","query":"What is the current temperature on Uranus?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[],"mode":"auto"}
+{"id":"R8H010","category":"off-topic","query":"What is the maximum age of a white dwarf?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[],"mode":"auto"}
+{"id":"R8H011","category":"long-paraphrase","query":"How can a subscriber preserve advancement after relaunching?","relevant_paths":["juniper73527journal.md"],"expected_status":"ok","forbidden_paths":[],"mode":"auto"}
+{"id":"R8H012","category":"long-paraphrase","query":"Why retry only short-lived connection errors?","relevant_paths":["juniper73527journal.md"],"expected_status":"ok","forbidden_paths":[],"mode":"auto"}
+{"id":"R8H013","category":"long-paraphrase","query":"How can replays prevent duplicating completed work?","relevant_paths":["juniper73527journal.md"],"expected_status":"ok","forbidden_paths":[],"mode":"auto"}
+{"id":"R8H014","category":"long-paraphrase","query":"How can pending activity be abandoned?","relevant_paths":["juniper73527journal.md"],"expected_status":"ok","forbidden_paths":[],"mode":"auto"}
+{"id":"R8H015","category":"long-paraphrase","query":"How can a mutex remain held while processing continues?","relevant_paths":["juniper73527journal.md"],"expected_status":"ok","forbidden_paths":[],"mode":"auto"}
+{"id":"R8H016","category":"off-topic","query":"How does a dolphin brain remember migrations?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[],"mode":"auto"}
+{"id":"R8H017","category":"off-topic","query":"Why does glaciers melt?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[],"mode":"auto"}
+{"id":"R8H018","category":"off-topic","query":"How does a white dwarf curve light?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[],"mode":"auto"}
+{"id":"R8H019","category":"off-topic","query":"What is the current temperature on Uranus?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[],"mode":"auto"}
+{"id":"R8H020","category":"off-topic","query":"What is the maximum age of a white dwarf?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[],"mode":"auto"}

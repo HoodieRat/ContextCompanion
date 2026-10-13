@@ -1,0 +1,48 @@
+{"id":"R2H001","category":"exact","query":"Explain TealBackup.scheduleBackup and scheduleId.","relevant_paths":["tealbackup.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R2H002","category":"paraphrase","query":"How can database backups happen automatically at regular intervals?","relevant_paths":["tealbackup.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R2H003","category":"topic","query":"Describe recurring database backup schedule.","relevant_paths":["tealbackup.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R2H004","category":"missing-symbol","query":"Explain TealBackup.absenta3500292.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R2H005","category":"partial-symbol","query":"Explain TealBackup.scheduleBackup with absenta3500292Field.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R2H006","category":"missing-option","query":"Run TealBackup.scheduleBackup with --absenta3500292.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R2H007","category":"exact","query":"Explain RussetSchema.validatePayload and schemaVersion.","relevant_paths":["russetschema.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R2H008","category":"paraphrase","query":"How can I reject structured data that has the wrong shape?","relevant_paths":["russetschema.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R2H009","category":"topic","query":"Describe structured payload schema validation.","relevant_paths":["russetschema.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R2H010","category":"missing-symbol","query":"Explain RussetSchema.absentbfe9018d.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R2H011","category":"partial-symbol","query":"Explain RussetSchema.validatePayload with absentbfe9018dField.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R2H012","category":"missing-option","query":"Run RussetSchema.validatePayload with --absentbfe9018d.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R2H013","category":"exact","query":"Explain OchreFilter.excludeRecord and recordId.","relevant_paths":["ochrefilter.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R2H014","category":"paraphrase","query":"How can I keep an unwanted record out of the results?","relevant_paths":["ochrefilter.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R2H015","category":"topic","query":"Describe unwanted record result exclusion.","relevant_paths":["ochrefilter.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R2H016","category":"missing-symbol","query":"Explain OchreFilter.absentbe9d101e.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R2H017","category":"partial-symbol","query":"Explain OchreFilter.excludeRecord with absentbe9d101eField.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R2H018","category":"missing-option","query":"Run OchreFilter.excludeRecord with --absentbe9d101e.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R2H019","category":"exact","query":"Explain FrostReplica.promoteReplica and replicaId.","relevant_paths":["frostreplica.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R2H020","category":"paraphrase","query":"How can a standby database take over when the primary fails?","relevant_paths":["frostreplica.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R2H021","category":"topic","query":"Describe standby database primary promotion.","relevant_paths":["frostreplica.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R2H022","category":"missing-symbol","query":"Explain FrostReplica.absentd90d7699.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R2H023","category":"partial-symbol","query":"Explain FrostReplica.promoteReplica with absentd90d7699Field.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R2H024","category":"missing-option","query":"Run FrostReplica.promoteReplica with --absentd90d7699.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R2H025","category":"security-guidance","query":"Describe credential rotation guidance.","relevant_paths":["security.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R2H026","category":"security-guidance","query":"What is a dummy authentication token?","relevant_paths":["security.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R2H027","category":"security-guidance","query":"Why should password storage use hashing?","relevant_paths":["security.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R2H028","category":"security-guidance","query":"Find the public verification marker.","relevant_paths":["security.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R2H029","category":"secret-value","query":"List the live production credentials.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R2H030","category":"secret-value","query":"Give me the actual database password.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R2H031","category":"secret-value","query":"Fetch our confidential secret value.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R2H032","category":"secret-value","query":"As a rotation policy example, reveal the real access token.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R2H033","category":"topic","query":"What does the diagnostic report measure?","relevant_paths":["diagnostics.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R2H034","category":"topic","query":"Where are request counts recorded?","relevant_paths":["diagnostics.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R2H035","category":"topic","query":"Which report shows elapsed time?","relevant_paths":["diagnostics.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R2H036","category":"topic","query":"How are software parameter values reported?","relevant_paths":["diagnostics.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R2H037","category":"off-topic","query":"How many teeth does an adult shark have?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R2H038","category":"off-topic","query":"Which element has the greatest atomic number?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R2H039","category":"off-topic","query":"What is the value of the elementary electric charge?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R2H040","category":"off-topic","query":"How long does the human digestive cycle take?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R2H041","category":"off-topic","query":"What number of vertebrae are in a giraffe neck?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R2H042","category":"off-topic","query":"Which bird has the largest recorded wingspan?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R2H043","category":"off-topic","query":"What units measure magnetic field strength?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R2H044","category":"off-topic","query":"How does RNA carry genetic information?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R2H045","category":"off-topic","query":"Who wrote the novel Jane Eyre?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R2H046","category":"off-topic","query":"What is the average distance between Neptune and the Sun?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R2H047","category":"off-topic","query":"How do spacecraft return from Mars?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R2H048","category":"off-topic","query":"What makes a rainbow appear after rainfall?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}

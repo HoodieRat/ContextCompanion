@@ -1,0 +1,16 @@
+{"id":"D001","query":"How is a recorded location recovered after interruption?","category":"returned-support","expected_status":"ok","relevant_paths":["PalisadeRead.md"],"forbidden_paths":[]}
+{"id":"D002","query":"How is a stored location recovered after interruption?","category":"returned-support","expected_status":"ok","relevant_paths":["PalisadeRead.md"],"forbidden_paths":[]}
+{"id":"D003","query":"How is a retained bookmark restored after the runtime closes?","category":"returned-support","expected_status":"ok","relevant_paths":["MulberryRead.md"],"forbidden_paths":[]}
+{"id":"D004","query":"How is a saved bookmark recovered after shutdown?","category":"returned-support","expected_status":"ok","relevant_paths":["MulberryRead.md"],"forbidden_paths":[]}
+{"id":"D005","query":"What is deferred distribution?","category":"returned-support","expected_status":"ok","relevant_paths":["LilacDispatch.md"],"forbidden_paths":[]}
+{"id":"D006","query":"What is queued dispatch?","category":"returned-support","expected_status":"ok","relevant_paths":["LilacDispatch.md"],"forbidden_paths":[]}
+{"id":"D007","query":"What is buffered transport?","category":"returned-support","expected_status":"ok","relevant_paths":["QuartzBatch.md"],"forbidden_paths":[]}
+{"id":"D008","query":"What is staged communication?","category":"returned-support","expected_status":"ok","relevant_paths":["QuartzBatch.md"],"forbidden_paths":[]}
+{"id":"D009","query":"How is a recorded location recovered on Antares?","category":"unsupported","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["PalisadeRead.md","MulberryRead.md","LilacDispatch.md","QuartzBatch.md"]}
+{"id":"D010","query":"How is a retained Antares bookmark restored after shutdown?","category":"unsupported","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["PalisadeRead.md","MulberryRead.md","LilacDispatch.md","QuartzBatch.md"]}
+{"id":"D011","query":"What is the temperature of PalisadeRead?","category":"unsupported","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["PalisadeRead.md","MulberryRead.md","LilacDispatch.md","QuartzBatch.md"]}
+{"id":"D012","query":"What is the capacity of MulberryRead?","category":"unsupported","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["PalisadeRead.md","MulberryRead.md","LilacDispatch.md","QuartzBatch.md"]}
+{"id":"D013","query":"What is deferred respiration?","category":"unsupported","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["PalisadeRead.md","MulberryRead.md","LilacDispatch.md","QuartzBatch.md"]}
+{"id":"D014","query":"What is queued teleportation?","category":"unsupported","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["PalisadeRead.md","MulberryRead.md","LilacDispatch.md","QuartzBatch.md"]}
+{"id":"D015","query":"What is buffered transport and resurrection?","category":"unsupported","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["PalisadeRead.md","MulberryRead.md","LilacDispatch.md","QuartzBatch.md"]}
+{"id":"D016","query":"What is staged stellar communication?","category":"unsupported","expected_status":"no_results","relevant_paths":[],"forbidden_paths":["PalisadeRead.md","MulberryRead.md","LilacDispatch.md","QuartzBatch.md"]}

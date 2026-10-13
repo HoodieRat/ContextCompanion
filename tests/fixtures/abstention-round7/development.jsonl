@@ -1,0 +1,16 @@
+{"id":"R7D001","query":"journal","expected_status":"ok","relevant_paths":["store.md"],"mode":"lexical","forbidden_paths":[],"category":"lexical-supported"}
+{"id":"R7D002","query":"durable journal","expected_status":"ok","relevant_paths":["store.md"],"mode":"lexical","forbidden_paths":[],"category":"lexical-supported"}
+{"id":"R7D003","query":"records","expected_status":"ok","relevant_paths":["store.md"],"mode":"lexical","forbidden_paths":[],"category":"lexical-supported"}
+{"id":"R7D004","query":"How can a subscriber start after termination?","expected_status":"ok","relevant_paths":["store.md"],"mode":"lexical","forbidden_paths":[],"category":"lexical-supported"}
+{"id":"R7D005","query":"What is the current version?","expected_status":"ok","relevant_paths":["store.md"],"mode":"lexical","forbidden_paths":[],"category":"lexical-supported"}
+{"id":"R7D006","query":"What is the maximum buffer capacity?","expected_status":"ok","relevant_paths":["store.md"],"mode":"lexical","forbidden_paths":[],"category":"lexical-supported"}
+{"id":"R7D007","query":"SaffronStore.recordWork","expected_status":"ok","relevant_paths":["store.md"],"mode":"lexical","forbidden_paths":[],"category":"lexical-supported"}
+{"id":"R7D008","query":"JavaScript","expected_status":"ok","relevant_paths":["store.md"],"mode":"lexical","forbidden_paths":[],"category":"lexical-supported"}
+{"id":"R7D009","query":"How can I become famous for my work?","expected_status":"no_results","relevant_paths":[],"mode":"lexical","forbidden_paths":[],"category":"lexical-off-topic"}
+{"id":"R7D010","query":"How can I become immortal while working?","expected_status":"no_results","relevant_paths":[],"mode":"lexical","forbidden_paths":[],"category":"lexical-off-topic"}
+{"id":"R7D011","query":"How do I attain enlightenment through work?","expected_status":"no_results","relevant_paths":[],"mode":"lexical","forbidden_paths":[],"category":"lexical-off-topic"}
+{"id":"R7D012","query":"What should I wear while working?","expected_status":"no_results","relevant_paths":[],"mode":"lexical","forbidden_paths":[],"category":"lexical-off-topic"}
+{"id":"R7D013","query":"How can I become famous while keeping records?","expected_status":"no_results","relevant_paths":[],"mode":"lexical","forbidden_paths":[],"category":"lexical-off-topic"}
+{"id":"R7D014","query":"How do I find meaning while recording work?","expected_status":"no_results","relevant_paths":[],"mode":"lexical","forbidden_paths":[],"category":"lexical-off-topic"}
+{"id":"R7D015","query":"How can I attain wisdom while recording work?","expected_status":"no_results","relevant_paths":[],"mode":"lexical","forbidden_paths":[],"category":"lexical-off-topic"}
+{"id":"R7D016","query":"How can I find spiritual peace while keeping records?","expected_status":"no_results","relevant_paths":[],"mode":"lexical","forbidden_paths":[],"category":"lexical-off-topic"}

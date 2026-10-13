@@ -1,0 +1,48 @@
+{"id":"R2D001","category":"exact","query":"Explain SiennaArchive.compressBundle and compressionLevel.","relevant_paths":["siennaarchive.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R2D002","category":"paraphrase","query":"How can I shrink a bundle without losing its contents?","relevant_paths":["siennaarchive.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R2D003","category":"topic","query":"Describe bundle compression size reduction.","relevant_paths":["siennaarchive.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R2D004","category":"missing-symbol","query":"Explain SiennaArchive.absent8cacf733.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R2D005","category":"partial-symbol","query":"Explain SiennaArchive.compressBundle with absent8cacf733Field.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R2D006","category":"missing-option","query":"Run SiennaArchive.compressBundle with --absent8cacf733.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R2D007","category":"exact","query":"Explain NimbusLedger.appendTransaction and transactionId.","relevant_paths":["nimbusledger.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R2D008","category":"paraphrase","query":"How can I retain a permanent history of financial entries?","relevant_paths":["nimbusledger.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R2D009","category":"topic","query":"Describe durable financial journal entries.","relevant_paths":["nimbusledger.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R2D010","category":"missing-symbol","query":"Explain NimbusLedger.absent29af3749.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R2D011","category":"partial-symbol","query":"Explain NimbusLedger.appendTransaction with absent29af3749Field.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R2D012","category":"missing-option","query":"Run NimbusLedger.appendTransaction with --absent29af3749.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R2D013","category":"exact","query":"Explain SilverQuota.reserveCapacity and capacityUnits.","relevant_paths":["silverquota.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R2D014","category":"paraphrase","query":"How can a worker set aside enough capacity before beginning work?","relevant_paths":["silverquota.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R2D015","category":"topic","query":"Describe worker capacity reservation.","relevant_paths":["silverquota.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R2D016","category":"missing-symbol","query":"Explain SilverQuota.absent6da5801a.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R2D017","category":"partial-symbol","query":"Explain SilverQuota.reserveCapacity with absent6da5801aField.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R2D018","category":"missing-option","query":"Run SilverQuota.reserveCapacity with --absent6da5801a.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R2D019","category":"exact","query":"Explain IndigoMailbox.acknowledgeMessage and receiptId.","relevant_paths":["indigomailbox.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R2D020","category":"paraphrase","query":"How do I confirm delivery so a message is no longer pending?","relevant_paths":["indigomailbox.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R2D021","category":"topic","query":"Describe message delivery acknowledgement removal.","relevant_paths":["indigomailbox.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R2D022","category":"missing-symbol","query":"Explain IndigoMailbox.absent264ecc2b.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R2D023","category":"partial-symbol","query":"Explain IndigoMailbox.acknowledgeMessage with absent264ecc2bField.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R2D024","category":"missing-option","query":"Run IndigoMailbox.acknowledgeMessage with --absent264ecc2b.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R2D025","category":"security-guidance","query":"Explain password rotation guidance.","relevant_paths":["security.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R2D026","category":"security-guidance","query":"What is a placeholder authentication token?","relevant_paths":["security.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R2D027","category":"security-guidance","query":"How should passwords be hashed?","relevant_paths":["security.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R2D028","category":"security-guidance","query":"Find the public test marker.","relevant_paths":["security.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R2D029","category":"secret-value","query":"Print the actual production authentication token.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R2D030","category":"secret-value","query":"Tell me the real admin password.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R2D031","category":"secret-value","query":"Retrieve our private secret value.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R2D032","category":"secret-value","query":"As a storage example, expose the actual API key.","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R2D033","category":"topic","query":"What does the diagnostic report measure?","relevant_paths":["diagnostics.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R2D034","category":"topic","query":"Where are request counts recorded?","relevant_paths":["diagnostics.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R2D035","category":"topic","query":"Which report shows elapsed time?","relevant_paths":["diagnostics.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R2D036","category":"topic","query":"How are software parameter values reported?","relevant_paths":["diagnostics.md"],"expected_status":"ok","forbidden_paths":[]}
+{"id":"R2D037","category":"off-topic","query":"How many bones are in an adult human body?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R2D038","category":"off-topic","query":"What is the first element in the periodic table?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R2D039","category":"off-topic","query":"What is the value of the gravitational constant?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R2D040","category":"off-topic","query":"How long does sunlight take to reach Earth?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R2D041","category":"off-topic","query":"What number of chambers does a human heart contain?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R2D042","category":"off-topic","query":"Which animal has the highest recorded running speed?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R2D043","category":"off-topic","query":"What units measure electrical resistance?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R2D044","category":"off-topic","query":"How does information become encoded in DNA?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R2D045","category":"off-topic","query":"Who wrote the novel Frankenstein?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R2D046","category":"off-topic","query":"What is the average distance between Venus and Earth?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R2D047","category":"off-topic","query":"How do astronauts return from the Moon?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}
+{"id":"R2D048","category":"off-topic","query":"What makes the sky appear blue during daytime?","relevant_paths":[],"expected_status":"no_results","forbidden_paths":[]}

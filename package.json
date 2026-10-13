@@ -1,0 +1,21 @@
+{
+  "name": "context-companion",
+  "version": "1.1.0-rc.1",
+  "description": "Windows-first, project-isolated knowledge companion for Codex, Grounded Docs and Serena",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "engines": {"node": ">=22"},
+  "bin": {"context-companion": "dist/cli.js"},
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/cli.js ui",
+    "test": "node scripts/run-test-suite.mjs baseline",
+    "test:research": "node scripts/run-test-suite.mjs research",
+    "test:diagnostic": "node scripts/run-test-suite.mjs diagnostic",
+    "check": "npm run build && npm test",
+    "test:live": "node dist/cli.js verify",
+    "doctor": "node dist/cli.js doctor"
+  },
+  "devDependencies": {"typescript": "5.8.3", "@types/node": "24.0.4"}
+}

@@ -1,0 +1,14 @@
+{
+  "caseHashes": {
+    "development": "dcb0b30a4280c079e114ab22ccb5c5697006f7ef31440599ff93c1d60445836c"
+  },
+  "metadata": {
+    "library": "",
+    "ecosystem": "generic",
+    "languages": [],
+    "platforms": [],
+    "kind": "project_context",
+    "reliability": "user",
+    "reliabilityEvidence": "Independent synthetic Markdown/support development, not original or fresh holdout questions"
+  }
+}
