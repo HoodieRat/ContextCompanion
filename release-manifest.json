@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "context-companion",
   "version": "1.1.0-rc.1",
-  "createdAt": "2026-10-13T08:53:47.413Z",
+  "createdAt": "2026-10-13T08:58:02.030Z",
   "note": "Allowlisted source, compiled app, synthetic fixtures and execution evidence only. The manifest itself is excluded from its file list. Hashes detect changes; they are not a publisher signature.",
   "files": [
     {
@@ -17,8 +17,8 @@
     },
     {
       "path": ".github/workflows/windows-live.yml",
-      "bytes": 1254,
-      "sha256": "d20788694b02adbda8f3b7197e5470315d3ceb2d5544e42b397f84648bcb8fc0"
+      "bytes": 1415,
+      "sha256": "e080954b7e7310374a0482913cd9c60fbf60c15e5ea2db92299f1f4adb714bf8"
     },
     {
       "path": ".gitignore",
