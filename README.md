@@ -1,19 +1,33 @@
 # Context Companion
 
-**Gather approved documentation once. Keep it current. Give your AI tools relevant, cited context through MCP.**
+**Keep the documentation your project needs current, and give your AI agent relevant passages with citations.**
 
 Context Companion is a Windows-first, local documentation and engineering-context service for existing projects. It collects references from sources you choose, indexes them through Grounded Docs, and exposes project-bound search, reading and memory tools through the Model Context Protocol (MCP).
 
 Your AI app chooses the model. Context Companion supplies reference material. The existing Codex integration also attempts automatic context delivery at session start and before substantive prompts. Other compatible MCP hosts can connect to the same tools; their configuration, tool calling and automatic delivery must be verified separately.
 
-**Status: 1.1.0-rc.1, beta/release candidate. Full release acceptance remains FAIL.** Features are frozen; repairs to the existing workflow continue. Scoped Windows checks have demonstrated useful documentation retrieval, Codex delivery, JavaScript rendering and existing LM Studio embeddings, but unseen retrieval quality, delivery under load and broader release gates remain open. See [current status and limitations](docs/PUBLIC_STATUS.md).
+**Status: 1.1.0-rc.1, beta/release candidate. Full release acceptance remains FAIL.** Features are frozen; repairs to the existing workflow continue. The published code snapshot passes 151 baseline tests. The later local development candidate passes 183 and adds scoped code-context, freshness and hook-delivery verification; those source repairs are not included in this documentation update. The latest separate documentation evaluation is 9/12, and delivery in a reused GUI chat remains unverified. See [verification results](docs/TEST_RESULTS.md) and [current status and limitations](docs/PUBLIC_STATUS.md).
+
+## What "refreshing context" means
+
+Context Companion keeps a searchable documentation library for each project. You approve the documentation URLs, repositories or local files. It gathers and indexes that material, refreshes enabled sources at your chosen interval, and supplies relevant excerpts and citations to your AI agent when you work.
+
+A refresh updates the stored documentation. A chat request retrieves selected evidence from that library. The 24-hour schedule is for source updates; context delivery can happen on each substantive prompt through the Codex hooks, or through an explicit MCP search.
+
+### How version requirements are used
+
+The project profile can read supported dependency manifests and lockfiles, distinguishing declared requirements from resolved versions. You can review or supply the profile manually. Retrieval compares the required library/version, language and platform with the source's metadata. Unresolved or conflicting versions need clarification; a declared compatibility range is not a runtime test.
+
+You still select the source to gather: a version-specific documentation URL, repository tag/commit or approved local folder. Labelling a source with a version does not change its URL or prove its contents match. Refreshing a pinned commit keeps that commit pinned. Finding additional primary documentation is work the AI agent can do with its research tools; saving a finding does not automatically attach or crawl its URL.
+
+For example, a team maintaining a Python 3.12 service can attach the official documentation for that version and its local architecture guides. When investigating a queue or threading API, the agent can retrieve the matching reference and cite the original passage. A documentation refresh keeps those selected sources current while preserving the team's version requirement. It does not upgrade the project to a newer Python release.
 
 ## What it does
 
 - Collects approved public documentation websites, public HTTPS Git repositories, local folders/files, uploaded documents and pasted notes.
 - Refreshes enabled sources on a schedule while the controller runs.
 - Uses Grounded Docs conversion, structural indexing, keyword search and optional embedding-based semantic retrieval.
-- Filters sources by project attachment and declared library/version/language/platform compatibility.
+- Reads supported project manifests/lockfiles and filters sources by project attachment and declared library/version/language/platform compatibility.
 - Returns bounded excerpts with original source locations, version metadata, timestamps and provenance.
 - Preserves reviewable engineering findings, decisions, failed approaches and handoffs.
 - Provides a project-bound, read-only Serena bridge for supported code definitions and references.
@@ -58,7 +72,7 @@ Example prompt:
 
 For local documentation changes, select the source and click **Refresh / retry**, confirm **Indexed** and a recent **Last good index**, then search for a changed passage.
 
-Follow the [usage walkthrough](docs/USAGE.md).
+Follow the [usage walkthrough](docs/USAGE.md). A manual source refresh and an explicit chat search are separate operations: searching does not by itself update a source's index.
 
 ## MCP hosts and models
 
@@ -107,7 +121,7 @@ npm run build
 npm test
 ```
 
-`npm test` selects the production baseline. `npm run test:research` selects the preserved research checks; `npm run test:diagnostic` selects both. Controlled tests do not substitute for live upstream, native Windows or AI-host verification. Keep `dist` synchronized with `src`.
+`npm test` selects the production baseline. `npm run test:research` selects the preserved research checks; `npm run test:diagnostic` selects both. The [verification report](docs/TEST_RESULTS.md) distinguishes the published snapshot, later local candidate, GitHub CI and live Windows checks. Controlled tests do not substitute for live upstream, native Windows or AI-host verification. Keep `dist` synchronized with `src`.
 
 The source includes synthetic fixtures and the specifically licensed upstream documentation snapshots required by the tests. Private local investigation artifacts and original failure receipts are excluded from this publication and retained in the development workspace. The [status page](docs/PUBLIC_STATUS.md) summarizes those limits without publishing user data.
 
