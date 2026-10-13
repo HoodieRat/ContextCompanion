@@ -24,6 +24,32 @@ jobs:
       - name: Run controller regression tests on native Windows
         shell: powershell
         run: .\scripts\Run-Tests.ps1
+      - name: Verify runtime removal preserves retained user data in isolated runner home
+        shell: powershell
+        run: |
+          $ownedHome = [IO.Path]::GetFullPath((Join-Path $env:RUNNER_TEMP 'ContextCompanionLive'))
+          $actualHome = [IO.Path]::GetFullPath($env:CONTEXT_COMPANION_HOME)
+          if ($actualHome -ne $ownedHome) { throw 'Uninstall target is not the explicitly owned runner home.' }
+          $ownedRuntime = [IO.Path]::GetFullPath((Join-Path $actualHome 'runtime'))
+          if ($ownedRuntime -ne (Join-Path $ownedHome 'runtime')) { throw 'Unexpected runtime removal target.' }
+          $retained = @('models\retain-check.txt','indexes\retain-check.txt','memory\retain-check.txt','backups\retain-check.txt','documents\retain-check.txt')
+          foreach ($relative in $retained) {
+            $target = Join-Path $actualHome $relative
+            New-Item -ItemType Directory -Path (Split-Path $target) -Force | Out-Null
+            [IO.File]::WriteAllText($target, 'isolated retention sentinel')
+          }
+          $registry = Join-Path $actualHome 'state.json'
+          $beforeRegistry = if (Test-Path -LiteralPath $registry) { (Get-FileHash -LiteralPath $registry -Algorithm SHA256).Hash } else { $null }
+          & .\scripts\Uninstall.ps1 -RemoveRuntimes
+          if ($LASTEXITCODE -ne 0) { throw 'Isolated uninstall failed.' }
+          if ((Test-Path -LiteralPath $ownedRuntime) -or (Test-Path -LiteralPath (Join-Path $actualHome 'installation.json'))) { throw 'Managed runtime was retained unexpectedly.' }
+          foreach ($relative in $retained) {
+            if ([IO.File]::ReadAllText((Join-Path $actualHome $relative)) -ne 'isolated retention sentinel') { throw "Retained data changed: $relative" }
+          }
+          if ($beforeRegistry -and (Get-FileHash -LiteralPath $registry -Algorithm SHA256).Hash -ne $beforeRegistry) { throw 'Registry changed during isolated no-project uninstall.' }
+          $verification = Join-Path $actualHome 'verification'
+          New-Item -ItemType Directory -Path $verification -Force | Out-Null
+          @{ status='PASS'; scope='Fresh isolated runner installation; runtime removal and five retained-data sentinels'; runtimeRemoved=$true; retained=$retained } | ConvertTo-Json | Set-Content -LiteralPath (Join-Path $verification 'uninstall-retention-report.json') -Encoding utf8
       - name: Preserve live evidence even on failure
         if: always()
         uses: actions/upload-artifact@v4
@@ -33,10 +59,12 @@ jobs:
           path: |
             ${{ env.CONTEXT_COMPANION_HOME }}\verification\**\report.json
             ${{ env.CONTEXT_COMPANION_HOME }}\verification\latest.json
+            ${{ env.CONTEXT_COMPANION_HOME }}\verification\uninstall-retention-report.json
             ${{ env.CONTEXT_COMPANION_HOME }}\logs\*.txt
             ${{ env.CONTEXT_COMPANION_HOME }}\logs\jobs\*.log
             ${{ env.CONTEXT_COMPANION_HOME }}\dependency-licenses.json
       - name: Stop managed runtime
         if: always()
         shell: powershell
-        run: .\scripts\Launch.ps1 -Action stop
+        run: |
+          if (Test-Path -LiteralPath (Join-Path $env:CONTEXT_COMPANION_HOME 'installation.json')) { .\scripts\Launch.ps1 -Action stop }

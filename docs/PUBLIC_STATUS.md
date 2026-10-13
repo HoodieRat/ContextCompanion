@@ -1,5 +1,11 @@
 # Status and publication scope
 
+## Runtime and model checks — 2026-10-13
+
+The keyword repair is accompanied by two existing-workflow repairs. Serena child processes now locate the managed uv executable without depending on the workstation PATH. The single local embedding worker prioritizes interactive queries ahead of waiting indexing batches, bounds admission atomically, skips disconnected queued work, and warms the same pinned CPU model during Grounded startup. Four query batches yield to indexing to avoid starvation; inference remains serial. External embedding URLs are unchanged.
+
+Current local build PASS, **203/203 baseline** and **241/241 diagnostic**, zero failures/skips/cancellations. The real installed Serena definition/reference check passes **5/5**. An existing Nomic endpoint and already-downloaded Qwen3.5-9B chat model pass **9/9** finite API/MCP checks, including model-generated retrieval, citation, and labelled unavailable-endpoint fallback. Six automatic installed Codex runtime turns pass **39/39** packet/trust/correlation checks without model tools; this does not certify the human composer GUI. A later real GUI prompt received a timeout warning during source indexing; that failure is preserved and current GUI re-verification remains open. The first fresh Windows install failed on the managed uv PATH; its receipt remains preserved while the repaired candidate is rechecked. Frozen holdout, fresh Windows install/uninstall and remaining release gates are pending. **Full release acceptance remains FAIL.**
+
 ## Keyword abstention repair — 2026-10-13
 
 Keyword-only natural-language requests now pass literal support checks instead of treating every upstream candidate as supported. Lifecycle questions bind the requested object and condition in one passage. Default bare-topic navigation retains its existing candidate contract; explicit lexical mode stays strict. Independently corroborated API identities retain their declaration proof. A lifecycle expiration condition no longer becomes a duration-field request; explicit object fields remain bound. This is bounded lexical corroboration, not general entailment or synonym matching. Implementation: [retrieval.ts](../src/retrieval.ts), [evidence-support.ts](../src/evidence-support.ts), [support.ts](../src/support.ts).

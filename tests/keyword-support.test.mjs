@@ -34,6 +34,9 @@ test('a lifecycle expiration condition is not a duration field; explicit fields 
  assert(requestPlan('How long is a lease valid?').attributes.some(a=>a.name==='time'));
  assert(requestPlan('What happens to the timeout when a job retries?').attributes.some(a=>a.name==='time'));
  assert.equal(support.keywordSupport('checkpoint',['An authorized source remains available.']),false);
+ const api='What does Zed.bucket.open return?',ids=['open','Zed.bucket.open'];
+ assert.equal(support.keywordSupport(api,['Returns buffer values.'],api,ids),true);
+ assert.deepEqual(ids,['open','Zed.bucket.open']);
 });
 test('lifecycle field questions keep the object and condition, while topic navigation retains its scope',async t=>{
  const f=fixture(t),p=addProject(f.store,f.code);addSource(f.store,p);

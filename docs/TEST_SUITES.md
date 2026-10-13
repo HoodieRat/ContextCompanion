@@ -1,5 +1,7 @@
 # Test suites
 
+Current runtime repair: build PASS; baseline **203/203**, diagnostics **241/241**, zero skipped/cancelled. New managed-runtime and queue checks extend the original suite. Fresh upstream Windows installation and current GUI acceptance are still being verified. Earlier counts below are historical.
+
 Current keyword repair: build PASS, baseline **195/195**, diagnostic **233/233**, zero failures/skips/cancellations. The six new checks are in [keyword-support.test.mjs](../tests/keyword-support.test.mjs); all original tests and suite memberships are retained. Native and CI results below belong to the previous checkpoint until new executions complete.
 
 Previous source publication, 2026-10-13: build PASS, production baseline **189/189 PASS**, full diagnostic **227/227 PASS** and native Windows baseline **189/189 PASS**, with zero failures/skips/cancellations. These counts describe the source/test snapshot included in this publication.

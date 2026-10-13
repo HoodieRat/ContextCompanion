@@ -29,7 +29,9 @@
     "api-condition.test.mjs",
     "python-api-identifiers.test.mjs",
     "grounded-cold-start.test.mjs",
-    "keyword-support.test.mjs"
+    "keyword-support.test.mjs",
+    "serena-runtime.test.mjs",
+    "embedding-priority.test.mjs"
   ],
   "research": [
     "abstention.test.mjs",

@@ -20,7 +20,7 @@ export class Embeddings {
         connection: Promise<Connection>;
     }>();
     constructor(readonly home: string) { }
-    async connection(profile: EmbeddingProfile): Promise<Connection | undefined> {
+    async connection(profile: EmbeddingProfile, interactive = false): Promise<Connection | undefined> {
         if (profile.kind === 'off')
             return undefined;
         if (profile.kind === 'external')
@@ -28,9 +28,10 @@ export class Embeddings {
         if (!/^[a-f0-9]{40}$/.test(profile.revision))
             throw new AppError('The local embedding model has not been pinned by the installer. Run Install.bat, or select Keyword only in Settings.', 503);
         const key = profileId(profile);
+        const routed = (connection: Connection): Connection => interactive ? { ...connection, baseUrl: connection.baseUrl.replace(/\/v1$/, '/query/v1') } : connection;
         const existing = this.workers.get(key);
         if (existing)
-            return existing.connection;
+            return existing.connection.then(routed);
         if (this.workers.size >= 2)
             throw new AppError('Two local model revisions are already active. Restart Context Companion before using another.', 503);
         const token = crypto.randomBytes(32).toString('hex');
@@ -56,7 +57,7 @@ export class Embeddings {
             child.once('exit', code => { this.workers.delete(key); reject(new AppError(`Embedding worker exited (${code}). Read logs/embeddings.log.`, 503)); });
         }), 15000, 'Embedding worker failed to start. See logs/embeddings.log.').catch(error => { stopChild(child); this.workers.delete(key); throw error; });
         this.workers.set(key, { child, connection });
-        return connection;
+        return connection.then(routed);
     }
     async probe(profile: EmbeddingProfile, timeoutMs = 240000): Promise<Record<string, unknown>> {
         const connection = await this.connection(profile);
@@ -91,7 +92,7 @@ export class Embeddings {
     /** Compare returned passages only; no ingestion, vector store or confidence gate. */
     async similarities(query: string, passages: string[], profile: EmbeddingProfile, signal?: AbortSignal): Promise<number[]> {
         if (profile.kind !== 'local') throw new AppError('Cross-source comparison requires the local embedding worker.', 503);
-        const connection = await this.connection(profile);
+        const connection = await this.connection(profile, true);
         if (!connection) throw new AppError('Local embedding worker unavailable.', 503);
         const embed = async (input: string[]): Promise<number[][]> => {
             const response = await fetch(`${connection.baseUrl}/embeddings`, { method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${connection.token}` }, body: JSON.stringify({ model: connection.model, input }), signal: signal ? AbortSignal.any([signal, AbortSignal.timeout(15000)]) : AbortSignal.timeout(15000) });

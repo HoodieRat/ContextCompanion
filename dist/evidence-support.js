@@ -33,7 +33,7 @@ export function keywordSupport(query, passages, task = query, verifiedIdentifier
     // A separately corroborated declaration can prove a namespace/member that
     // the returned member paragraph omits. Do not demand that spelling again;
     // all remaining task terms still require their own literal support.
-    for (const identifier of verifiedIdentifiers)
+    for (const identifier of [...verifiedIdentifiers].sort((a, b) => b.length - a.length))
         task = task.replaceAll(identifier, ' ');
     if (!/^what\s+happens\s+(?:to|when|after|if|unless|until)\b/i.test(query.trim()))
         return literalSupport(task, passages.map(topicText));
