@@ -56,6 +56,10 @@ export function instructionTask(query: string): string | undefined {
 }
 export function groundedQuery(query: string, codeProject?: string): string {
     let task = instructionTask(query) ?? query;
+    // Lifecycle scaffolding is not the subject being looked up. Keep the
+    // actual object and every temporal/conditional qualifier in ranking;
+    // declaration and support checks still receive the complete request.
+    task = task.replace(/^what\s+happens\s+to\s+/i, '').replace(/^what\s+happens\s+(?=(?:when|after|if|unless|until)\b)/i, '');
     if (!codeProject) return task;
     const name = codeProject.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     task = task.replace(new RegExp(`^(?:in|for)\\s+${name}\\s+project(?:'s)?\\s+source code,\\s*`, 'i'), '');

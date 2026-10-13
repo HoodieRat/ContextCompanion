@@ -1,5 +1,9 @@
 # Daily use
 
+## Check the evidence for the requested behavior
+
+Application usage and factual questions prefer applicable guide sources. Explicit source selection and named library references retain precedence. Bounded instructions that make an actor perform an operation, and actor questions with an explicit condition, require support in one affirmative passage; incidental words or a documented denial cannot establish that operation. Polar and explanatory questions can legitimately retrieve restrictions or denials. This guard is a spelling-based check, not general entailment. If evidence is withheld or unrelated, inspect the original source and research the gap.
+
 ## Register a project
 
 Run `Start.bat` and choose **Add project**. Enter the existing repository/folder that the AI app will work on. **Connect Codex and add project instructions** enables the managed Codex integration; **Index eligible project files** is optional. You can also attach selected reference folders instead of indexing an entire repository.

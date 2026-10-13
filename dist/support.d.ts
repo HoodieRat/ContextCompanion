@@ -48,6 +48,13 @@ export declare function communicationDefinitionSupport(query: string, evidence: 
  * Intent verbs are scaffolding, while their actual objects remain required.
  */
 export declare function operationSupportsRequest(query: string, evidence: string): boolean;
+/** Bounded affirmative operation requests must not borrow an incidental noun,
+ * a separate action/condition or an explicit denial. Polar/why questions can
+ * legitimately retrieve denials and retain the existing support path.
+ * This spelling contract covers causative instructions and actor questions;
+ * it is not a general natural-language entailment claim.
+ */
+export declare function assertedOperationSupport(query: string, evidence: string): boolean;
 /** Explicit API conditions must occur in this passage. Similarity or an API
  * name cannot certify an unrelated event. This bounded lexical guard keeps
  * punctuation spelling and negative conditions; it is not general entailment.

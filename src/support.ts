@@ -434,6 +434,32 @@ export function operationSupportsRequest(query: string, evidence: string): boole
  const body=new Set((normalize(topicText(evidence)).match(/[\p{L}\p{N}_-]+/gu)||[]).map(stem));
  return goals.every(word=>body.has(stem(word)));
 }
+
+/** Bounded affirmative operation requests must not borrow an incidental noun,
+ * a separate action/condition or an explicit denial. Polar/why questions can
+ * legitimately retrieve denials and retain the existing support path.
+ * This spelling contract covers causative instructions and actor questions;
+ * it is not a general natural-language entailment claim.
+ */
+export function assertedOperationSupport(query: string, evidence: string): boolean {
+ const operation='download|install|launch|upload|export|import|encrypt|decrypt|delete|send|collect|keep|retain|start|stop|refresh|run|poll|execute';
+ const causative=query.trim().match(new RegExp('^how\\s+(?:do|can|could|should)\\s+(?:i|we|you)\\s+make\\s+(.+?)\\s+((?:automatically\\s+)?(?:'+operation+'))\\s+([^?!;]+)','i'));
+ const actor=query.trim().match(new RegExp('^(?:what|which)\\s+(.+?)\\s+((?:'+operation+')s?)\\s+([^?!;]+)','i'));
+ // Generic API-discovery questions retain their existing declaration and
+ // semantic support path. The actor check binds an explicitly requested
+ // condition/state to its behavior, rather than demanding verb spelling for
+ // every "which operation" question.
+ const request=causative||(actor && /\b(?:while|when|if|unless|until)\b/i.test(actor[3]!) ? actor : null);if(!request)return true;
+ const stem=(word:string)=>word.toLowerCase().replace(/ies$/,'y').replace(/s$/,'').replace(/(?:ed|ing)$/,'').replace(/e$/,'');
+ const tokens=(text:string)=>(normalize(text).match(/[\p{L}\p{N}_-]+/gu)||[]).filter(w=>!GRAMMAR.has(w)&&!GENERIC.has(w)).map(stem);
+ const goals=tokens(request.slice(1).join(' '));
+ return topicText(evidence).split(/\n|(?<=[.!?;])\s+/).some(sentence=>{
+  // An until/without qualification can document a legitimate restriction,
+  // but cannot prove an affirmative operation in this bounded request form.
+  if(/\b(?:no|not|never|cannot|can't|doesn't|don't|won't|isn't|aren't|without)\b/i.test(sentence))return false;
+  const body=new Set(tokens(sentence));return goals.every(goal=>body.has(goal));
+ });
+}
 /** Explicit API conditions must occur in this passage. Similarity or an API
  * name cannot certify an unrelated event. This bounded lexical guard keeps
  * punctuation spelling and negative conditions; it is not general entailment.
@@ -477,7 +503,7 @@ export function runtimeQualifier(query:string):{library:string;task:string}|unde
  */
 export function passageSupportsRequest(query: string, text: string, compatibility: string[] = [], verifiedSemanticSubjects: string[] = [], apiBindings:string[]=[]): boolean {
  const plan=requestPlan(query);
- return operationSupportsRequest(query,text) && conditionSupportsRequest(query,text) && plan.subjects.every(subject=>subjectPresent(subject,text,compatibility)||apiBindings.some(binding=>binding.split(/\.|::/).some(part=>part.toLowerCase()===subject.toLowerCase()))||(plan.semanticSubjects.includes(subject)&&verifiedSemanticSubjects.includes(subject))) && plan.attributes.every(attribute=>attribute.marker.test(normalize(topicText(text))));
+ return assertedOperationSupport(query,text) && operationSupportsRequest(query,text) && conditionSupportsRequest(query,text) && plan.subjects.every(subject=>subjectPresent(subject,text,compatibility)||apiBindings.some(binding=>binding.split(/\.|::/).some(part=>part.toLowerCase()===subject.toLowerCase()))||(plan.semanticSubjects.includes(subject)&&verifiedSemanticSubjects.includes(subject))) && plan.attributes.every(attribute=>attribute.marker.test(normalize(topicText(text))));
 }
 export function missingSemanticSubjects(query:string,text:string,compatibility:string[]=[]):string[]{return requestPlan(query).semanticSubjects.filter(subject=>!subjectPresent(subject,text,compatibility));}
 export function missingPropertySubjects(query: string, evidence: string[], compatibility: string[] = []): string[] {
