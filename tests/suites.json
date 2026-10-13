@@ -1,5 +1,7 @@
 {
   "baseline": [
+    "guide-operation.test.mjs",
+    "factual-query.test.mjs",
     "request-operation.test.mjs",
     "communication-emission.test.mjs",
     "communication-scope.test.mjs",

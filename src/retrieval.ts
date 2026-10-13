@@ -50,7 +50,7 @@ export function selectSources(collections: Collection[], query: string, project:
     // Identifier questions may also concern an external API: an explicitly
     // named library remains stronger evidence than this role preference.
     const implementation = /\b(?:source code|implementation|implemented)\b|\bwhere\b[^\n]{0,120}\bdefined\b/i.test(query) || requiredIdentifiers(query).length > 0;
-    const usage = !implementation && !!instructionTask(query);
+    const usage = !implementation && (!!instructionTask(query) || /^(?:what|which|when|why|how|does|do|can|should|is|are)\b/i.test(query.trim()));
     return collections.map(collection => {
         const tags = words([collection.name, ...collection.tags, collection.metadata?.library || '', collection.version].join(' '));
         // Substrings like "an" in "companion" and "our" in "source" are
@@ -455,7 +455,13 @@ export class Retrieval {
         // before the actual instructions. Rerank only already-supported hits;
         // explicit identifiers and factual questions retain their ordering.
         const instruction = instructionTask(query) !== undefined && !plan.attributes.length && !missingIdentifiers(query, ['']).length;
-        const topics = instruction ? topicTerms(instructionTask(query)!) : [];
+        // Factual operating questions need the handbook as well as imperative
+        // questions. A metadata word such as "source" must not let repository
+        // history displace an already-supported guide. Explicit choices and
+        // implementation/library routing keep their own precedence.
+        const guideIntent = !options.sourceIds?.length && selected.some(s => s.reason.includes('Task intent: application usage')) && !selected.some(s => s.reason.includes('Named library reference'));
+        const guideHit = (hit: SearchHit) => Number(guideIntent && hit.metadata?.kind === 'guide');
+        const topics = instruction ? topicTerms(instructionTask(query)!) : guideIntent ? topicTerms(query) : [];
         const action = instruction ? topicTerms(instructionTask(query)!.split(/\s+/)[0]!)[0] : undefined;
         const displayedText = (hit: SearchHit) => topicText(focusedSpans.get(hit.id)?.text || hit.content);
         const coverage = (hit: SearchHit) => { const terms=new Set(topicTerms(displayedText(hit)));return topics.filter(topic=>terms.has(topic)).length; };
@@ -464,7 +470,7 @@ export class Retrieval {
         // or changing the ordering of factual/identifier requests.
         const actionSentence = (hit: SearchHit) => Number(!!action && displayedText(hit).split(/\n|(?<=[.!?])\s+/).some(sentence =>
             /^(?:\d+[.)]\s*)?(?:set|choose|open|click|select|run|check|inspect|use|keep|enter|start|add|enable|refresh|configure|follow|expand)\b/i.test(sentence.trim()) && topicTerms(sentence).includes(action)));
-        results.sort((a, b) => Number(b.exactMatch) - Number(a.exactMatch) || (instruction ? actionSentence(b)-actionSentence(a) || coverage(b)-coverage(a) : 0) || b.score - a.score || (similarities.get(b.id) ?? 0) - (similarities.get(a.id) ?? 0) || (quality[b.metadata?.reliability || 'unknown']! - quality[a.metadata?.reliability || 'unknown']!) || a.url.localeCompare(b.url) || a.id.localeCompare(b.id));
+        results.sort((a, b) => Number(b.exactMatch) - Number(a.exactMatch) || guideHit(b)-guideHit(a) || (instruction ? actionSentence(b)-actionSentence(a) : 0) || (instruction || guideIntent ? coverage(b)-coverage(a) : 0) || b.score - a.score || (similarities.get(b.id) ?? 0) - (similarities.get(a.id) ?? 0) || (quality[b.metadata?.reliability || 'unknown']! - quality[a.metadata?.reliability || 'unknown']!) || a.url.localeCompare(b.url) || a.id.localeCompare(b.id));
         const unique: SearchHit[] = [];
         for (const hit of results) {
             const prior = unique.find(other => !other.duplicateOf && nearDuplicate(hit.content, other.content));

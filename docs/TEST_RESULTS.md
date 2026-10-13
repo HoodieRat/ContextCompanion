@@ -1,10 +1,22 @@
 # Tests and acceptance results
 
+## Documentation repair checkpoint — 2026-10-13
+
+The current working code builds and passes **189/189 baseline** and **227/227 diagnostic** checks, with zero failures, skips or cancellations. Two new regression files add six checks; original tests, assertions and sealed evidence remain intact. The publication copy independently passes build, baseline and diagnostic suites; the documented native Windows batch launcher passes **189/189**. Application/test parity covers **480 files**, and all **342** previously published protected test/evidence/vendor files remain byte-identical. The local preservation seal covers **9,214** original files.
+
+The unchanged twelve-case daily-documentation protocol now passes **12/12 in a known-regression replay**, including the three previously failing cases. The original fresh **9/12 FAIL** receipt remains unchanged. This replay is not a new holdout or full release acceptance.
+
+The repairs prioritize applicable guides for factual application questions, remove a lifecycle-question preamble only from Grounded ranking, and require one affirmative passage to support bounded causative or conditional actor operations. Explicit source choices, library/version compatibility, authorization, packet limits and Grounded conversion/storage ownership remain authoritative. These are bounded lexical checks; synonyms and unseen question forms remain limitations.
+
+Fresh installed-runtime first/repeated turns pass **15/15** for the final lifecycle candidate, with zero model tools and matched input, retrieval and delivered-context hashes. A separate guide-operation runtime run also passes **15/15**. Actual delivery in a reused human GUI chat is verified: the formatted composer prompt's trimmed hash, session and turn match Windows/controller receipts, and the supplied developer-context bytes match the hook's completed packet hash. Its cited answer uses zero model tools. That GUI turn ran the guide/support candidate immediately before the final lifecycle-ranking change; the final candidate has the separate runtime check above. Earlier missing receipts in the original chat remain preserved, and this does not certify every GUI session.
+
+The first broader diagnostic candidate failed an existing API-support assertion; the corrected candidate retains that assertion and passes. A subsequent known replay scored **11/12** before the separately developed lifecycle normalization; that failure is also retained. An independent keyword-indexed lifecycle corpus still scores **2/3**, with an unsupported encryption question returning related evidence both before and after this repair. This unresolved abstention case and the other release gates keep **full release acceptance FAIL**. The two existing approved normal-project sources were refreshed successfully; 61 memories retain their bodies, approval statuses and revisions. A direct unsigned PowerShell launch was refused by the host policy; the existing documented batch entry point passed without changing system policy. Raw private receipts, chat transcripts, host configuration and local evaluation inputs are excluded from publication.
+
 Updated 2026-10-13. **Full release acceptance remains FAIL.** Passing controller tests and finite live checks establish their stated scope, not general retrieval quality or reliable delivery for every host session.
 
-## Current source publication
+## Earlier source publication (PR #2)
 
-The public application source, compiled output, UI, tests/fixtures, vendor files, package metadata, pins and notices match the current working project across **478 files**, allowing line-ending normalization. The newer repairs are included in this source update.
+The public application source, compiled output, UI, tests/fixtures, vendor files, package metadata, pins and notices matched the then-working project across **478 files**, allowing line-ending normalization. The newer repairs are included in this source update.
 
 | Executed check | Current result | Scope |
 |---|---|---|
@@ -31,7 +43,7 @@ The 14-check live retry uses an isolated data home, keyword indexing and an aged
 
 No full diagnostic rerun was performed for PR #1. The current source publication now has a **221/221** diagnostic run; earlier full-suite results retain their original dates and source snapshots.
 
-## Latest local live checks
+## Earlier local live checks
 
 These checks used actual installed Windows components. They are earlier receipts reviewed for publication, separate from the fresh 14-check staged-application run above.
 
@@ -46,7 +58,7 @@ These checks used actual installed Windows components. They are earlier receipts
 
 The published implementation now distinguishes guide questions from project-code questions, corroborates supported TS/JS member quotations against approved snapshots, keeps compact accepted-memory previews in bounded startup packets, and avoids a recognized response-only suffix displacing relevant setup instructions. Those changes retain existing source permissions, version filters, support guards and deadlines.
 
-The new 9/12 evaluation leaves one supported passage missing from its first five excerpts and two strict no-results assertions failing. One failed negative case returns an explicit denial of the requested behavior; a strict abstention failure does not itself establish fabricated support. All 76 returned citations match current original-file hashes and packet limits pass. The original harness failure and all earlier first-use failures remain preserved. No exposed holdout was used to tune this documentation update.
+The historical 9/12 evaluation left one supported passage missing from its first five excerpts and two strict no-results assertions failing. One failed negative case returns an explicit denial of the requested behavior; a strict abstention failure does not itself establish fabricated support. All 76 returned citations match current original-file hashes and packet limits pass. The original harness failure and all earlier first-use failures remain preserved. That documentation-only checkpoint made no production changes; the later repair method and known-replay scope are recorded above.
 
 ## Reproduce the available checks
 
@@ -64,6 +76,6 @@ GitHub's controller workflow checks shipped JavaScript, executes the baseline an
 
 ## Remaining acceptance gates
 
-Unseen retrieval quality; fresh dispatch in the reused GUI chat; long-term/load-dependent host delivery; historical ASCII failure attribution; broader extraction/OCR and upstream Windows compatibility; and end-to-end other MCP-host/chat-model workflows remain open. Features are frozen. See [PUBLIC_STATUS.md](PUBLIC_STATUS.md) for progress, evidence limits and publication scope.
+Unseen retrieval quality; dependable dispatch across GUI sessions; long-term/load-dependent host delivery; historical ASCII failure attribution; broader extraction/OCR and upstream Windows compatibility; and end-to-end other MCP-host/chat-model workflows remain open. Features are frozen. See [PUBLIC_STATUS.md](PUBLIC_STATUS.md) for progress, evidence limits and publication scope.
 
 Original failures, local detailed reports and frozen holdout inputs remain in the private development workspace. Public summaries do not erase them or publish private data.

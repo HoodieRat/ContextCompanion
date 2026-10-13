@@ -1,12 +1,24 @@
 # Status and publication scope
 
+## Documentation repair checkpoint — 2026-10-13
+
+The current working code builds and passes **189/189 baseline** and **227/227 diagnostic** checks, with zero failures, skips or cancellations. Two new regression files add six checks; original tests, assertions and sealed evidence remain intact. The publication copy independently passes build, baseline and diagnostic suites; the documented native Windows batch launcher passes **189/189**. Application/test parity covers **480 files**, and all **342** previously published protected test/evidence/vendor files remain byte-identical. The local preservation seal covers **9,214** original files.
+
+The unchanged twelve-case daily-documentation protocol now passes **12/12 in a known-regression replay**, including the three previously failing cases. The original fresh **9/12 FAIL** receipt remains unchanged. This replay is not a new holdout or full release acceptance.
+
+The repairs prioritize applicable guides for factual application questions, remove a lifecycle-question preamble only from Grounded ranking, and require one affirmative passage to support bounded causative or conditional actor operations. Explicit source choices, library/version compatibility, authorization, packet limits and Grounded conversion/storage ownership remain authoritative. These are bounded lexical checks; synonyms and unseen question forms remain limitations.
+
+Fresh installed-runtime first/repeated turns pass **15/15** for the final lifecycle candidate, with zero model tools and matched input, retrieval and delivered-context hashes. A separate guide-operation runtime run also passes **15/15**. Actual delivery in a reused human GUI chat is verified: the formatted composer prompt's trimmed hash, session and turn match Windows/controller receipts, and the supplied developer-context bytes match the hook's completed packet hash. Its cited answer uses zero model tools. That GUI turn ran the guide/support candidate immediately before the final lifecycle-ranking change; the final candidate has the separate runtime check above. Earlier missing receipts in the original chat remain preserved, and this does not certify every GUI session.
+
+The first broader diagnostic candidate failed an existing API-support assertion; the corrected candidate retains that assertion and passes. A subsequent known replay scored **11/12** before the separately developed lifecycle normalization; that failure is also retained. An independent keyword-indexed lifecycle corpus still scores **2/3**, with an unsupported encryption question returning related evidence both before and after this repair. This unresolved abstention case and the other release gates keep **full release acceptance FAIL**. The two existing approved normal-project sources were refreshed successfully; 61 memories retain their bodies, approval statuses and revisions. A direct unsigned PowerShell launch was refused by the host policy; the existing documented batch entry point passed without changing system policy. Raw private receipts, chat transcripts, host configuration and local evaluation inputs are excluded from publication.
+
 Updated 2026-10-13. Version 1.1.0-rc.1 is a beta/release candidate. **Full release acceptance remains FAIL.** Features are frozen; existing retrieval, ingestion, freshness, delivery and documentation repairs remain in scope.
 
-## Current source publication — 2026-10-13
+## Earlier source publication (PR #2) — 2026-10-13
 
-The public source now includes the newer working-project repairs: guide/code source selection, browser/form hook-input normalization, Grounded-owned TS/JS declaration corroboration with a bounded parser buffer, compact accepted-memory previews and response-only directive ranking. Existing permissions, support guards, version filters, deadlines and architecture remain intact.
+PR #2 included the then-current working-project repairs: guide/code source selection, browser/form hook-input normalization, Grounded-owned TS/JS declaration corroboration with a bounded parser buffer, compact accepted-memory previews and response-only directive ranking. Existing permissions, support guards, version filters, deadlines and architecture remain intact.
 
-The clean publication copy builds and passes **183/183 baseline** and **221/221 full diagnostic** tests, with zero failures/skips/cancellations. The native Windows launcher independently passes **183/183** using managed Node. Source, compiled output, dashboard, tests/fixtures, vendor files, package metadata, pins and notices match the working project across **478 files**, allowing only line-ending normalization. All **336** previously published protected test/evidence/vendor files remain unchanged; the existing Grounded query test has an additive regression.
+That publication copy built and passed **183/183 baseline** and **221/221 full diagnostic** tests, with zero failures/skips/cancellations. The native Windows launcher independently passes **183/183** using managed Node. Source, compiled output, dashboard, tests/fixtures, vendor files, package metadata, pins and notices matched that working snapshot across **478 files**, allowing only line-ending normalization. All **336** previously published protected test/evidence/vendor files remain unchanged; the existing Grounded query test has an additive regression.
 
 The independent code-context test adapter uses the pinned TypeScript development dependency. Both GitHub workflows now install exact development requirements before running regressions. `Run-Tests.bat` fails explicitly if that dependency is missing; the controller itself still has no production npm dependencies.
 
@@ -14,7 +26,7 @@ The staged application also passes **14/14 fresh live checks** against installed
 
 The first live harness added a second source file for code checks but removed only one file during its empty-folder step, so that refresh correctly succeeded and the expected-failure assertion failed. That run is retained. The fresh retry removes both files, keeps the assertions and production candidate unchanged, and passes all 14 checks. The upstream converter emitted a TypeScript partial-parser warning; the original logs are retained, and these passes do not certify complete conversion of arbitrary code.
 
-Publication checks do not close full release acceptance. The separate daily-documentation evaluation remains **9/12 FAIL** and delivery in the reused human GUI chat remains unverified. Detailed failure evidence, host configuration, private data and local holdout inputs remain outside the publication.
+Publication checks do not close full release acceptance. At that checkpoint the separate daily-documentation evaluation scored **9/12 FAIL** and reused-GUI delivery was unverified; the newer scoped replay and GUI evidence are recorded above. Detailed failure evidence, host configuration, private data and local holdout inputs remain outside the publication.
 
 ## Earlier documentation-only checkpoint — 2026-10-13
 
@@ -35,7 +47,7 @@ The freshness run used an isolated project and an aged due timestamp; it did not
 
 The documentation evaluation's first harness incorrectly resolved source paths; that failure remains preserved. Its citation-path retry kept the sealed candidate and assertions and scored 9/12 with warmed caches. All 76 returned citations matched original-file hashes and all packets met their limits. One supported passage was absent from the first five excerpts. Two strict no-results assertions failed; one response contained a documented denial rather than support for the requested behavior. This is not evidence that the model fabricated that behavior.
 
-Earlier **9/12** and **17/24** first-use failures remain unchanged. Known-regression repairs are not rescored as fresh acceptance. The reused GUI host inventory is unavailable, and prior chat context can explain its correct answers. A fresh installed-runtime pass does not resolve that running GUI dispatch gap.
+Earlier **9/12** and **17/24** first-use failures remain unchanged. Known-regression repairs are not rescored as fresh acceptance. The original reused GUI host inventory remains unavailable; later packet-correlated delivery in another reused chat is recorded above. A fresh installed-runtime pass does not resolve that running GUI dispatch gap.
 
 Detailed local receipts remain private. The public [verification report](TEST_RESULTS.md) identifies the executed scopes and GitHub workflow status without publishing host configuration, raw chats or holdout inputs.
 
@@ -54,7 +66,7 @@ These summarize earlier local Windows evidence, not a new benchmark performed by
 ## Open gates
 
 - Generalization to unseen documentation questions.
-- Fresh delivery in the reused GUI chat, plus long-term ordinary AI-host delivery and behavior under load; fresh/repeated isolated-runtime checks above pass only in their stated scope.
+- Dependable delivery across GUI sessions and sustained host load; finite runtime and packet-correlated GUI checks above pass only in their stated scopes.
 - Attribution of the historical ASCII desktop delivery failure.
 - Broader document/visual formats and OCR coverage.
 - Preserved upstream native Windows failures and compatibility across installations.
