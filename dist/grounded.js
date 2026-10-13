@@ -7,6 +7,8 @@ import { snapshot, scan } from './scanner.js';
 import { cleanEnvironment, run } from './process.js';
 import { publicUrl } from './security.js';
 import { declaredApiContext } from './api-context.js';
+import { createRequire } from 'node:module';
+import { declaredCodeContext } from './code-context.js';
 import { requiredIdentifiers } from './support.js';
 import { gitSnapshot } from './repositories.js';
 /** Remove only first-person question scaffolding from upstream ranking.
@@ -22,10 +24,37 @@ export function instructionRequest(query) {
 export function instructionTask(query) {
     const request = instructionRequest(query).trim();
     const task = request.replace(/^how\s+(?:do|can|could|should)\s+(?:i|we|you)\s+/i, '');
-    return task === request ? undefined : task.replace(/\?\s*$/, '').trim() || undefined;
+    if (task === request)
+        return undefined;
+    // Presentation/tool-use directives after a complete question can rank
+    // integration commentary ahead of its actual setup instructions. Remove
+    // only an entirely recognized suffix from ranking, never from support.
+    // Extra operations, qualifiers, identifiers and quoted examples remain.
+    const question = task.match(/^([^?\n]+)\?\s+([\s\S]+)$/);
+    if (question) {
+        const directive = /^(?:please\s+)?(?:cite\s+(?:the\s+)?(?:supporting\s+documentation|documentation|sources?|references)|(?:answer|respond)\s+(?:using|with)\s+(?:only\s+)?(?:the\s+)?(?:supplied|provided|indexed)\s+(?:evidence|context)(?:\s+only)?|do\s+not\s+(?:call|use)\s+tools)(?:[.!]\s*|$)/i;
+        let suffix = question[2].trim();
+        while (suffix) {
+            const match = suffix.match(directive);
+            if (!match)
+                break;
+            suffix = suffix.slice(match[0].length).trim();
+        }
+        if (!suffix)
+            return question[1].trim() || undefined;
+    }
+    return task.replace(/\?\s*$/, '').trim() || undefined;
 }
-export function groundedQuery(query) {
-    return instructionTask(query) ?? query;
+export function groundedQuery(query, codeProject) {
+    let task = instructionTask(query) ?? query;
+    if (!codeProject)
+        return task;
+    const name = codeProject.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    task = task.replace(new RegExp(`^(?:in|for)\\s+${name}\\s+project(?:'s)?\\s+source code,\\s*`, 'i'), '');
+    // A large-file chunk may omit the class header. Search the member spelling
+    // within this already project-bound source; the complete original API name
+    // must still be proved by the returned text/declaration before delivery.
+    return task.replace(/\b[A-Z][A-Za-z0-9_$]*\.([a-z_$][A-Za-z0-9_$]*)\b/g, '$1');
 }
 /** Do not invent a GitHub-style file viewer URL for an unknown Git host. */
 export function repositoryFileUrl(repository, commit, relative) {
@@ -92,6 +121,40 @@ export function restageMissingText(root, files, integrity) {
 export class Grounded {
     home;
     embeddings;
+    codeParser;
+    codeParserUnavailable = false;
+    codeContext(source, passage, request) {
+        if (this.codeParserUnavailable)
+            return;
+        if (!this.codeParser) {
+            try {
+                const require = createRequire(this.entry);
+                const Parser = require('tree-sitter');
+                const language = require('tree-sitter-typescript');
+                const parser = new Parser();
+                parser.setLanguage(language.typescript);
+                this.codeParser = parser;
+            }
+            catch {
+                this.codeParserUnavailable = true;
+                return;
+            }
+        }
+        try {
+            // Tree-sitter 0.21's default input buffer rejects longer strings.
+            // Bound the buffer to the already bounded snapshot, including UTF-16.
+            const tree = this.codeParser.parse(source, null, { bufferSize: Math.max(32768, source.length * 2 + 1024) });
+            try {
+                return declaredCodeContext(source, passage, tree.rootNode, requiredIdentifiers(request));
+            }
+            finally {
+                tree.delete?.();
+            }
+        }
+        catch {
+            return; /* A failed passage cannot disable subsequent corroboration. */
+        }
+    }
     slot = 0;
     waiting = 0;
     slots = Array.from({ length: 4 }, () => Promise.resolve());
@@ -229,7 +292,7 @@ export class Grounded {
             throw error;
         }
     }
-    async search(collection, query, limit, signal, keywordFallback = false, request = query) {
+    async search(collection, query, limit, signal, keywordFallback = false, request = query, codeProject) {
         if (this.waiting >= 48)
             throw new AppError('Grounded search queue is full. Retry shortly.', 429);
         const slot = this.slot++ % this.slots.length, previous = this.slots[slot];
@@ -246,7 +309,7 @@ export class Grounded {
                     else
                         signal?.addEventListener('abort', abort, { once: true });
                 })]);
-            return await this.searchNow(collection, query, limit, signal, keywordFallback, request);
+            return await this.searchNow(collection, query, limit, signal, keywordFallback, request, codeProject);
         }
         finally {
             signal?.removeEventListener('abort', abort);
@@ -254,12 +317,12 @@ export class Grounded {
             release();
         }
     }
-    async searchNow(collection, query, limit, signal, keywordFallback = false, request = query) {
+    async searchNow(collection, query, limit, signal, keywordFallback = false, request = query, codeProject) {
         if (!collection.active)
             return [];
         const generation = collection.active;
         const options = await this.options(collection, generation, true, keywordFallback);
-        const result = await run(process.execPath, [this.entry, '--config', options.config, 'search', collection.id, groundedQuery(query), '--version', collection.version, '--exact-match', '--limit', String(limit), '--output', 'json'], { ...options, timeoutMs: 45000, signal });
+        const result = await run(process.execPath, [this.entry, '--config', options.config, 'search', collection.id, groundedQuery(query, collection.metadata?.kind === 'project_context' ? codeProject : undefined), '--version', collection.version, '--exact-match', '--limit', String(limit), '--output', 'json'], { ...options, timeoutMs: 45000, signal });
         const parsed = JSON.parse(result.stdout.trim());
         if (!Array.isArray(parsed))
             throw new AppError('Unexpected Grounded Docs search schema.', 502);
@@ -291,11 +354,11 @@ export class Grounded {
                 conversion = mapped?.conversion;
                 // Only the approved immutable snapshot can corroborate scope.
                 // No source label or arbitrary metadata supplies an API name.
-                if (mapped && /\.(?:rst|md|mdx|txt)$/i.test(mapped.stagedPath) && fs.statSync(local).size <= 200000) {
+                if (mapped && /\.(?:rst|md|mdx|txt|ts|js|mjs|cjs)$/i.test(mapped.stagedPath) && fs.statSync(local).size <= 200000) {
                     const bytes = fs.readFileSync(local);
                     if (isUtf8(bytes) && hash(bytes) === mapped.hash) {
                         const source = bytes.toString('utf8');
-                        apiContext = declaredApiContext(source, hit.content, requiredIdentifiers(request));
+                        apiContext = /\.(?:ts|js|mjs|cjs)$/i.test(mapped.stagedPath) ? this.codeContext(source, hit.content, request) : declaredApiContext(source, hit.content, requiredIdentifiers(request));
                         if (apiContext?.sourceExcerpt)
                             content = source.slice(apiContext.sourceExcerpt.start, apiContext.sourceExcerpt.end);
                     }

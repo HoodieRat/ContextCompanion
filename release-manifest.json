@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "context-companion",
   "version": "1.1.0-rc.1",
-  "createdAt": "2026-10-13T19:33:16.556Z",
+  "createdAt": "2026-10-13T19:55:31.584Z",
   "note": "Allowlisted source, compiled app, synthetic fixtures and execution evidence only. The manifest itself is excluded from its file list. Hashes detect changes; they are not a publisher signature.",
   "files": [
     {
@@ -12,13 +12,13 @@
     },
     {
       "path": ".github/workflows/ci.yml",
-      "bytes": 729,
-      "sha256": "4e8b0d83d2755331820df60124e3fc5a9fd75cf303f1fb893231ad82eee60aed"
+      "bytes": 862,
+      "sha256": "0ee8350b8fe600adc38ad526ef8093b0bde2d1f8ca0a1550be566e5de9831a3d"
     },
     {
       "path": ".github/workflows/windows-live.yml",
-      "bytes": 1415,
-      "sha256": "e080954b7e7310374a0482913cd9c60fbf60c15e5ea2db92299f1f4adb714bf8"
+      "bytes": 1642,
+      "sha256": "e31245e6d1b3aee31156c37ecc42e8c1214651acd8fbf2e79b651dd89512d578"
     },
     {
       "path": ".gitignore",
@@ -104,6 +104,21 @@
       "path": "dist/client.js.map",
       "bytes": 2681,
       "sha256": "beb28c1dec0ef622a04a7df13bda6f9f45d897973e4940db7d4368ad80565ee8"
+    },
+    {
+      "path": "dist/code-context.d.ts",
+      "bytes": 554,
+      "sha256": "3182aaf8f0d5e642ce591ee08e9bb6afa315f7e246d330e7a4601231973534ce"
+    },
+    {
+      "path": "dist/code-context.js",
+      "bytes": 2753,
+      "sha256": "8c2bed3a381cb11053e86ba2100e47f7850741e4b053874a519dc78f52a5df86"
+    },
+    {
+      "path": "dist/code-context.js.map",
+      "bytes": 2727,
+      "sha256": "d1a0668cd1f6d6afa53aa50f3311b0a99481370461167a094605a65018c15ef3"
     },
     {
       "path": "dist/compatibility.d.ts",
@@ -212,18 +227,18 @@
     },
     {
       "path": "dist/grounded.d.ts",
-      "bytes": 2650,
-      "sha256": "2b2552aea54d13eddad96fdac079baeac37415fd88724f1940761bef18e37eaf"
+      "bytes": 2779,
+      "sha256": "c131f85bb4df71ce78d3af2b370125239ba65855edad4220700ed9291d894510"
     },
     {
       "path": "dist/grounded.js",
-      "bytes": 21535,
-      "sha256": "e7e11d9e49955a60ef870875cf8dbc493cea3850a6245ec568aeaf9a1a5b833d"
+      "bytes": 24742,
+      "sha256": "a64b2620740080f9f22c50a7c281c914089e4eabd2fd5b9d315b0f459801e3c5"
     },
     {
       "path": "dist/grounded.js.map",
-      "bytes": 20985,
-      "sha256": "89c3a7f1e3928e4ba64d75ac292f7f27756ececc1b18c9350eb24b97d8ac9a56"
+      "bytes": 23199,
+      "sha256": "bc7373102283b34d44c6afb8b907dc979bb9d37e975bb3c23cae4c4d1e6dc730"
     },
     {
       "path": "dist/integration.d.ts",
@@ -322,13 +337,13 @@
     },
     {
       "path": "dist/retrieval.js",
-      "bytes": 42359,
-      "sha256": "0dc0e53d8da3536a745283ebe6225327d1c6d774b7e0f64a8ce62a6d5b7ca046"
+      "bytes": 43908,
+      "sha256": "6ef7d4fbcf9d82f8443fbdba353adbdec0d6b0c61f25acf083839c4acbd27dbb"
     },
     {
       "path": "dist/retrieval.js.map",
-      "bytes": 41200,
-      "sha256": "0bb21b01bdc6bb457081cefa6f9c6f181e095f31f969aae932e90344d1163faa"
+      "bytes": 42345,
+      "sha256": "48f4a167874a1b9651f519aeef9cd564b97e8c0c4a75f6d42e8dae1c5930cece"
     },
     {
       "path": "dist/rpc.d.ts",
@@ -442,13 +457,13 @@
     },
     {
       "path": "dist/service.js",
-      "bytes": 38646,
-      "sha256": "9cb8305bf9bd907630dde9b1b7e5609becb4196e2de06f714fc3640fb3d6cdac"
+      "bytes": 42872,
+      "sha256": "2428ce87169b937066454a98eaaedd6b948ac6adef6d7376966b512e454c0996"
     },
     {
       "path": "dist/service.js.map",
-      "bytes": 41510,
-      "sha256": "ea437d06e3eb4eaf3f6c2f50bc0551a132be49e251ae601ad16b2f95666a6fd5"
+      "bytes": 46028,
+      "sha256": "12f56e697a2f684160cf76abd3ea1b5ae9ca3e8d21fd093f8861bd3660556e47"
     },
     {
       "path": "dist/state.d.ts",
@@ -542,8 +557,8 @@
     },
     {
       "path": "docs/PUBLIC_STATUS.md",
-      "bytes": 7572,
-      "sha256": "0c384387942b5ac3305d5e27b98e6e6d01392f7f495bd3b044771c6e54758c07"
+      "bytes": 10496,
+      "sha256": "ef3e5d5437052a7fd807b92e2d6e765ef0e33c107f757a0f182484eccd64a7ae"
     },
     {
       "path": "docs/SECURITY.md",
@@ -552,13 +567,18 @@
     },
     {
       "path": "docs/TEST_RESULTS.md",
-      "bytes": 5192,
-      "sha256": "0ae40721e93f2455aa69068044207718f50d98a6fe08a55286a5a848db08ff7d"
+      "bytes": 7712,
+      "sha256": "da07a9de7c3509a1830d44d6f9766c30483aafba399696a0b679ec5dc4e90fdd"
+    },
+    {
+      "path": "docs/TEST_SUITES.md",
+      "bytes": 1789,
+      "sha256": "198b6200725ece07dee40d936f1a2630af92b29c33b2a5c01531bebcae702d2e"
     },
     {
       "path": "docs/USAGE.md",
-      "bytes": 4677,
-      "sha256": "63a2e68e36fa80fc3078daf8ee62fa6f22b25957cb4c0459aaa751051bbcc21a"
+      "bytes": 6583,
+      "sha256": "e4092d48bdfcc68f3f81fa2be01f65642ed0552bd81b5218f90810bafea3e424"
     },
     {
       "path": "evidence/windows-independent-retrieval-repair/primary/async-sync/async-sync.rst",
@@ -637,8 +657,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 11342,
-      "sha256": "f95648bfacb8b2f1986ed7da3d8695d6b041a99ff9a93fb39c57cf85b20318bc"
+      "bytes": 11538,
+      "sha256": "f009903005c5d093d4138ae1940a062a883aa79f51bdf035a5104d00b92c9174"
     },
     {
       "path": "Restore-Backup.bat",
@@ -722,8 +742,8 @@
     },
     {
       "path": "scripts/Run-Tests.ps1",
-      "bytes": 747,
-      "sha256": "64e1b20d4498840ca9bdba635508961b5e621ce11cb802c5f1a37b515fc6f006"
+      "bytes": 1088,
+      "sha256": "7ccc0475d686997f7ec608cd6744ce11a78908e80f3b829ab9ed5350dda33ccd"
     },
     {
       "path": "scripts/Uninstall.ps1",
@@ -766,6 +786,11 @@
       "sha256": "2cc9680cca6ad191e211eb77df710c4e8ef4b75caa86b75ad4ee0b9255a07a1d"
     },
     {
+      "path": "src/code-context.ts",
+      "bytes": 3080,
+      "sha256": "b979b71ee3be2a71e40fae10497a33332cfacae1a8d2db804c4498f54cc77884"
+    },
+    {
       "path": "src/compatibility.ts",
       "bytes": 7428,
       "sha256": "f3619aea4a0743fc510acd7c384ff2d225d4da7cdc1ffb481d05e6d4ab1c7315"
@@ -802,8 +827,8 @@
     },
     {
       "path": "src/grounded.ts",
-      "bytes": 22916,
-      "sha256": "a2385f53ab71e21c0d2314424ab350dfb3450aff34d5f2e1b715b9438989dbe9"
+      "bytes": 26135,
+      "sha256": "cbea4a3c5a78aa4e4c0da51183a3ae661e721fb7512f7522f0b45965ab2fdcf3"
     },
     {
       "path": "src/integration.ts",
@@ -837,8 +862,8 @@
     },
     {
       "path": "src/retrieval.ts",
-      "bytes": 43315,
-      "sha256": "8df274c6263983dedb7c510e9228ebdc7be6bc5b0cb5b2b92c1037eed8ff94aa"
+      "bytes": 44863,
+      "sha256": "262527314bebe1f3a3346b085b67a73d6903b2c3953e30439f780377606df4af"
     },
     {
       "path": "src/rpc.ts",
@@ -877,8 +902,8 @@
     },
     {
       "path": "src/service.ts",
-      "bytes": 39860,
-      "sha256": "685352596b3eecfe1924c8f995de519cda4a12277d865303a2dd949f720af694"
+      "bytes": 44078,
+      "sha256": "23520747d07512a34640ef39b18e59859944040b36a10bcb2a3f193cfbf6bc2e"
     },
     {
       "path": "src/state.ts",
@@ -946,6 +971,11 @@
       "sha256": "ea01b84800603e33ebe54b377b4a867daa7b9dbcf4725912d5da480f27434d24"
     },
     {
+      "path": "tests/code-context.test.mjs",
+      "bytes": 3831,
+      "sha256": "b28b34829bfa8262718cbce71ee9e529a04ef431e8bfc30f2aa678437f602d57"
+    },
+    {
       "path": "tests/communication-emission.test.mjs",
       "bytes": 2772,
       "sha256": "de666b0ccffec7950cac7c968ae09ad7abf514652c9d80f977a1b74561b1447f"
@@ -954,6 +984,11 @@
       "path": "tests/communication-scope.test.mjs",
       "bytes": 3731,
       "sha256": "f062e97d0e519b4d4c900ccaa3b5018e036546c0ef36f9aed7bf386943b80bb4"
+    },
+    {
+      "path": "tests/compact-handoff.test.mjs",
+      "bytes": 3458,
+      "sha256": "1c6c62f01fbad6cb891b8d40edfd2b5028ac14dad29dff12e9330297f934956f"
     },
     {
       "path": "tests/component-support.test.mjs",
@@ -2227,13 +2262,23 @@
     },
     {
       "path": "tests/grounded-query.test.mjs",
-      "bytes": 2190,
-      "sha256": "9f04d5f77fae23905457fd2672abb65a375fac2a18321a12293bb3b01fff4dde"
+      "bytes": 2943,
+      "sha256": "a12f819b4be08fab9d6f9e86946a71643c1bc2594d4ce065fadf6d0a77569778"
     },
     {
       "path": "tests/helpers.mjs",
       "bytes": 1953,
       "sha256": "cf478e75f8ba6bdd9798925bd3f259ed49c2af7a79fd619a34d85ede4ae48eef"
+    },
+    {
+      "path": "tests/hook-prompt.test.mjs",
+      "bytes": 5178,
+      "sha256": "2dd9c169e96797e5ba210c57ebd9ea68ebca7279c133068a1c4050581a4b4a51"
+    },
+    {
+      "path": "tests/instruction-directives.test.mjs",
+      "bytes": 2285,
+      "sha256": "24707f0d2e51ef17ea922cb029de0d41845b802d82fedc5c3675b4be563933c4"
     },
     {
       "path": "tests/integration.test.mjs",
@@ -2276,14 +2321,19 @@
       "sha256": "5f5457239aefd77a11958eb5d2ee5ffd550fd1301fd6cd1727c48e345023caa9"
     },
     {
+      "path": "tests/source-intent.test.mjs",
+      "bytes": 4113,
+      "sha256": "2aa2950309f74fee5c2a6001add42fe6806a45205d72bdb3b822663a4d11b0d4"
+    },
+    {
       "path": "tests/state-memory.test.mjs",
       "bytes": 10035,
       "sha256": "d14e558c5c561eef29dd0dfe5250ab12092f05da51996ab76338fd2fdf3f02df"
     },
     {
       "path": "tests/suites.json",
-      "bytes": 1080,
-      "sha256": "7d8b5b7dfb18339dabdf9f1ecb0426d1f9e8d8c80ce0305c2e6d0fff53ba38b7"
+      "bytes": 1238,
+      "sha256": "144ffa49169dad87a30acc996947d32a9ee40388c6a44c564268cc3992f6c505"
     },
     {
       "path": "tests/support-scoping.test.mjs",
