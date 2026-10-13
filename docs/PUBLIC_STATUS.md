@@ -2,9 +2,23 @@
 
 Updated 2026-10-13. Version 1.1.0-rc.1 is a beta/release candidate. **Full release acceptance remains FAIL.** Features are frozen; existing retrieval, ingestion, freshness, delivery and documentation repairs remain in scope.
 
-## Verification checkpoint — 2026-10-13
+## Current source publication — 2026-10-13
 
-The published GitHub code at `a646fa6` and the later local development candidate are different snapshots. This update changes documentation only; it does not ship the later source repairs.
+The public source now includes the newer working-project repairs: guide/code source selection, browser/form hook-input normalization, Grounded-owned TS/JS declaration corroboration with a bounded parser buffer, compact accepted-memory previews and response-only directive ranking. Existing permissions, support guards, version filters, deadlines and architecture remain intact.
+
+The clean publication copy builds and passes **183/183 baseline** and **221/221 full diagnostic** tests, with zero failures/skips/cancellations. The native Windows launcher independently passes **183/183** using managed Node. Source, compiled output, dashboard, tests/fixtures, vendor files, package metadata, pins and notices match the working project across **478 files**, allowing only line-ending normalization. All **336** previously published protected test/evidence/vendor files remain unchanged; the existing Grounded query test has an additive regression.
+
+The independent code-context test adapter uses the pinned TypeScript development dependency. Both GitHub workflows now install exact development requirements before running regressions. `Run-Tests.bat` fails explicitly if that dependency is missing; the controller itself still has no production npm dependencies.
+
+The staged application also passes **14/14 fresh live checks** against installed Grounded Docs: large-file parser corroboration with exact offsets; real guide/code hook routing; unsupported-owner refusal; changed-content replacement; stale accepted memory; disabled/manual scheduling; empty-refresh failure retaining good generations; restart; and the actual 60-second controller timer. The timer observation took **81.9 seconds** including indexing/search. This used an isolated data home, keyword indexing and an aged due timestamp; production settings were unchanged. Hook calls were driven directly through the staged service, not a new automatic Codex GUI/model test.
+
+The first live harness added a second source file for code checks but removed only one file during its empty-folder step, so that refresh correctly succeeded and the expected-failure assertion failed. That run is retained. The fresh retry removes both files, keeps the assertions and production candidate unchanged, and passes all 14 checks. The upstream converter emitted a TypeScript partial-parser warning; the original logs are retained, and these passes do not certify complete conversion of arbitrary code.
+
+Publication checks do not close full release acceptance. The separate daily-documentation evaluation remains **9/12 FAIL** and delivery in the reused human GUI chat remains unverified. Detailed failure evidence, host configuration, private data and local holdout inputs remain outside the publication.
+
+## Earlier documentation-only checkpoint — 2026-10-13
+
+At the earlier documentation-only PR #1, published GitHub code at `a646fa6` and the later local development candidate were different snapshots. That PR did not ship the source repairs. Its execution scopes below remain historical; the current source publication above closes that code/test parity gap.
 
 | Scope | Recorded result | What it establishes |
 |---|---|---|

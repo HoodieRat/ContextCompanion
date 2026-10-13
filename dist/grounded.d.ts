@@ -17,7 +17,7 @@ export type GroundedHit = {
  */
 export declare function instructionRequest(query: string): string;
 export declare function instructionTask(query: string): string | undefined;
-export declare function groundedQuery(query: string): string;
+export declare function groundedQuery(query: string, codeProject?: string): string;
 /** Do not invent a GitHub-style file viewer URL for an unknown Git host. */
 export declare function repositoryFileUrl(repository: string, commit: string, relative: string): string;
 export declare function inventoryVersion(input: unknown, library: string, version: string): {
@@ -37,6 +37,9 @@ export declare function restageMissingText(root: string, files: StagedFile[], in
 export declare class Grounded {
     readonly home: string;
     readonly embeddings: Embeddings;
+    private codeParser?;
+    private codeParserUnavailable;
+    private codeContext;
     private slot;
     private waiting;
     private slots;
@@ -51,7 +54,7 @@ export declare class Grounded {
     }>;
     inspect(collection: Collection, generation: Generation, signal?: AbortSignal): Promise<Record<string, unknown>>;
     build(collection: Collection, profile: EmbeddingProfile, logFile: string, signal: AbortSignal): Promise<Generation>;
-    search(collection: Collection, query: string, limit: number, signal?: AbortSignal, keywordFallback?: boolean, request?: string): Promise<GroundedHit[]>;
+    search(collection: Collection, query: string, limit: number, signal?: AbortSignal, keywordFallback?: boolean, request?: string, codeProject?: string): Promise<GroundedHit[]>;
     private searchNow;
     similarities(query: string, passages: string[], profile: EmbeddingProfile, signal?: AbortSignal): Promise<number[]>;
 }

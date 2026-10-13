@@ -45,10 +45,21 @@ export function selectSources(collections: Collection[], query: string, project:
         return [...new Set(requested)].map(id => { const c = collections.find(c => c.id === id); if (!c)
             throw new AppError('A requested source is outside this project or not applicable.', 403); return { collection: c, reason: 'Explicitly selected and applicability checked' }; });
     const terms = words(query);
+    // Hooks can search only one source. Prefer its declared role when the
+    // task distinguishes implementation from operating the application.
+    // Identifier questions may also concern an external API: an explicitly
+    // named library remains stronger evidence than this role preference.
+    const implementation = /\b(?:source code|implementation|implemented)\b|\bwhere\b[^\n]{0,120}\bdefined\b/i.test(query) || requiredIdentifiers(query).length > 0;
+    const usage = !implementation && !!instructionTask(query);
     return collections.map(collection => {
         const tags = words([collection.name, ...collection.tags, collection.metadata?.library || '', collection.version].join(' '));
-        const matches = terms.filter(t => tags.some(tag => tag === t || tag.includes(t) || t.includes(tag)));
-        return { collection, weight: matches.length, reason: matches.length ? `Matched metadata: ${matches.join(', ')}` : 'Attached applicable reference; metadata does not distinguish this task' };
+        // Substrings like "an" in "companion" and "our" in "source" are
+        // transport/prose coincidences, not metadata evidence.
+        const matches = terms.filter(t => tags.includes(t));
+        const library = words(collection.metadata?.library || '');
+        const namedLibrary = library.length > 0 && library.every(t => terms.includes(t));
+        const role = implementation && collection.metadata?.kind === 'project_context' ? 'implementation' : usage && collection.metadata?.kind === 'guide' ? 'application usage' : '';
+        return { collection, weight: matches.length + (namedLibrary ? 8 : 0) + (role ? 3 : 0), reason: [role ? `Task intent: ${role}; declared source kind` : '', matches.length ? `Matched metadata: ${matches.join(', ')}` : '', namedLibrary ? 'Named library reference' : ''].filter(Boolean).join('; ') || 'Attached applicable reference; metadata does not distinguish this task' };
     }).sort((a, b) => b.weight - a.weight || a.collection.id.localeCompare(b.collection.id)).slice(0, project.maxSources);
 }
 function textKey(value: string): string { return hash(value.replace(/\s+/g, ' ').trim()); }
@@ -215,19 +226,22 @@ export class Retrieval {
                         const policyHash = this.policy(c);
                         const pooled = new Map<string, SearchHit>();
                         const q = variants[variant]!;
-                        const lexical = options.mode === 'lexical' || variant > 0;
+                        // Code symbol lookups need exact spelling before vector
+                        // neighbors. Keep semantic ranking for ordinary prose
+                        // and API documentation; support uses the full request.
+                        const lexical = options.mode === 'lexical' || variant > 0 || (c.metadata?.kind === 'project_context' && requiredIdentifiers(query).some(id => id.includes('.') || /[a-z][A-Z]/.test(id)));
                         const key = hash(JSON.stringify([projectId, c.id, c.active!.id, policyHash, project.profile, filters, q, lexical,query]));
                         let found = this.cache.get(key);
                         try {
                             if (!found || Date.now() - found.at > 300000) {
                                 let hits: GroundedHit[], fallback = false;
                                 try {
-                                    hits = await this.grounded.search(c, q, 8, options.signal, lexical,query);
+                                    hits = await this.grounded.search(c, q, 8, options.signal, lexical,query,project.name);
                                 }
                                 catch (error) {
                                     if (options.signal?.aborted || lexical || c.active!.profile.kind === 'off')
                                         throw error;
-                                    hits = await this.grounded.search(c, q, 8, options.signal, true,query);
+                                    hits = await this.grounded.search(c, q, 8, options.signal, true,query,project.name);
                                     fallback = true;
                                 }
                                 found = { at: Date.now(), hits, fallback };
@@ -441,7 +455,7 @@ export class Retrieval {
         // before the actual instructions. Rerank only already-supported hits;
         // explicit identifiers and factual questions retain their ordering.
         const instruction = instructionTask(query) !== undefined && !plan.attributes.length && !missingIdentifiers(query, ['']).length;
-        const topics = instruction ? topicTerms(query) : [];
+        const topics = instruction ? topicTerms(instructionTask(query)!) : [];
         const action = instruction ? topicTerms(instructionTask(query)!.split(/\s+/)[0]!)[0] : undefined;
         const displayedText = (hit: SearchHit) => topicText(focusedSpans.get(hit.id)?.text || hit.content);
         const coverage = (hit: SearchHit) => { const terms=new Set(topicTerms(displayedText(hit)));return topics.filter(topic=>terms.has(topic)).length; };

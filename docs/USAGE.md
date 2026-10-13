@@ -26,6 +26,12 @@ Click **Add & index**, inspect **Activity & tests**, and check **Indexed**, **La
 
 ## Refresh
 
+For automatic Codex context, ordinary usage questions favor sources marked **guide**; implementation and named code-symbol questions favor **project context**. Explicit source selection still takes precedence. Named external library references retain their metadata preference and all compatibility checks. Automatic hooks search one source within their deadline; explicit MCP search can use the broader attached source set.
+
+Project code-symbol lookups use keyword candidates first. For supported TypeScript/JavaScript class methods, the controller may corroborate a returned quotation with Grounded's installed parser and quote that exact member from the approved snapshot. Missing, ambiguous, malformed or unsupported declarations remain unproved. This does not make code retrieval exhaustive or certify that an implementation behaves correctly.
+
+Accepted project decisions are supplied at session start. Oversized startup/handoff snapshots retain compact memory previews, stale flags and record IDs; use `context_memories` and `context_memory_read` for the complete records. Proposals retain their existing approval status. A changed reference marks a memory stale; it does not rewrite or erase the accepted decision. Important new findings should be saved with sources, validation and limitations; chat history is not automatically archived as memory.
+
 In a source's **Edit settings**, enable retrieval and scheduled refresh. A starting interval could be 24 hours for public documentation and 1 hour for frequently edited local docs. Zero means manual refresh; the add-source form initially shows 24 hours. Keep the controller running.
 
 After an important edit, click **Refresh / retry**, confirm a recent **Last good index**, then search for a changed passage. Upload a new snapshot for a changed uploaded document.
@@ -37,6 +43,8 @@ Include the library, actual version, relevant API/error and platform in your tas
 > Investigate this timeout using the attached LibraryName 3.2 Windows reference. Cite the documented behavior and distinguish it from what our logs prove before changing code.
 
 When supported hooks are invoked and delivered, Codex receives project context at session start and a bounded retrieval packet for substantive prompts. The automatic prompt path searches one selected source within its deadline; explicit `context_search` can inspect more sources. Short acknowledgements need not trigger retrieval.
+
+Use ordinary task messages; no special context-fetching question is required. Before automatic retrieval, the controller removes a recognized leading desktop browser-context block and reads question/answer values from a recognized form-reply envelope. Browser URLs and form transport IDs do not become required code identifiers. Actual task text, versions, identifiers and qualifiers remain intact; quoted examples and malformed or unknown envelopes remain literal text. This does not guarantee that a relevant passage will be found or delivered.
 
 Inspect **Search & evidence > Inspect last automatic retrieval** immediately after a documentation-specific prompt. Match its query/time: another explicit search or chat can overwrite that project-wide view. A plausible answer does not establish successful delivery.
 

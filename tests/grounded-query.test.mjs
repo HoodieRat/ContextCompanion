@@ -18,6 +18,14 @@ test('factual requests, quoted topics and incomplete questions are not rewritten
   assert.equal(groundedQuery(query),query);
 });
 
+test('project-code ranking removes only its own scope label and retains original task qualifiers',()=>{
+ const query='In Copper Atlas project source code, how does Ledger.rotate skip unchanged files on Windows version 2 with --retry-delay?';
+ assert.equal(groundedQuery(query,'Copper Atlas'),'how does rotate skip unchanged files on Windows version 2 with --retry-delay?');
+ assert.equal(groundedQuery(query),query);
+ assert.equal(groundedQuery('In Another Project project source code, compare Ledger.rotate with Ledger.read.','Copper Atlas'),'In Another Project project source code, compare rotate with read.');
+ assert.equal(groundedQuery('How does Ledger.rotate preserve cancellation?','Copper Atlas'),'How does rotate preserve cancellation?');
+});
+
 test('instruction evidence precedes an incidental status match without overriding identifier ranking',async t=>{
  const f=fixture(t),p=addProject(f.store,f.code);addSource(f.store,p);
  const search=async()=>[

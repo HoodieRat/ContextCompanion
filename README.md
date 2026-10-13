@@ -6,7 +6,7 @@ Context Companion is a Windows-first, local documentation and engineering-contex
 
 Your AI app chooses the model. Context Companion supplies reference material. The existing Codex integration also attempts automatic context delivery at session start and before substantive prompts. Other compatible MCP hosts can connect to the same tools; their configuration, tool calling and automatic delivery must be verified separately.
 
-**Status: 1.1.0-rc.1, beta/release candidate. Full release acceptance remains FAIL.** Features are frozen; repairs to the existing workflow continue. The published code snapshot passes 151 baseline tests. The later local development candidate passes 183 and adds scoped code-context, freshness and hook-delivery verification; those source repairs are not included in this documentation update. The latest separate documentation evaluation is 9/12, and delivery in a reused GUI chat remains unverified. See [verification results](docs/TEST_RESULTS.md) and [current status and limitations](docs/PUBLIC_STATUS.md).
+**Status: 1.1.0-rc.1, beta/release candidate. Full release acceptance remains FAIL.** Features are frozen; repairs to the existing workflow continue. The current source includes the local code-context, source-selection, hook-prompt and compact-memory repairs. Its production baseline passes 183/183 and its full diagnostic suite passes 221/221. The latest separate documentation evaluation remains 9/12, and delivery in a reused GUI chat remains unverified. See [verification results](docs/TEST_RESULTS.md) and [current status and limitations](docs/PUBLIC_STATUS.md).
 
 ## What "refreshing context" means
 
@@ -106,14 +106,14 @@ This project integrates those components. It does not train chat models or guara
 | Start.bat / Stop.bat | Open or stop the local controller |
 | Diagnose.bat | Save installation/runtime diagnostics |
 | Verify-Installation.bat | Exercise the installed retrieval, embedding and Serena workflow |
-| Run-Tests.bat | Run the production baseline using managed Node |
+| Run-Tests.bat | Run the production baseline using managed Node after installing the pinned development dependencies |
 | Verify-Codex.bat | Run an actual model/MCP verification with explicit model-use confirmation |
 | Backup.bat / Restore-Backup.bat | Back up private application data or restore a verified snapshot |
 | Uninstall.bat | Remove managed integration; review options for retaining/removing app data |
 
 ## Development
 
-The compiled controller has no production npm dependencies. With a compatible Node installation (the Windows installer pins Node 24.21.0):
+The compiled controller has no production npm dependencies. The regression suite requires the pinned development dependencies, including TypeScript for an independent parser test adapter. Install them before running `npm test` or `Run-Tests.bat`. With a compatible Node installation (the Windows installer pins Node 24.21.0):
 
 ```powershell
 npm ci --ignore-scripts
