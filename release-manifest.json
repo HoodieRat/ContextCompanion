@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "context-companion",
   "version": "1.1.0-rc.1",
-  "createdAt": "2026-10-13T08:58:02.030Z",
+  "createdAt": "2026-10-13T19:33:16.556Z",
   "note": "Allowlisted source, compiled app, synthetic fixtures and execution evidence only. The manifest itself is excluded from its file list. Hashes detect changes; they are not a publisher signature.",
   "files": [
     {
@@ -542,13 +542,18 @@
     },
     {
       "path": "docs/PUBLIC_STATUS.md",
-      "bytes": 4043,
-      "sha256": "5f46e3923b792bcb4026d579e8442d98a2cd08e71cb920e15ed20cc09a6be6dc"
+      "bytes": 7572,
+      "sha256": "0c384387942b5ac3305d5e27b98e6e6d01392f7f495bd3b044771c6e54758c07"
     },
     {
       "path": "docs/SECURITY.md",
       "bytes": 4117,
       "sha256": "4fd96cfe5d4c768d72f6f710f372e05fe95302381c341c5a8eb70cbd061090fd"
+    },
+    {
+      "path": "docs/TEST_RESULTS.md",
+      "bytes": 5192,
+      "sha256": "0ae40721e93f2455aa69068044207718f50d98a6fe08a55286a5a848db08ff7d"
     },
     {
       "path": "docs/USAGE.md",
@@ -632,8 +637,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 8949,
-      "sha256": "0c317f2efeee9a5ca72c59fd3b960fe8d1923fc9dc154cf3be2274bd2fbbb434"
+      "bytes": 11342,
+      "sha256": "f95648bfacb8b2f1986ed7da3d8695d6b041a99ff9a93fb39c57cf85b20318bc"
     },
     {
       "path": "Restore-Backup.bat",
