@@ -28,7 +28,8 @@
     "api-context.test.mjs",
     "api-condition.test.mjs",
     "python-api-identifiers.test.mjs",
-    "grounded-cold-start.test.mjs"
+    "grounded-cold-start.test.mjs",
+    "keyword-support.test.mjs"
   ],
   "research": [
     "abstention.test.mjs",

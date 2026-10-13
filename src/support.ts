@@ -184,6 +184,10 @@ export function requestPlan(query: string): { attributes: Attribute[]; subjects:
  // A sentence-start response formatter is not a requested return-value field.
  // Remove only its verb; all other fields, identities and security checks stay.
  let fieldIntent=query;
+ // An event in a lifecycle condition is not a requested factual field.
+ // Keep the object (including any explicit field) before that condition;
+ // complete request/support checks still receive the original condition.
+ fieldIntent=fieldIntent.replace(/^(what\s+happens(?:\s+to\s+.*?)?)\s+(?:when|after|if|unless|until)\b[\s\S]*$/i,'$1');
  // A named API member followed by its behavior is not a requested software
  // release/version. Identity checks keep the complete owner/member binding.
  for(const member of namedApiMembers(query))fieldIntent=fieldIntent.replace(member.raw,member.identifier);
@@ -256,7 +260,7 @@ export function requestPlan(query: string): { attributes: Attribute[]; subjects:
   const contextualParticiple=words[0]&&words[0].length>4&&/(?:ed|ing)$/i.test(words[0])&&CONTEXT_REFERENTS.has(words[1]?.toLowerCase()||'');
   if(!contextualParticiple&&words[0])add(words[0]);
  }
- const fieldQuestion=identity.match(/^(?:what|which)\s+([^?.!;]+)/i);
+ const fieldQuestion=identity.replace(/^what\s+happens\s+to\s+/i,'what ').match(/^(?:what|which)\s+([^?.!;]+)/i);
  if(fieldQuestion&&attributes.length){
   const words=fieldQuestion[1]!.split(/\s+/),field=words.findIndex(word=>ATTRIBUTES.some(attribute=>attribute.ask.test(normalize(word))));
   if(field>0){const head=words.slice(0,field).find(word=>!GRAMMAR.has(word.toLowerCase())&&!fieldModifier(word))?.match(/^[\p{L}\p{N}_-]+/u)?.[0];if(head)add(head);}

@@ -6,7 +6,7 @@ Context Companion is a Windows-first, local documentation and engineering-contex
 
 Your AI app chooses the model. Context Companion supplies reference material. The existing Codex integration also attempts automatic context delivery at session start and before substantive prompts. Other compatible MCP hosts can connect to the same tools; their configuration, tool calling and automatic delivery must be verified separately.
 
-**Status: 1.1.0-rc.1, beta/release candidate. Full release acceptance remains FAIL.** Features are frozen; repairs to the existing workflow continue. Current code passes 189/189 baseline and 227/227 diagnostic tests. The unchanged documentation protocol now passes 12/12 as a known-regression replay; its original 9/12 failure is preserved. Fresh runtime delivery and one actual reused GUI turn have matching packet receipts. Unseen retrieval and reliability gates remain open. See [verification results](docs/TEST_RESULTS.md) and [current status and limitations](docs/PUBLIC_STATUS.md).
+**Status: 1.1.0-rc.1, beta/release candidate. Full release acceptance remains FAIL.** Features are frozen; repairs to the existing workflow continue. Current code passes 195/195 baseline and 233/233 diagnostic tests. The keyword lifecycle failure now passes its unchanged 3/3 replay; broader release gates are being verified. The unchanged documentation protocol now passes 12/12 as a known-regression replay; its original 9/12 failure is preserved. Fresh runtime delivery and one actual reused GUI turn have matching packet receipts. Unseen retrieval and reliability gates remain open. See [verification results](docs/TEST_RESULTS.md) and [current status and limitations](docs/PUBLIC_STATUS.md).
 
 ## What "refreshing context" means
 

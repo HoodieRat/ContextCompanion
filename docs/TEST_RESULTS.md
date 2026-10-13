@@ -1,5 +1,13 @@
 # Tests and acceptance results
 
+## Keyword abstention repair — 2026-10-13
+
+Keyword-only natural-language requests now pass literal support checks instead of treating every upstream candidate as supported. Lifecycle questions bind the requested object and condition in one passage. Default bare-topic navigation retains its existing candidate contract; explicit lexical mode stays strict. Independently corroborated API identities retain their declaration proof. A lifecycle expiration condition no longer becomes a duration-field request; explicit object fields remain bound. This is bounded lexical corroboration, not general entailment or synonym matching. Implementation: [retrieval.ts](../src/retrieval.ts), [evidence-support.ts](../src/evidence-support.ts), [support.ts](../src/support.ts).
+
+Local build, **195/195 baseline** and **233/233 diagnostic** checks pass, with zero failures/skips/cancellations. Six added keyword checks preserve every original test and assertion. Independent actual Grounded keyword development passes **10/10**. The unchanged original lifecycle protocol now passes **3/3 as a known replay**, including strict zero-hit abstention; its original **2/3 FAIL** receipts remain intact. Intermediate candidates rejected by original generation-navigation, explicit-lexical and API-identity checks are preserved.
+
+The remaining release gates are being checked separately: an unexecuted frozen retrieval holdout, repeated/concurrent runtime delivery, current-code GUI receipts, broader format/conversion controls, existing external embeddings/chat availability, installed license provenance and an isolated native Windows dependency-install workflow. No unexecuted gate is marked passed. Historical ASCII cause attribution and universal/long-term fidelity are not established by these finite checks. **Full release acceptance remains FAIL.**
+
 ## Documentation repair checkpoint — 2026-10-13
 
 The current working code builds and passes **189/189 baseline** and **227/227 diagnostic** checks, with zero failures, skips or cancellations. Two new regression files add six checks; original tests, assertions and sealed evidence remain intact. The publication copy independently passes build, baseline and diagnostic suites; the documented native Windows batch launcher passes **189/189**. Application/test parity covers **480 files**, and all **342** previously published protected test/evidence/vendor files remain byte-identical. The local preservation seal covers **9,214** original files.

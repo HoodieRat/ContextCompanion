@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "context-companion",
   "version": "1.1.0-rc.1",
-  "createdAt": "2026-10-13T20:37:49.178Z",
+  "createdAt": "2026-10-13T21:07:17.397Z",
   "note": "Allowlisted source, compiled app, synthetic fixtures and execution evidence only. The manifest itself is excluded from its file list. Hashes detect changes; they are not a publisher signature.",
   "files": [
     {
@@ -212,18 +212,18 @@
     },
     {
       "path": "dist/evidence-support.d.ts",
-      "bytes": 464,
-      "sha256": "0948c96278a939cb8f0e06f656f9b062c0a6cc9243729066bf75a48a05186c12"
+      "bytes": 901,
+      "sha256": "07d7af928877b4599ceb57d7e30f48e3153505dc1591941c7fe101d5e6c5bd94"
     },
     {
       "path": "dist/evidence-support.js",
-      "bytes": 3046,
-      "sha256": "ca1bc0bdc78725c8fd0e199f86972db4bbeafc852cd42a334602ca83842f3cd9"
+      "bytes": 4154,
+      "sha256": "f9e3afa1ed2b927e1c0fbeeaccce9936eeb85cecfca2db9dacc18c59c1115b10"
     },
     {
       "path": "dist/evidence-support.js.map",
-      "bytes": 1722,
-      "sha256": "6ec3358263d4a2eb6e596bd0526fb2dc0ee7fc0b650a00b7cc50a376c51246dc"
+      "bytes": 2414,
+      "sha256": "d858bcec14b0d4db19634ee13ca0a51a29932399c7e0ed884b1d4d26d7b46948"
     },
     {
       "path": "dist/grounded.d.ts",
@@ -337,13 +337,13 @@
     },
     {
       "path": "dist/retrieval.js",
-      "bytes": 44683,
-      "sha256": "0fc8b5b927b01f5c7e4257026494dcae4d298cb26ada340ff33a7573e5042daf"
+      "bytes": 45325,
+      "sha256": "878717213b9d5f5d92351131f0c797c98c768ec32bc9509ea47c3d9dba2928bc"
     },
     {
       "path": "dist/retrieval.js.map",
-      "bytes": 42980,
-      "sha256": "c1a889ad603ceb09c4bd39f692b1ab91eb3227f7d93c46822d3899baf5225e83"
+      "bytes": 43412,
+      "sha256": "e4213ba54df0138d0a28439e84e06580f056c67161e50a055d30e37b11f616f0"
     },
     {
       "path": "dist/rpc.d.ts",
@@ -487,13 +487,13 @@
     },
     {
       "path": "dist/support.js",
-      "bytes": 56758,
-      "sha256": "4fa16eb65cb5f80710b0f37acdab0af7ac3e20ab40e1596d8070bcc7c35c7377"
+      "bytes": 57158,
+      "sha256": "69391f622b02252c8a307cefafec5e7878545e597bcd7bc4220755f200e14688"
     },
     {
       "path": "dist/support.js.map",
-      "bytes": 46560,
-      "sha256": "40b649a4f7b49f0941dfefb4ab5d06f1efc2f779bac1d9196cfdc51869e08bf7"
+      "bytes": 46699,
+      "sha256": "3d757ec9bc1c388f0df6e5d0410f1dc8f61e0e27ba3ba6da2f44b0b282d90bb0"
     },
     {
       "path": "dist/types.d.ts",
@@ -557,8 +557,8 @@
     },
     {
       "path": "docs/PUBLIC_STATUS.md",
-      "bytes": 13689,
-      "sha256": "187eb7a500b21797f5ffa9c41181b01708e63a9b32ce9a8b654dddf0a0bddabd"
+      "bytes": 15526,
+      "sha256": "111aaa50305b4cbfbaaef114afe198b3913c2d1a9c23031fd8fedb016722cce4"
     },
     {
       "path": "docs/SECURITY.md",
@@ -567,13 +567,13 @@
     },
     {
       "path": "docs/TEST_RESULTS.md",
-      "bytes": 10930,
-      "sha256": "bc5ddcaab8aff4cb8675625cad2a7266f6739fcf4bb6e4a307ba945378442e99"
+      "bytes": 12767,
+      "sha256": "9095d420f043f466b04b10f872c339864e2d41aa490362a2f63d543b39b131e0"
     },
     {
       "path": "docs/TEST_SUITES.md",
-      "bytes": 2004,
-      "sha256": "dfd46afac8f5b80f5b24695afa5300339116a051950acecaa62651c6483e0e6c"
+      "bytes": 2360,
+      "sha256": "345aa6988b4bea66f7ba37db51b34c4a9b780da81a86f9ab5f28ff09e217a446"
     },
     {
       "path": "docs/USAGE.md",
@@ -657,8 +657,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 11558,
-      "sha256": "a1f14ba1631e43a6ec88dc7133a3db435a3a8d13830383a812c377d6dab2c0a1"
+      "bytes": 11667,
+      "sha256": "cef7b903030724515c154624be15129c30f2324289aab56b0ea6ea6a017c0701"
     },
     {
       "path": "Restore-Backup.bat",
@@ -822,8 +822,8 @@
     },
     {
       "path": "src/evidence-support.ts",
-      "bytes": 3135,
-      "sha256": "ac0f3d7678648021a493fbaac17c4c0163ec490fcf296654e2b6d9803d7bb5dd"
+      "bytes": 4272,
+      "sha256": "cce044f03b6d7ffc5305781cc8205435ab7e81567d52325a9df1eb68473f3105"
     },
     {
       "path": "src/grounded.ts",
@@ -862,8 +862,8 @@
     },
     {
       "path": "src/retrieval.ts",
-      "bytes": 45647,
-      "sha256": "8146fd7655a2cd4383fabb0a73199b45422c86301af9c8614a68f5ea1e1c8040"
+      "bytes": 46289,
+      "sha256": "ef838c0ceedb923ec847a247d64ec3c0b10e23b8937e36cb2138b8514bb7e885"
     },
     {
       "path": "src/rpc.ts",
@@ -912,8 +912,8 @@
     },
     {
       "path": "src/support.ts",
-      "bytes": 52782,
-      "sha256": "27a0728e18b8e671a9b581d59da97e0f5f212626ae085a5c23db85c7a29182b3"
+      "bytes": 53166,
+      "sha256": "fe467ab3a32ee09d4f4dacc40ac541b03b587523e9be660cc308c2bab8b33780"
     },
     {
       "path": "src/types.ts",
@@ -2296,6 +2296,11 @@
       "sha256": "0168f2ad9c6987919e6bd9d1790ab1683e14971fe3af3d1bc033c17015c5f3d7"
     },
     {
+      "path": "tests/keyword-support.test.mjs",
+      "bytes": 4577,
+      "sha256": "3a39c0be7d458ece9c6c0eda6e1259225018af90a81ea80280d021910be5d186"
+    },
+    {
       "path": "tests/markup-support.test.mjs",
       "bytes": 1879,
       "sha256": "339b5ad330e9fd547e8f113c9d13fb3cf348b30ca2011ab327e5070f241fd693"
@@ -2342,8 +2347,8 @@
     },
     {
       "path": "tests/suites.json",
-      "bytes": 1300,
-      "sha256": "a006ee072a7c47593596057b785c5f85ef1e098ddaa58ed6bc6d0f74461a7f12"
+      "bytes": 1332,
+      "sha256": "9a549402d48c715efb40109bab36778e63ac5d340dc2a3cc542a74664ac6e838"
     },
     {
       "path": "tests/support-scoping.test.mjs",
