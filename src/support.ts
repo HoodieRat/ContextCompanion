@@ -211,7 +211,10 @@ export function requestPlan(query: string): { attributes: Attribute[]; subjects:
  if(agendaRequest(query))attributes.push({name:'plan',ask:/$^/,marker:/\bhandoff\b[^.!?\n]{0,160}\b(?:says?\s+to|next\s+steps?|finish|complete|continue|resume)\b/i});
  if(agendaRequest(query)&&/\b(?:verified|successful)\s+(?:result|check)\b/i.test(query))attributes.push({name:'verification',ask:/$^/,marker:/\b(?:last|prior|previous)\s+(?:verified|successful)\s+(?:result|check)\b/i});
  if(agendaRequest(query))return {attributes,subjects:[],semanticSubjects:[],semanticContexts:{}};
- const identity=supportText(query).replace(/[’‘]/g,"'").replace(/\b(what|it|that|there|which)'s\b/gi,'$1 is');
+ let identity=supportText(query).replace(/[’‘]/g,"'").replace(/\b(what|it|that|there|which)'s\b/gi,'$1 is');
+ // In a named API question, lowercase the caller's is a grammatical role.
+ // Quoted/capitalized owners and the actual object/field remain explicit.
+ if(requiredIdentifiers(query).some(id=>/[.:]/.test(id)))identity=identity.replace(/(`+[^`\n]*`+|"[^"\n]*")|\bthe caller's\b/g,(match,quoted:string|undefined)=>quoted||'the');
  // Unknown factual fields still need actual evidence; a known entity cannot
  // turn a request for an absent temperature into a version or size answer.
  if(!attributes.length){const slot=identity.match(/\b(?:what|which)\s+(?:is|are)\s+(?:(?:the|its|our|current|default|latest|maximum|minimum)\s+)*([\p{L}\p{N}_-]+)(?:\s+(?:of|for|in|on)\b|[?.!]*$)/iu);if(slot&&!BEHAVIOR_REFERENTS.has(slot[1]!.toLowerCase())&&!/^(?:purpose|benefit)$/i.test(slot[1]!))attributes.push({name:slot[1]!.toLowerCase(),ask:/$^/,marker:new RegExp('\\b'+slot[1]!.replace(ESCAPE,'\\$&')+'\\b','i')});}
@@ -453,10 +456,17 @@ export function assertedOperationSupport(query: string, evidence: string): boole
  // semantic support path. The actor check binds an explicitly requested
  // condition/state to its behavior, rather than demanding verb spelling for
  // every "which operation" question.
- const request=causative||(actor && /\b(?:while|when|if|unless|until)\b/i.test(actor[3]!) ? actor : null);if(!request)return true;
+ const direct=requiredIdentifiers(query).some(id=>/[.:]/.test(id)) ? query.trim().match(new RegExp('^how\\s+(?:do|can|could|should)\\s+(i|we|you)\\s+((?:automatically\\s+)?(?:'+operation+'))\\s+([^?!;]+)','i')) : null;
+ const request=causative||direct||(actor && /\b(?:while|when|if|unless|until)\b/i.test(actor[3]!) ? actor : null);if(!request)return true;
  const stem=(word:string)=>word.toLowerCase().replace(/ies$/,'y').replace(/s$/,'').replace(/(?:ed|ing)$/,'').replace(/e$/,'');
  const tokens=(text:string)=>(normalize(text).match(/[\p{L}\p{N}_-]+/gu)||[]).filter(w=>!GRAMMAR.has(w)&&!GENERIC.has(w)).map(stem);
- const goals=tokens(request.slice(1).join(' '));
+ // Identity is independently checked; retain arguments and extra operations.
+ let task=request.slice(1).join(' ');
+ if(direct){
+  const next=query.trim().slice(direct[0].length).match(new RegExp('^[?!;.]\\s+(?:then\\s+)?((?:'+operation+')\\s+[^?!;]+)','i'));if(next)task+=' '+next[1];
+  for(const identifier of requiredIdentifiers(query).sort((a,b)=>b.length-a.length))task=task.replaceAll(identifier,' ');
+ }
+ const goals=tokens(task);
  return topicText(evidence).split(/\n|(?<=[.!?;])\s+/).some(sentence=>{
   // An until/without qualification can document a legitimate restriction,
   // but cannot prove an affirmative operation in this bounded request form.

@@ -1,5 +1,13 @@
 # Tests and acceptance results
 
+## Phase 1 completion work — 2026-10-13
+
+[Phased plan](RELEASE_COMPLETION_PLAN.md): Phase 1 remains active; Phases 2–6 have not started. Three independently reproduced repairs distinguish API caller roles from named owners, withhold unrelated direct named-API operations, and retain adjacent qualifications in a short uniquely bound API section. Build, **211/211 baseline** and **249/249 diagnostic** checks pass, with zero failures/skips/cancellations. Every original test/assertion remains intact.
+
+Unchanged support-v4 development passes 16/16 in both layouts; support-v3 development and exposed holdout replays each pass 48/48 in both layouts (**224 known-case executions**). These close stale checklist entries within their measured scope; historical failures remain unchanged. Independent version-pinned primary-document development passes **13/13 per layout**, after a separately preserved marker-only harness correction.
+
+The frozen professional acceptance remains **11/13 FAIL in both layouts**. No tuning follows that exposed split. Separate primary-document language development scores **7/10**; the subsequent experiment regressed supported cases and was rejected, with its full source/new tests/failures archived and the verified candidate restored. A second acceptance protocol is recorded but **UNEXECUTED**. The pending gate and broader phases remain open. **Full release acceptance remains FAIL.** Private receipts, indexed documents, cache/model/runtime data and raw chat transcripts are excluded from publication.
+
 ## Current verified repairs — 2026-10-13
 
 Build PASS; **203/203 baseline** and **241/241 diagnostic**, zero failures/skips/cancellations. All original tests/assertions and failure evidence remain intact. The keyword-only bypass is repaired using bounded literal support: lifecycle requests require their object and condition in one passage, and separately proved API identifiers retain declaration proof. Default bare-topic navigation remains available; explicit lexical mode remains strict. Lifecycle expiration events no longer become duration-field requests. These rules do not establish general entailment or synonym coverage. [Retrieval](../src/retrieval.ts), [support](../src/evidence-support.ts), [request parsing](../src/support.ts).

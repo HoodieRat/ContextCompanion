@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "context-companion",
   "version": "1.1.0-rc.1",
-  "createdAt": "2026-10-13T22:14:16.106Z",
+  "createdAt": "2026-10-13T23:55:48.386Z",
   "note": "Allowlisted source, compiled app, synthetic fixtures and execution evidence only. The manifest itself is excluded from its file list. Hashes detect changes; they are not a publisher signature.",
   "files": [
     {
@@ -27,8 +27,8 @@
     },
     {
       "path": "AGENTS.md",
-      "bytes": 4702,
-      "sha256": "82e826d22057f031d8e71d9dda4c2ca8c2e2c8af23d8eeef97a12cfa814bdee9"
+      "bytes": 5912,
+      "sha256": "8c5188a9a5fd0b912371c7812c353ffaf7a9534dab8e2b16c1902c66dd111117"
     },
     {
       "path": "Backup.bat",
@@ -52,13 +52,13 @@
     },
     {
       "path": "dist/api-context.js",
-      "bytes": 7940,
-      "sha256": "cbbcf7b29a6d202c6e2815a632e78f0334c8e4fb8bc200207d85f6b123106d02"
+      "bytes": 8499,
+      "sha256": "0a1fddc0613fa172a899469af516b14445b574c27ffde4d80c6d9661a056d8a8"
     },
     {
       "path": "dist/api-context.js.map",
-      "bytes": 8155,
-      "sha256": "62b7e62ef6e6297e190c4745306fea951e383a354efd8c95ab3c8ae4fec41dc6"
+      "bytes": 8698,
+      "sha256": "2b5d27e2c2fef3ce6bfef5db8c4620dca739ed0f96f174b2a612072d05e1d49e"
     },
     {
       "path": "dist/checks.d.ts",
@@ -502,13 +502,13 @@
     },
     {
       "path": "dist/support.js",
-      "bytes": 57158,
-      "sha256": "69391f622b02252c8a307cefafec5e7878545e597bcd7bc4220755f200e14688"
+      "bytes": 58208,
+      "sha256": "8a288c8b6691a5590ee4d7ceddb46362748cc5732643a52003161366159a577c"
     },
     {
       "path": "dist/support.js.map",
-      "bytes": 46699,
-      "sha256": "3d757ec9bc1c388f0df6e5d0410f1dc8f61e0e27ba3ba6da2f44b0b282d90bb0"
+      "bytes": 47713,
+      "sha256": "42dbe3ac79f5eb961f6e983f11dbcf09295cba293abf11165fc6d920aad6964e"
     },
     {
       "path": "dist/types.d.ts",
@@ -572,8 +572,13 @@
     },
     {
       "path": "docs/PUBLIC_STATUS.md",
-      "bytes": 22839,
-      "sha256": "dcd9e64a29ebf6c025ac089bc35d93fc82f7f1342091c71b407a0581e0136b6b"
+      "bytes": 24377,
+      "sha256": "1c27d5d90bc2ae7ca27cce6c160496e97b558f1a5fc39516e4def9a8e29ef7ca"
+    },
+    {
+      "path": "docs/RELEASE_COMPLETION_PLAN.md",
+      "bytes": 8873,
+      "sha256": "75cecdcff5918f38fe33fcf93b8912e0147c35978b1fe035dd62e28ce041abf3"
     },
     {
       "path": "docs/SECURITY.md",
@@ -582,13 +587,13 @@
     },
     {
       "path": "docs/TEST_RESULTS.md",
-      "bytes": 20080,
-      "sha256": "138000f4dd057ac8d6d512edc523d58505a5da7ac69c62f993d8ba4fff7a9e17"
+      "bytes": 21618,
+      "sha256": "2e9d96912c13456efc9797eadbaddf1c9503c8fb54d77243514ee99673c6d849"
     },
     {
       "path": "docs/TEST_SUITES.md",
-      "bytes": 3252,
-      "sha256": "e8567fd96dcc85ef765727620b5ab5e36324f3f68ddc8f0aaa3998351a80ccb7"
+      "bytes": 3515,
+      "sha256": "73f03845ba864a3871b78a1184080222eda57f4db64da2bae1ce483f772dc6e4"
     },
     {
       "path": "docs/USAGE.md",
@@ -672,8 +677,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 11779,
-      "sha256": "8f55a4c099f2c7e7ae8184412e62c4cf46d1c7e4133be06098c1cc9bd02afb86"
+      "bytes": 11980,
+      "sha256": "ae11ad6fb6806d59d94f06bcfe5d2977851c31dbfa644151023c226a58713519"
     },
     {
       "path": "Restore-Backup.bat",
@@ -782,8 +787,8 @@
     },
     {
       "path": "src/api-context.ts",
-      "bytes": 6590,
-      "sha256": "aa48827d29af6e43c6845ddcbdb3cdfe2985a2eb6fb490d70f8193eb232ef0cc"
+      "bytes": 7069,
+      "sha256": "6a13f10bc9679462200f6ff38bf617085337a9a9cb04846620c7bf669b0b847e"
     },
     {
       "path": "src/checks.ts",
@@ -932,8 +937,8 @@
     },
     {
       "path": "src/support.ts",
-      "bytes": 53166,
-      "sha256": "fe467ab3a32ee09d4f4dacc40ac541b03b587523e9be660cc308c2bab8b33780"
+      "bytes": 54106,
+      "sha256": "9ee2d740945fc27570d702aabeb569c0ae66305d72c160b5e7e7d491ba1bfdbf"
     },
     {
       "path": "src/types.ts",
@@ -979,6 +984,16 @@
       "path": "tests/api-context.test.mjs",
       "bytes": 3707,
       "sha256": "490cc91315926e4cb6a6752a2b6f408d60378cd1cca7895af5058e44cf6e67cc"
+    },
+    {
+      "path": "tests/api-operation-role.test.mjs",
+      "bytes": 3498,
+      "sha256": "77d39c1785144730a3f2b3b73c041063014e771e7d9550f7cadb9e8b3bb4988c"
+    },
+    {
+      "path": "tests/api-section-context.test.mjs",
+      "bytes": 2221,
+      "sha256": "4a2c498b66874cedfe4b8eb11db0da68071dbe2358ba039141d16e9906d49a12"
     },
     {
       "path": "tests/behavioral-context.test.mjs",
@@ -2377,8 +2392,8 @@
     },
     {
       "path": "tests/suites.json",
-      "bytes": 1398,
-      "sha256": "aac751ef8a79d8bacbdaa60359133c2906499511c046707b4f6130eeef294e7a"
+      "bytes": 1469,
+      "sha256": "89788b56518999081a116c59d6fe568b7c005fdeb4315e1c8f7aa1e356f7a8f8"
     },
     {
       "path": "tests/support-scoping.test.mjs",

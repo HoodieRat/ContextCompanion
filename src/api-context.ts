@@ -82,6 +82,13 @@ export function declaredApiContext(source:string,passage:string,requestedIdentif
   for(const declaration of context.declarations)if(!declarations.some(d=>d.start===declaration.start))declarations.push(declaration);
  }
  let sourceExcerpt:ApiContext['sourceExcerpt'];
- if(declarationOnly&&matches.length===1){const context=matches[0]!;let end=Math.min(context.end,context.start+1600);if(/[\uD800-\uDBFF]/.test(source[end-1]||''))end--;sourceExcerpt={start:context.start,end};}
+ if(matches.length===1){
+  const context=matches[0]!,qualified=[context.module,context.owner,context.member].filter(Boolean).join('.');
+  const aliases=context.member?[qualified,context.owner+'.'+context.member]:[qualified];
+  // A unique explicitly requested API section can retain nearby qualifications.
+  // Generic/ambiguous hits and oversized sections keep their original excerpt.
+  const requested=aliases.some(id=>id.includes('.')&&requestedIdentifiers.includes(id));
+  if(declarationOnly||(requested&&context.end-context.start<=1600)){let end=Math.min(context.end,context.start+1600);if(/[\uD800-\uDBFF]/.test(source[end-1]||''))end--;sourceExcerpt={start:context.start,end};}
+ }
  return {identifiers:[...ids],declarations,...(sourceExcerpt?{sourceExcerpt}:{})};
 }

@@ -1,5 +1,7 @@
 # Test suites
 
+Current Phase 1 candidate: build PASS, baseline **211/211**, diagnostic **249/249**, zero skipped/cancelled/failed. Eight new checks extend original suite membership/assertions. Professional acceptance remains FAIL; see [phase plan](RELEASE_COMPLETION_PLAN.md).
+
 Current executed candidate: build PASS, baseline **203/203**, diagnostic **241/241**, zero failures/skips/cancellations. New keyword, managed Serena-runtime and embedding-priority checks extend the original suite membership and assertions. Windows/Linux CI passes; fresh real Windows installation and runtime-removal retention pass [38475106206](https://github.com/HoodieRat/ContextCompanion/actions/runs/38475106206). Controlled adapters remain separate from live upstream verification. See [TEST_RESULTS](TEST_RESULTS.md) for executed scopes and unresolved gates.
 
 ## Historical checkpoints
