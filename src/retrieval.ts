@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 import type { Collection, Project, SearchHit, SearchResult, SearchFilters, Compatibility } from './types.js';
 import { Store, DEFAULT_METADATA } from './state.js';
 import type { Grounded, GroundedHit } from './grounded.js';
-import { instructionTask, instructionRequest } from './grounded.js';
+import { instructionTask, instructionRequest, groundedQuery } from './grounded.js';
 import { AppError, hash, cutUtf8, errorText, readJson, isWithin, integer } from './util.js';
 import type { ProjectMap } from './scanner.js';
 import { eligible } from './compatibility.js';
@@ -12,7 +12,7 @@ import { looksSecret, checkedFile } from './security.js';
 import { toolText } from './rpc.js';
 import { DISCOVERY_POLICY } from './discovery.js';
 import { requiredIdentifiers, missingIdentifiers, secretValueRequest, requestPlan, passageSupportsRequest, missingSemanticSubjects, semanticSupportSpans, returnedSpanContext, topicText, communicationSupport, communicationDefinitionSupport, runtimeQualifier } from './support.js';
-import { calibratedProfile, literalSupport, topicTerms, SUPPORT_PROFILE, COMPONENT_MINIMUM_COSINE } from './evidence-support.js';
+import { calibratedProfile, literalSupport, keywordSupport, topicTerms, SUPPORT_PROFILE, COMPONENT_MINIMUM_COSINE } from './evidence-support.js';
 const STOP = new Set(['the', 'and', 'with', 'this', 'that', 'for', 'from', 'what', 'how', 'are', 'can', 'could', 'would', 'please', 'use', 'using', 'make', 'create', 'project', 'code', 'implement', 'need', 'want', 'does', 'which', 'into', 'when', 'without', 'should', 'have', 'been', 'its', 'there']);
 export function words(value: string): string[] { return [...new Set((value.toLowerCase().match(/[\p{L}\p{N}_+.-]{2,}/gu) || []).filter(w => !STOP.has(w)))]; }
 export function identifierVariants(query: string): string[] {
@@ -360,8 +360,15 @@ export class Retrieval {
         ])];
         const missingComponents = (hit: SearchHit) => missingComponentsFor(hit.content, qualifiers(hit));
         const candidate = (hit: SearchHit) => !missingIdentifiers(supportQuery,[hit.content],[hit.apiContext?.identifiers||[]]).length && passageSupportsRequest(supportQuery, hit.content, qualifiers(hit), missingComponents(hit),hit.apiContext?.identifiers);
+        const keywordTask = groundedQuery(supportQuery);
+        // Default keyword-only bare topic probes retain navigation candidates;
+        // explicit lexical mode and complete questions require actual support.
+        // Identifier, authorization and secret checks remain authoritative.
+        const navigationProbe = options.mode !== 'lexical' && /^[\p{L}\p{N}_-]+$/u.test(supportQuery.trim());
         const bodyLiteral = (hit: SearchHit) => !missingComponents(hit).length && candidate(hit) &&
-            (plan.attributes.length > 0 || profileFor(hit)?.kind === 'off' || literalSupport(supportQuery, [topicText(hit.content)]));
+            ((profileFor(hit)?.kind === 'off' || options.mode === 'lexical')
+                ? (profileFor(hit)?.kind === 'off' && navigationProbe) || keywordSupport(supportQuery, [hit.content], keywordTask, hit.apiContext?.identifiers)
+                : plan.attributes.length > 0 || literalSupport(supportQuery, [topicText(hit.content)]));
         const supportIds = new Set<string>();
         const componentProofs = new Map<string, Set<string>>();
         const focusedSpans = new Map<string, { text:string; start:number }>();

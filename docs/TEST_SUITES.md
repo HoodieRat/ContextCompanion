@@ -1,12 +1,20 @@
 # Test suites
 
-Current source publication, 2026-10-13: build PASS, production baseline **189/189 PASS**, full diagnostic **227/227 PASS** and native Windows baseline **189/189 PASS**, with zero failures/skips/cancellations. These counts describe the source/test snapshot included in this publication.
+Current executed candidate: build PASS, baseline **203/203**, diagnostic **241/241**, zero failures/skips/cancellations. New keyword, managed Serena-runtime and embedding-priority checks extend the original suite membership and assertions. Windows/Linux CI passes; fresh real Windows installation and runtime-removal retention pass [38475106206](https://github.com/HoodieRat/ContextCompanion/actions/runs/38475106206). Controlled adapters remain separate from live upstream verification. See [TEST_RESULTS](TEST_RESULTS.md) for executed scopes and unresolved gates.
+
+## Historical checkpoints
+
+Current runtime repair: build PASS; baseline **203/203**, diagnostics **241/241**, zero skipped/cancelled. New managed-runtime and queue checks extend the original suite. Fresh upstream Windows installation and current GUI acceptance are still being verified. Earlier counts below are historical.
+
+Current keyword repair: build PASS, baseline **195/195**, diagnostic **233/233**, zero failures/skips/cancellations. The six new checks are in [keyword-support.test.mjs](../tests/keyword-support.test.mjs); all original tests and suite memberships are retained. Native and CI results below belong to the previous checkpoint until new executions complete.
+
+Previous source publication, 2026-10-13: build PASS, production baseline **189/189 PASS**, full diagnostic **227/227 PASS** and native Windows baseline **189/189 PASS**, with zero failures/skips/cancellations. These counts describe the source/test snapshot included in this publication.
 
 | Command | Selection |
 |---|---|
-| `npm test` / `Run-Tests.bat` | 189 production baseline checks |
+| `npm test` / `Run-Tests.bat` | 203 production baseline checks |
 | `npm run test:research` / `Run-Tests.bat -Suite research` | 38 preserved research checks |
-| `npm run test:diagnostic` / `Run-Tests.bat -Suite diagnostic` | Both selections, 227 checks |
+| `npm run test:diagnostic` / `Run-Tests.bat -Suite diagnostic` | Both selections, 241 checks |
 
 Install the exact development dependencies with `npm ci --ignore-scripts` before running the baseline or diagnostic suite. The code-context regression adapter uses pinned TypeScript; the application uses Grounded's installed parser. Missing dependencies or zero executed tests are not success. The Windows launcher reports the missing prerequisite explicitly.
 

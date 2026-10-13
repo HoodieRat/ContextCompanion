@@ -10,7 +10,7 @@ export declare class Embeddings {
     readonly home: string;
     private workers;
     constructor(home: string);
-    connection(profile: EmbeddingProfile): Promise<Connection | undefined>;
+    connection(profile: EmbeddingProfile, interactive?: boolean): Promise<Connection | undefined>;
     probe(profile: EmbeddingProfile, timeoutMs?: number): Promise<Record<string, unknown>>;
     status(): Promise<Record<string, unknown>[]>;
     /** Compare returned passages only; no ingestion, vector store or confidence gate. */

@@ -4,6 +4,7 @@ import { pathToFileURL } from 'node:url';
 import fs from 'node:fs';
 import { AppError, defaultHome, ensureDir, errorText, object, text } from './util.js';
 import { normalize, weightedMean, windows } from './embedding-math.js';
+import { EmbeddingQueue } from './embedding-queue.js';
 const args = process.argv.slice(2);
 const get = (flag, fallback = '') => { const i = args.indexOf(flag); return i >= 0 ? args[i + 1] || fallback : fallback; };
 const home = get('--home', defaultHome());
@@ -37,8 +38,7 @@ async function load() {
         })().catch(error => { loading = undefined; state = 'error'; lastError = errorText(error); throw error; });
     return loading;
 }
-let queue = Promise.resolve();
-let outstanding = 0;
+const queue = new EmbeddingQueue();
 async function embed(input) {
     const pipeline = await load();
     let tokens = 0;
@@ -78,17 +78,15 @@ const server = http.createServer(async (req, res) => {
         send(200, { state, model, revision, dimensions: 384, error: lastError });
         return;
     }
-    if (req.method === 'GET' && req.url === '/v1/models') {
+    if (req.method === 'GET' && (req.url === '/v1/models' || req.url === '/query/v1/models')) {
         send(200, { object: 'list', data: [{ id: model, object: 'model', owned_by: 'local' }] });
         return;
     }
-    if (req.method !== 'POST' || req.url !== '/v1/embeddings') {
+    if (req.method !== 'POST' || !['/v1/embeddings', '/query/v1/embeddings'].includes(req.url || '')) {
         send(404, { error: { message: 'Not found.' } });
         return;
     }
     try {
-        if (outstanding >= 16)
-            throw new AppError('Embedding queue is full. Retry shortly.', 429);
         const chunks = [];
         let length = 0;
         for await (const chunk of req) {
@@ -108,19 +106,12 @@ const server = http.createServer(async (req, res) => {
         const input = (Array.isArray(body.input) ? body.input : [body.input]).map(x => text(x, 'embedding input', 100000));
         if (!input.length || input.length > 64)
             throw new AppError('Supply between 1 and 64 input strings.');
-        outstanding++;
-        const work = queue.then(() => embed(input));
-        queue = work.then(() => undefined, () => undefined);
-        try {
-            const result = await work;
-            send(200, { object: 'list', model, data: result.vectors.map((embedding, index) => ({ object: 'embedding', index, embedding })), usage: { prompt_tokens: result.tokens, total_tokens: result.tokens } });
-        }
-        finally {
-            outstanding--;
-        }
+        const result = await queue.run(() => embed(input), req.url === '/query/v1/embeddings', () => res.destroyed);
+        send(200, { object: 'list', model, data: result.vectors.map((embedding, index) => ({ object: 'embedding', index, embedding })), usage: { prompt_tokens: result.tokens, total_tokens: result.tokens } });
     }
     catch (error) {
-        send(error instanceof AppError ? error.status : 500, { error: { message: errorText(error) } });
+        if (!res.destroyed)
+            send(error instanceof AppError ? error.status : 500, { error: { message: errorText(error) } });
     }
 });
 server.requestTimeout = 300000;
@@ -129,6 +120,10 @@ server.listen(0, '127.0.0.1', () => {
     const address = server.address();
     if (address && typeof address === 'object')
         process.stdout.write(JSON.stringify({ port: address.port }) + '\n');
+    // A connection was requested for this approved pinned model. Overlap its
+    // initialization with Grounded's startup instead of waiting for the first
+    // HTTP embedding request on the short interactive deadline.
+    void load().catch(error => process.stderr.write(`Embedding warmup failed: ${errorText(error)}\n`));
 });
 for (const signal of ['SIGTERM', 'SIGINT'])
     process.on(signal, () => { server.close(); setTimeout(() => process.exit(0), 1000).unref(); });

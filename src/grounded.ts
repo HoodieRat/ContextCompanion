@@ -166,7 +166,7 @@ export class Grounded {
         ensureDir(dir);
         const cwd = path.join(this.home, 'runtime', 'work');
         ensureDir(cwd);
-        const connection = keywordFallback ? undefined : await this.embeddings.connection(generation.profile);
+        const connection = keywordFallback ? undefined : await this.embeddings.connection(generation.profile, readOnly);
         const config = path.join(dir, readOnly ? (keywordFallback ? 'search-keyword.json' : 'search.json') : 'index.json');
         writeJson(config, {
             app: { storePath: path.join(dir, 'store'), telemetryEnabled: false, readOnly, ...(connection ? { embeddingModel: connection.model } : {}) },

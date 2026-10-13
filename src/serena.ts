@@ -7,6 +7,21 @@ import { RpcClient, type Tool, type ToolResult } from './rpc.js';
 import { checkedFile, looksSecret } from './security.js';
 const ALLOWED = new Set(['find_symbol', 'find_referencing_symbols', 'get_symbols_overview', 'search_for_pattern', 'find_file', 'list_dir', 'read_file']);
 export function serenaExe(home: string): string { return path.join(home, 'runtime', 'serena', process.platform === 'win32' ? 'Scripts/serena.exe' : 'bin/serena'); }
+/** Language-server subprocesses need the installed app-owned uv and Node;
+ * an interactive machine-wide PATH must not mask a broken clean install.
+ * Only the two archive layouts already accepted by the installer are used.
+ */
+export function serenaEnvironment(home: string): NodeJS.ProcessEnv {
+    const root = path.join(home, 'runtime', 'uv'), name = process.platform === 'win32' ? 'uv.exe' : 'uv';
+    const directories = fs.existsSync(root) ? [root, ...fs.readdirSync(root, { withFileTypes: true }).filter(e => e.isDirectory()).map(e => path.join(root, e.name))] : [];
+    const uv = directories.filter(dir => fs.existsSync(path.join(dir, name)) && fs.statSync(path.join(dir, name)).isFile());
+    if (uv.length !== 1) throw new AppError(uv.length ? 'The managed uv archive layout is ambiguous. Run Install.bat to repair it.' : 'The managed uv runtime is missing. Run Install.bat to repair it.', 503);
+    const env = cleanEnvironment({ PYTHONNOUSERSITE: '1', UV_CACHE_DIR: path.join(home, 'uv-cache'), UV_PYTHON_INSTALL_DIR: path.join(home, 'runtime', 'python') });
+    const inherited = Object.entries(env).find(([key]) => key.toLowerCase() === 'path')?.[1] || '';
+    for (const key of Object.keys(env)) if (key.toLowerCase() === 'path') delete env[key];
+    env.PATH = [uv[0]!, path.dirname(process.execPath), path.dirname(serenaExe(home)), inherited].filter(Boolean).join(path.delimiter);
+    return env;
+}
 export function filterTools(tools: Tool[]): Tool[] { return tools.filter(t => ALLOWED.has(t.name)).map(t => ({ ...t, annotations: { ...t.annotations, readOnlyHint: true, destructiveHint: false } })); }
 export function validateSerenaArgs(project: Project, name: string, args: Record<string, unknown>): Record<string, unknown> {
     if (!ALLOWED.has(name))
@@ -51,7 +66,7 @@ export class Serena {
                     throw new AppError('Serena is not installed. Run Install.bat to repair the isolated Python runtime.', 503);
                 const projectHome = path.join(this.home, 'projects', this.project.id, 'serena-home');
                 ensureDir(projectHome);
-                const child = spawnOwned(executable, ['start-mcp-server', '--project', this.project.root, '--context', 'codex', '--transport', 'stdio', '--enable-web-dashboard', 'false', '--open-web-dashboard', 'false', '--log-level', 'WARNING'], { cwd: this.project.root, env: cleanEnvironment({ SERENA_HOME: projectHome, PYTHONNOUSERSITE: '1' }) });
+                const child = spawnOwned(executable, ['start-mcp-server', '--project', this.project.root, '--context', 'codex', '--transport', 'stdio', '--enable-web-dashboard', 'false', '--open-web-dashboard', 'false', '--log-level', 'WARNING'], { cwd: this.project.root, env: { ...serenaEnvironment(this.home), SERENA_HOME: projectHome } });
                 const logFile = path.join(this.home, 'logs', `serena-${this.project.id}.log`);
                 ensureDir(path.dirname(logFile));
                 child.stderr?.on('data', (chunk: Buffer) => fs.appendFileSync(logFile, chunk));

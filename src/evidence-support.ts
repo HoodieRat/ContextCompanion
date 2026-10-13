@@ -2,7 +2,7 @@
  * This is a relevance safeguard, not fact verification or general entailment.
  * Development calibration: evidence/windows-support-v2/development-calibration.json.
  */
-import { supportText } from './support.js';
+import { supportText, topicText } from './support.js';
 import type { EmbeddingProfile } from './types.js';
 export const SUPPORT_PROFILE = { model: 'Xenova/all-MiniLM-L6-v2', revision: '751bff37182d3f1213fa05d7196b954e230abad9', dimensions: 384, minimumCosine: 0.20 };
 // Same-passage descriptive components have a separate development-only
@@ -23,6 +23,24 @@ export function literalSupport(query: string, passages: string[]): boolean {
         // One incidental shared noun cannot establish a multi-topic request.
         // Unanchored paraphrases still get the pinned-model comparison below.
         return overlap >= Math.min(2, topics.length);
+    });
+}
+/** Unscored keyword candidates still require actual task words. Lifecycle
+ * questions bind their object and condition in one passage, using the same
+ * scaffold-free ranking task. This is a bounded spelling check: synonyms
+ * without literal corroboration may abstain; no semantic score is invented.
+ */
+export function keywordSupport(query: string, passages: string[], task = query, verifiedIdentifiers: string[] = []): boolean {
+    // A separately corroborated declaration can prove a namespace/member that
+    // the returned member paragraph omits. Do not demand that spelling again;
+    // all remaining task terms still require their own literal support.
+    for (const identifier of [...verifiedIdentifiers].sort((a, b) => b.length - a.length)) task = task.replaceAll(identifier, ' ');
+    if (!/^what\s+happens\s+(?:to|when|after|if|unless|until)\b/i.test(query.trim()))
+        return literalSupport(task, passages.map(topicText));
+    const topics = topicTerms(task);
+    return topics.length > 0 && passages.some(passage => {
+        const body = new Set(topicTerms(topicText(passage)));
+        return topics.every(topic => body.has(topic));
     });
 }
 export function calibratedProfile(profile?: EmbeddingProfile): boolean {
