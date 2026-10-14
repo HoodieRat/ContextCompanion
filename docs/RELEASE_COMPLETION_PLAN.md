@@ -15,7 +15,8 @@ Created 2026-10-13. Execute one phase at a time, in this order. Check an item on
 - [x] Seal current original tests, fixtures and evidence; verify working implementation against published code; establish one current failure ledger. Baseline seal protects 9,871 files and confirms 487 production files match main 045781e; receipts are in tmp/release-phases-20261013.
 - [x] Replay unchanged broader development/known regression inputs in isolated homes with the installed real Grounded/model runtimes; classify remaining misses as source coverage, extraction, compatibility, ranking, support filtering or delivery.
 - [x] Add a small independent professional-task protocol against primary, version-specific documentation, with supported paraphrases/API references and strict unsupported/version controls. Record missing source coverage separately from retrieval defects.
-- [x] Make only independently reproduced repairs; append meaningful regression checks without altering original tests/assertions. Build and synchronize dist; run baseline, diagnostics and the affected real workflow.
+- [x] Implement and verify the three independently reproduced API repairs described in the checkpoint below; append meaningful regression checks without altering original tests/assertions. Build and synchronize dist; run baseline, diagnostics and the affected real workflow. This completes those three repairs, not all Phase 1 retrieval work.
+- [ ] Repair the remaining ordinary API-comparison and caller-purpose language gaps using independent primary-document development. Preserve explicit state/domain/identifier obligations and previously supported cases; reject regressing candidates. Keep the exposed 11/13 acceptance and rejected experiment unchanged as historical evidence.
 - [ ] Freeze implementation and an independent acceptance protocol before execution. Run both source layouts, validate citations/versions and strict abstention, preserve all results, and make no outcome-driven changes after holdout exposure.
 - [ ] Run the unchanged daily/keyword regressions, reconcile remaining broader failures, record limitations and publish the reviewed phase checkpoint. Proceed to Phase 2 only when this phase's agreed finite gate passes.
 
@@ -66,6 +67,8 @@ Independent primary-document professional development reproduced a caller-role f
 The frozen first professional acceptance scored 11/13 in both layouts. Two supported comparisons/purpose questions were withheld. It remains a failed gate and is not tuned. Separate Node.js/Python primary-document development subsequently scored 7/10; a language-support experiment regressed previously supported cases and was rejected with its complete source/test/failure archive retained. The working project retains the independently verified three-repair candidate.
 
 Remaining Phase 1 work: repair genuine ordinary API-comparison and caller-purpose language gaps using independent development; retain explicit state/domain/identifier obligations; evaluate a new frozen acceptance set; rerun the unchanged daily/keyword checks; publish a passing phase checkpoint. A second independent acceptance protocol has been recorded but remains UNEXECUTED. Phases 2–6 have not started. Full release acceptance remains FAIL.
+
+The remaining repair, acceptance verification and regression/publication items are separate obligations. Checking off verification cannot repair code. Phases 2–6 address reliability, document fidelity, native integration, distribution clearance and release rehearsal; they do not automatically resolve these Phase 1 language-support failures. The first 11/13 receipt remains historical even if a later candidate passes a new gate.
 
 ## Execution record
 

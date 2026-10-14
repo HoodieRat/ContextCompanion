@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "context-companion",
   "version": "1.1.0-rc.1",
-  "createdAt": "2026-10-13T23:55:48.386Z",
+  "createdAt": "2026-10-14T00:08:02.184Z",
   "note": "Allowlisted source, compiled app, synthetic fixtures and execution evidence only. The manifest itself is excluded from its file list. Hashes detect changes; they are not a publisher signature.",
   "files": [
     {
@@ -577,8 +577,8 @@
     },
     {
       "path": "docs/RELEASE_COMPLETION_PLAN.md",
-      "bytes": 8873,
-      "sha256": "75cecdcff5918f38fe33fcf93b8912e0147c35978b1fe035dd62e28ce041abf3"
+      "bytes": 9774,
+      "sha256": "2e6a48627e42317f19f108e08027b1b431f58a37d06d4321bf969598a2cc6dcb"
     },
     {
       "path": "docs/SECURITY.md",
