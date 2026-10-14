@@ -1,0 +1,14 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {declaredApiContext,declaredApiDefinition} from '../dist/api-context.js';import {Retrieval} from '../dist/retrieval.js';import {fixture,addProject,addSource} from './helpers.mjs';import {SUPPORT_PROFILE} from '../dist/evidence-support.js';
+test('exact declaration navigation never resolves ambiguous body evidence by guessing an owner',()=>{
+ const shared='The current state is reported without modifying the counter.',source='## `example.first()`\n\n'+shared+'\n\n## `example.second()`\n\n'+shared+'\n';assert.equal(declaredApiContext(source,shared,['example.first']),undefined);const context=declaredApiDefinition(source,['example.first']);assert(context.identifiers.includes('example.first'));assert(!context.identifiers.includes('example.second'));assert(source.slice(context.sourceExcerpt.start,context.sourceExcerpt.end).includes(shared));assert.equal(declaredApiDefinition(source,['other.first']),undefined);assert.equal(declaredApiDefinition(source,['example.first','example.second']),undefined);
+});
+test('long history metadata cannot displace the actual bounded API definition',()=>{
+ const definition='Returns a complete description of the supplied object for diagnostic use.',source='## `example.describe(value)`\n\n<!-- YAML\n'+('changes: historical release information\n'.repeat(60))+'-->\n\n* `value` {Object}\n\n'+definition+'\n';const context=declaredApiDefinition(source,['example.describe']);assert(context.overview);const quote=source.slice(context.sourceExcerpt.start,context.sourceExcerpt.end);assert(quote.includes(definition));assert(quote.length<=1600);for(const d of context.declarations)assert.equal(source.slice(d.start,d.end),d.text);
+});
+test('a basic short-namespace API overview requires its proved definition and complete request',async t=>{
+ const f=fixture(t),p=addProject(f.store,f.code);addSource(f.store,p);f.store.update(s=>{s.settings.embedding={kind:'local',...SUPPORT_PROFILE};s.collections[0].active.profile=s.settings.embedding;s.collections[0].metadata.kind='api';});const content='Returns a description of the current runtime for diagnostic use.';let overview=true;
+ const r=()=>new Retrieval(f.store,{search:async()=>[{url:'https://example.com/function',content,apiContext:{identifiers:['xy.describe','xy'],declarations:[],overview},score:1}],similarities:async(q,texts)=>texts.map(()=>0)}),options={filters:{version:'1.0.0'}};
+ assert.equal((await r().search(p.id,'What does xy.describe() do when using the input?',options)).status,'ok');
+ for(const query of ['What does xy.describe() do when using encrypted dossiers?','What does xy.describe() do and send private records?','What is the temperature of xy.describe()?'])assert.equal((await r().search(p.id,query,options)).status,'no_results',query);
+ overview=false;assert.equal((await r().search(p.id,'What does xy.describe() do when using the input?',options)).status,'no_results');
+});

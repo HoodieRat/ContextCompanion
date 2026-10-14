@@ -16,8 +16,8 @@ Created 2026-10-13. Execute one phase at a time, in this order. Check an item on
 - [x] Replay unchanged broader development/known regression inputs in isolated homes with the installed real Grounded/model runtimes; classify remaining misses as source coverage, extraction, compatibility, ranking, support filtering or delivery.
 - [x] Add a small independent professional-task protocol against primary, version-specific documentation, with supported paraphrases/API references and strict unsupported/version controls. Record missing source coverage separately from retrieval defects.
 - [x] Implement and verify the three independently reproduced API repairs described in the checkpoint below; append meaningful regression checks without altering original tests/assertions. Build and synchronize dist; run baseline, diagnostics and the affected real workflow. This completes those three repairs, not all Phase 1 retrieval work.
-- [ ] Repair the remaining ordinary API-comparison and caller-purpose language gaps using independent primary-document development. Preserve explicit state/domain/identifier obligations and previously supported cases; reject regressing candidates. Keep the exposed 11/13 acceptance and rejected experiment unchanged as historical evidence.
-- [ ] Freeze implementation and an independent acceptance protocol before execution. Run both source layouts, validate citations/versions and strict abstention, preserve all results, and make no outcome-driven changes after holdout exposure.
+- [x] Repair the remaining ordinary API-comparison and caller-purpose language gaps using independent primary-document development. Preserve explicit state/domain/identifier obligations and previously supported cases; reject regressing candidates. Keep the exposed 11/13 acceptance and rejected experiment unchanged as historical evidence.
+- [x] Freeze implementation and an independent acceptance protocol before execution. Run both source layouts, validate citations/versions and strict abstention, preserve all results, and make no outcome-driven changes after holdout exposure.
 - [ ] Run the unchanged daily/keyword regressions, reconcile remaining broader failures, record limitations and publish the reviewed phase checkpoint. Proceed to Phase 2 only when this phase's agreed finite gate passes.
 
 ## Phase 2 — Sustained delivery, refresh and memory reliability
@@ -58,7 +58,11 @@ Created 2026-10-13. Execute one phase at a time, in this order. Check an item on
 - [ ] Review and publish synchronized source/dist/docs/manifest; require appropriate Windows/Linux CI and fresh published-file parity.
 - [ ] Mark full release acceptance complete only when all agreed gates have executable proof. Clearly state remaining unsupported scope and external/user-dependent blockers.
 
-## Phase 1 checkpoint — still active
+## Verified Phase 1 repair checkpoint — 2026-10-14
+
+The current candidate passes build, **227/227 baseline** and **265/265 diagnostic** checks. The final frozen primary-document acceptance passes **10/10 in both layouts**, including citation/hash/version and unsupported-question controls. Earlier failed acceptance inputs and receipts remain intact. The unchanged keyword replay passes **3/3**; after refreshing the existing approved project-code index, the unchanged daily replay passes **12/12**. Its initial stale-code citation mismatch is preserved. Final broader replays are still running; Phase 1 remains active pending their reconciliation and publication checks. Phases 2–6 have not started; full release acceptance remains **FAIL**. Earlier checkpoints below are historical.
+
+## Historical Phase 1 checkpoint before the final repair
 
 The older support-v4 development now passes 16/16 in both layouts. Both support-v3 development and already-exposed holdout replays pass 48/48 in both layouts: 224 unchanged known-case executions. Their historical failures remain preserved; these are known replays.
 

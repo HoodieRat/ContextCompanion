@@ -1,5 +1,9 @@
 # Status and publication scope
 
+## Verified Phase 1 repair checkpoint — 2026-10-14
+
+The current candidate passes build, **227/227 baseline** and **265/265 diagnostic** checks. The final frozen primary-document acceptance passes **10/10 in both layouts**, including citation/hash/version and unsupported-question controls. Earlier failed acceptance inputs and receipts remain intact. The unchanged keyword replay passes **3/3**; after refreshing the existing approved project-code index, the unchanged daily replay passes **12/12**. Its initial stale-code citation mismatch is preserved. Final broader replays are still running; Phase 1 remains active pending their reconciliation and publication checks. Phases 2–6 have not started; full release acceptance remains **FAIL**. Earlier checkpoints below are historical.
+
 ## Phase 1 completion work — 2026-10-13
 
 [Phased plan](RELEASE_COMPLETION_PLAN.md): Phase 1 remains active; Phases 2–6 have not started. Three independently reproduced repairs distinguish API caller roles from named owners, withhold unrelated direct named-API operations, and retain adjacent qualifications in a short uniquely bound API section. Build, **211/211 baseline** and **249/249 diagnostic** checks pass, with zero failures/skips/cancellations. Every original test/assertion remains intact.

@@ -256,6 +256,10 @@ export function requestPlan(query) {
     // Quoted/capitalized owners and the actual object/field remain explicit.
     if (requiredIdentifiers(query).some(id => /[.:]/.test(id)))
         identity = identity.replace(/(`+[^`\n]*`+|"[^"\n]*")|\bthe caller's\b/g, (match, quoted) => quoted || 'the');
+    // The complete bounded caller-purpose clause is grammatical scaffolding,
+    // not an extra named input. Full condition/operation checks retain it.
+    if (requiredIdentifiers(query).some(id => /[.:]/.test(id)))
+        identity = identity.replace(/\bwhen\s+(?:using|calling|handling|processing|checking|selecting|choosing|computing|calculating|managing|validating|implementing|performing|producing)\s+(?:(?:a|an|the|its)\s+)?(?:data|input|inputs|value|values|item|items|element|elements|record|records|entry|entries|result|results|output|outputs|argument|arguments|parameter|parameters|option|options|request|requests|response|responses|file|files|buffer|buffers)(?=[?!.]*$)/g, '');
     // Unknown factual fields still need actual evidence; a known entity cannot
     // turn a request for an absent temperature into a version or size answer.
     if (!attributes.length) {
@@ -346,13 +350,47 @@ export function requestPlan(query) {
                 add(head);
         }
     }
-    for (const m of identity.matchAll(/\b(?:of|about|in|on|for|by|supports?|measures?|keep)\s+([^?.!;]+)/gi))
+    for (const m of identity.matchAll(/\b(?:of|about|in|on|for|by|supports?|measures?|keep)\s+([^?.!;]+)/gi)) {
+        // In an explicit API do-support question, an activity after "support" is
+        // the operation's object, not a new compound entity name. Its complete
+        // goals stay bound by operationSupportsRequest; keep each literal object.
+        if (!attributes.length && /^supports?\b/i.test(m[0]) && /^how\s+(?:does|do|did)\s+[\w]+(?:(?:\.|::)[\w]+)+\s*$/i.test(identity.slice(0, m.index)) && /^[a-z]+ing\s+/.test(m[1])) {
+            for (const word of m[1].trim().split(/\s+/).slice(1))
+                add(word);
+            continue;
+        }
         add(m[1], /^(?:of|for|by|keep)\b/i.test(m[0]), !attributes.length && m[1].trim().split(/\s+/).length >= 3 && /\b\p{L}+(?:ed|ing)\b/iu.test(m[1]));
+    }
     // A source/location noun after "from" retains its own evidence. A bare
     // gerund in "prevent ... from expiring" is a behavior clause, not a place.
-    for (const m of identity.matchAll(/\bfrom\s+([^?.!;]+)/gi))
-        if (attributes.length || !/^(?:being\s+)?\p{L}+(?:ed|ing)(?:\s+(?:\p{L}+ly|early|late|soon|now|again))*\s*$/iu.test(m[1].trim()))
+    for (const m of identity.matchAll(/\bfrom\s+([^?.!;]+)/gi)) {
+        // Coordinated gerunds share their object: "adding and accumulating values"
+        // is an activity, not an entity named "accumulating values". Contextual
+        // objects retain whole-query support; other objects need same-passage
+        // semantic proof. Explicit modifiers still require their own spelling.
+        const activity = !attributes.length && requiredIdentifiers(query).some(id => /[.:]/.test(id)) && /\bdiffers?\s*$/i.test(identity.slice(0, m.index))
+            ? m[1].trim().match(/^([a-z]+ing(?:\s+(?:and|or)\s+[a-z]+ing)*)\s+(.+)$/) : null;
+        if (activity) {
+            const object = activity[2].trim().split(/\s+/).filter(word => !GRAMMAR.has(word.toLowerCase()));
+            // An unquoted lowercase compound such as "errorname" can refer to the
+            // named API's own concept (getSystemErrorName), rather than a new owner.
+            // The entire activity still needs independent same-passage semantic proof;
+            // quoted/capitalized fields and unrelated domains keep literal obligations.
+            const apiWords = normalize(requiredIdentifiers(query).join(' ')).match(/[a-z]+/g) || [];
+            const apiReference = (word) => /^[a-z]+names?$/.test(word) && apiWords.includes(word.replace(/names?$/, ''));
+            for (const modifier of object.slice(0, -1))
+                if (!CONTEXT_REFERENTS.has(modifier.toLowerCase()) && !descriptiveWord(modifier) && !apiReference(modifier))
+                    add(modifier);
+            if (object.length && !object.every(word => CONTEXT_REFERENTS.has(word.toLowerCase()))) {
+                const phrase = activity[0];
+                subjects.push(phrase);
+                semanticSubjects.push(phrase);
+                semanticContexts[phrase] = phrase.replace(/\b[a-z]+names?\b/g, word => apiReference(word) ? word.replace(/(names?)$/, ' $1') : word);
+            }
+        }
+        else if (attributes.length || !/^(?:being\s+)?\p{L}+(?:ed|ing)(?:\s+(?:\p{L}+ly|early|late|soon|now|again))*\s*$/iu.test(m[1].trim()))
             add(m[1], /^being\b/i.test(m[1].trim()));
+    }
     // Each side of an explicit comparison retains its own referent. A known
     // behavior cannot lend evidence to an unrelated second comparison object.
     if (!attributes.length) {
@@ -556,7 +594,7 @@ export function operationSupportsRequest(query, evidence) {
     if (!tail)
         return true;
     const intentVerbs = new Set('use enable implement perform provide produce select choose configure check validate compute calculate handle manage process support work do'.split(' '));
-    const stem = (word) => word.toLowerCase().replace(/ion$/, '').replace(/(?:ance|ence)$/, '').replace(/ing$/, '').replace(/ed$/, '').replace(/(?<!s)s$/, '').replace(/e$/, '');
+    const stem = (word) => word.toLowerCase().replace(/ion$/, '').replace(/(?:ance|ence)$/, '').replace(/ing$/, '').replace(/ed$/, '').replace(/(?<!s)s$/, '').replace(/e$/, '').replace(/([bcdfghjklmnpqrstvwxyz])\1$/, '$1');
     const verb = tail[1].toLowerCase();
     const goals = (normalize(tail[2]).match(/[\p{L}\p{N}_-]+/gu) || [])
         .filter(word => !GRAMMAR.has(word) && !GENERIC.has(word) && !CONTEXT_REFERENTS.has(word));
@@ -611,16 +649,23 @@ export function assertedOperationSupport(query, evidence) {
  * punctuation spelling and negative conditions; it is not general entailment.
  */
 export function conditionSupportsRequest(query, evidence) {
-    const anchors = requiredIdentifiers(query).map(id => ({ id, at: query.indexOf(id) })).filter(a => a.at >= 0);
+    const conditionAt = query.search(/\b(?:when|if|unless)\s+/i);
+    const anchors = requiredIdentifiers(query).map(id => ({ id, at: query.indexOf(id) })).filter(a => a.at >= 0 && (conditionAt < 0 || a.at < conditionAt));
     if (!anchors.length)
         return true;
     const last = anchors.sort((a, b) => b.at - a.at)[0];
     const tail = query.slice(last.at + last.id.length);
-    const conditions = [...tail.matchAll(/\b(?:when|if|unless)\s+([^?;]+)/gi)].map(m => m[1]);
+    const conditions = [...tail.matchAll(/\b(when|if|unless)\s+([^?;]+)/gi)];
     const stem = (word) => word.replace(/(?:ing|ed)$/, '').replace(/s$/, '').replace(/e$/, '');
     const body = topicText(evidence), bodyWords = new Set((normalize(body).match(/[\p{L}\p{N}_-]+/gu) || []).map(stem));
-    return conditions.every(condition => {
+    return conditions.every(match => {
+        const condition = match[2];
         const state = normalize(condition).replace(/\s+/g, ' ').trim();
+        // A complete lowercase caller-purpose clause introduces no external state.
+        // Extra modifiers, quotations, owners and predicates stay on the strict
+        // condition path; the requested API and return field remain independent.
+        if (match[1].toLowerCase() === 'when' && condition === condition.toLowerCase() && /^(?:using|calling|handling|processing|checking|selecting|choosing|computing|calculating|managing|validating|implementing|performing|producing)\s+(?:(?:a|an|the|its)\s+)?(?:data|input|inputs|value|values|item|items|element|elements|record|records|entry|entries|result|results|output|outputs|argument|arguments|parameter|parameters|option|options|request|requests|response|responses|file|files|buffer|buffers)$/.test(condition.trim()))
+            return true;
         const emptyRequest = /^(?:empty|it is empty|(?:(?:there (?:is|are)|it (?:has|contains)) )?no (?:items|elements|entries|records)(?: (?:are )?(?:present|available|remaining|left))?)$/.test(state);
         if (emptyRequest) {
             // Occupancy paraphrases retain the complete bounded predicate. An added
@@ -631,6 +676,14 @@ export function conditionSupportsRequest(query, evidence) {
                 return empty || /\bno (?:items|elements|entries|records) (?:are )?(?:present|available|remaining|left)\b/.test(text);
             });
         }
+        // Quoted identifiers and named condition owners cannot become contextual
+        // resource words merely because normalization removes their capitalization.
+        if (missingIdentifiers(condition, [body]).length)
+            return false;
+        if ([...condition.matchAll(/"([^"\n]+)"/g)].some(match => !contains(normalize(body), normalize(match[1]))))
+            return false;
+        if ((condition.match(/\b[A-Z][\p{L}\p{N}_-]*\b/gu) || []).some(word => !contains(supportText(body).toLowerCase(), word.toLowerCase())))
+            return false;
         const goals = (normalize(condition).match(/[\p{L}\p{N}_-]+/gu) || []).filter(word => !GRAMMAR.has(word) && !GENERIC.has(word) && !CONTEXT_REFERENTS.has(word));
         if (!goals.every(word => bodyWords.has(stem(word)) || (word === 'dot' && /`+\.`+/.test(body))))
             return false;

@@ -210,6 +210,15 @@ export class Retrieval {
         const results: SearchHit[] = [];
         const policies = new Map(selected.map(({ collection: c }) => [c.id, { hash: this.policy(c), generation: c.active!.id }]));
         const variants = options.expandIdentifiers === false ? [query] : [query, ...identifierVariants(query)];
+        const factualApis = requestPlan(supportQuery).attributes.length ? requiredIdentifiers(supportQuery).filter(id=>/[.:]/.test(id)) : [];
+        const ownsRequestedFields = (hit: Pick<SearchHit,'apiContext'>) => !hit.apiContext || factualApis.every(id=>hit.apiContext!.identifiers.includes(id));
+        const explicitApis=requiredIdentifiers(supportQuery).filter(id=>/[.:]/.test(id));
+        const apiOverview=explicitApis.length===1&&new RegExp('^(?:how\\s+does\\s+'+explicitApis[0]!.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'(?:\\(\\))?\\s+differ\\b|what\\s+does\\s+'+explicitApis[0]!.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'(?:\\(\\))?\\s+do\\b)','i').test(supportQuery);
+        const overviewHit=(hit:SearchHit)=>Number(apiOverview&&hit.metadata?.kind==='api'&&hit.apiContext?.overview===true);
+        // A complete "what does this API do" request is answered by its proved
+        // definition; a two-letter namespace must not create a topic deficit.
+        // Any extra field, state, goal, quotation or owner keeps ordinary checks.
+        const basicOverview=explicitApis.length===1&&new RegExp('^what\\s+does\\s+'+explicitApis[0]!.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'(?:\\(\\))?\\s+do(?:\\s+when\\s+(?:using|calling|handling|processing|checking|selecting|choosing|computing|calculating|managing|validating|implementing|performing|producing)\\s+(?:(?:a|an|the|its)\\s+)?(?:data|input|inputs|value|values|item|items|element|elements|record|records|entry|entries|result|results|output|outputs|argument|arguments|parameter|parameters|option|options|request|requests|response|responses|file|files|buffer|buffers))?[?!.]*$','i').test(supportQuery);
         if (sensitiveLookup(query) || secretValueRequest(query))
             warnings.push('Requests for secret values are withheld. Search for security guidance instead.');
         else if (!words(query).length)
@@ -218,7 +227,7 @@ export class Retrieval {
             for (let variant = 0; variant < variants.length; variant++) {
                 // Expansion is a fallback for the whole task, not a new process
                 // per source when another source already matched its identifier.
-                if (variant > 0 && results.some(h => h.exactMatch)) break;
+                if (variant > 0 && results.some(h => h.exactMatch && ownsRequestedFields(h) && (!apiOverview||h.metadata?.kind!=='api'||overviewHit(h)))) break;
                 for (let batch = 0; batch < selected.length; batch += 4) {
                     if (options.signal?.aborted)
                         throw new AppError('Retrieval cancelled.', 499);
@@ -359,7 +368,9 @@ export class Retrieval {
             ...plan.semanticSubjects.filter(component => communicationSupport(component, plan.semanticContexts[component] || component, text) === false)
         ])];
         const missingComponents = (hit: SearchHit) => missingComponentsFor(hit.content, qualifiers(hit));
-        const candidate = (hit: SearchHit) => !missingIdentifiers(supportQuery,[hit.content],[hit.apiContext?.identifiers||[]]).length && passageSupportsRequest(supportQuery, hit.content, qualifiers(hit), missingComponents(hit),hit.apiContext?.identifiers);
+        // A return/field question must belong to the declared API scope.
+        // Another member's cross-reference cannot lend its value to this one.
+        const candidate = (hit: SearchHit) => ownsRequestedFields(hit) && !missingIdentifiers(supportQuery,[hit.content],[hit.apiContext?.identifiers||[]]).length && passageSupportsRequest(supportQuery, hit.content, qualifiers(hit), missingComponents(hit),hit.apiContext?.identifiers);
         const keywordTask = groundedQuery(supportQuery);
         // Default keyword-only bare topic probes retain navigation candidates;
         // explicit lexical mode and complete questions require actual support.
@@ -368,7 +379,7 @@ export class Retrieval {
         const bodyLiteral = (hit: SearchHit) => !missingComponents(hit).length && candidate(hit) &&
             ((profileFor(hit)?.kind === 'off' || options.mode === 'lexical')
                 ? (profileFor(hit)?.kind === 'off' && navigationProbe) || keywordSupport(supportQuery, [hit.content], keywordTask, hit.apiContext?.identifiers)
-                : plan.attributes.length > 0 || literalSupport(supportQuery, [topicText(hit.content)]));
+                : plan.attributes.length > 0 || (basicOverview&&overviewHit(hit)>0) || literalSupport(supportQuery, [topicText(hit.content)]));
         const supportIds = new Set<string>();
         const componentProofs = new Map<string, Set<string>>();
         const focusedSpans = new Map<string, { text:string; start:number }>();
@@ -417,7 +428,7 @@ export class Retrieval {
                         // A supported passage can still bury the useful sentence
                         // beyond the packet budget. Focus longer quotations using
                         // the same bounded, support-checked windows below.
-                        if (fullSupported) { supportIds.add(hit.id); if(Buffer.byteLength(hit.content)<=600)continue; }
+                        if (fullSupported) { supportIds.add(hit.id); if(Buffer.byteLength(hit.content)<=600 || (hit.apiContext?.sourceExcerpt && hit.content.length<=1600) || overviewHit(hit))continue; }
                         // Long passages dilute sentence-level encoders. Compare
                         // only bounded windows of returned text, never new files.
                         const spans = semanticSupportSpans(hit.content, supportQuery);
@@ -435,7 +446,11 @@ export class Retrieval {
                                 if(scores[index]!<SUPPORT_PROFILE.minimumCosine&&!communicationDefinitionSupport(supportQuery,spans[index]!.text))continue;
                                 const span=spans[index]!,missing=missingComponentsFor(span.text,qualifiers(hit)),spanVerified=new Set(missing.filter(component=>componentScores.get(component)?.[index] === true));
                                 if(spanVerified.size !== missing.length || !passageSupportsRequest(supportQuery,span.text,qualifiers(hit),[...spanVerified],hit.apiContext?.identifiers))continue;
-                                supportIds.add(hit.id);componentProofs.set(hit.id,spanVerified);focusedSpans.set(hit.id,returnedSpanContext(hit.content,span.start,span.end));break;
+                                supportIds.add(hit.id);componentProofs.set(hit.id,spanVerified);
+                                // A verified unit inside a bounded declared section must
+                                // retain that section's definition and qualifications.
+                                // Scoring stays on the unit; this only preserves quoted text.
+                                if(!(hit.apiContext?.sourceExcerpt&&hit.content.length<=1600))focusedSpans.set(hit.id,returnedSpanContext(hit.content,span.start,span.end));break;
                             }
                         }
                     }
@@ -477,7 +492,7 @@ export class Retrieval {
         // or changing the ordering of factual/identifier requests.
         const actionSentence = (hit: SearchHit) => Number(!!action && displayedText(hit).split(/\n|(?<=[.!?])\s+/).some(sentence =>
             /^(?:\d+[.)]\s*)?(?:set|choose|open|click|select|run|check|inspect|use|keep|enter|start|add|enable|refresh|configure|follow|expand)\b/i.test(sentence.trim()) && topicTerms(sentence).includes(action)));
-        results.sort((a, b) => Number(b.exactMatch) - Number(a.exactMatch) || guideHit(b)-guideHit(a) || (instruction ? actionSentence(b)-actionSentence(a) : 0) || (instruction || guideIntent ? coverage(b)-coverage(a) : 0) || b.score - a.score || (similarities.get(b.id) ?? 0) - (similarities.get(a.id) ?? 0) || (quality[b.metadata?.reliability || 'unknown']! - quality[a.metadata?.reliability || 'unknown']!) || a.url.localeCompare(b.url) || a.id.localeCompare(b.id));
+        results.sort((a, b) => Number(b.exactMatch) - Number(a.exactMatch) || overviewHit(b)-overviewHit(a) || guideHit(b)-guideHit(a) || (instruction ? actionSentence(b)-actionSentence(a) : 0) || (instruction || guideIntent ? coverage(b)-coverage(a) : 0) || b.score - a.score || (similarities.get(b.id) ?? 0) - (similarities.get(a.id) ?? 0) || (quality[b.metadata?.reliability || 'unknown']! - quality[a.metadata?.reliability || 'unknown']!) || a.url.localeCompare(b.url) || a.id.localeCompare(b.id));
         const unique: SearchHit[] = [];
         for (const hit of results) {
             const prior = unique.find(other => !other.duplicateOf && nearDuplicate(hit.content, other.content));

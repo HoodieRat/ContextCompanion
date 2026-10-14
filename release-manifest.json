@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "context-companion",
   "version": "1.1.0-rc.1",
-  "createdAt": "2026-10-14T00:08:02.184Z",
+  "createdAt": "2026-10-14T03:53:07.100Z",
   "note": "Allowlisted source, compiled app, synthetic fixtures and execution evidence only. The manifest itself is excluded from its file list. Hashes detect changes; they are not a publisher signature.",
   "files": [
     {
@@ -47,18 +47,18 @@
     },
     {
       "path": "dist/api-context.d.ts",
-      "bytes": 675,
-      "sha256": "47a4703926251df4d2c896869270ef535a09813907591915cd647be1ceb5bb7d"
+      "bytes": 1056,
+      "sha256": "91ff09068fc2d809986318963e81c7f42e269254681f21e831011d12ffae63b7"
     },
     {
       "path": "dist/api-context.js",
-      "bytes": 8499,
-      "sha256": "0a1fddc0613fa172a899469af516b14445b574c27ffde4d80c6d9661a056d8a8"
+      "bytes": 11488,
+      "sha256": "473dda91a935c16ecd464da3bf588d2a78175f9765700fb50c70558969b21b7b"
     },
     {
       "path": "dist/api-context.js.map",
-      "bytes": 8698,
-      "sha256": "2b5d27e2c2fef3ce6bfef5db8c4620dca739ed0f96f174b2a612072d05e1d49e"
+      "bytes": 11608,
+      "sha256": "33e3101d048f880324096f8951011410c11a8c083346ece0fafaa1032b737790"
     },
     {
       "path": "dist/checks.d.ts",
@@ -247,13 +247,13 @@
     },
     {
       "path": "dist/grounded.js",
-      "bytes": 25102,
-      "sha256": "b7109dfefb06a2ca1896d3cec402a67f83e1df862b524de2da9134040042425f"
+      "bytes": 25743,
+      "sha256": "19c05f403387c34c0dded6a35207840f85b927b50ccfb0fb1c3b99600efb6d08"
     },
     {
       "path": "dist/grounded.js.map",
-      "bytes": 23348,
-      "sha256": "134b6c37139b15aea7eda5a89f0884632e68a4195c95b86dc274784083f472a4"
+      "bytes": 23921,
+      "sha256": "8a261a9cb487d85d38f31a5f58f72e5652c53eca96dc91483f94feab20c6679e"
     },
     {
       "path": "dist/integration.d.ts",
@@ -352,13 +352,13 @@
     },
     {
       "path": "dist/retrieval.js",
-      "bytes": 45325,
-      "sha256": "878717213b9d5f5d92351131f0c797c98c768ec32bc9509ea47c3d9dba2928bc"
+      "bytes": 47804,
+      "sha256": "b4afebfb51fb3b8a17b1dbd2624e3bd9eb5561c02eaa93c2f9a4dbecd6b58e55"
     },
     {
       "path": "dist/retrieval.js.map",
-      "bytes": 43412,
-      "sha256": "e4213ba54df0138d0a28439e84e06580f056c67161e50a055d30e37b11f616f0"
+      "bytes": 45060,
+      "sha256": "9e184c968f79c41f2bf8997ac369ff5815963208f806fa9c8ee9a36ff9556005"
     },
     {
       "path": "dist/rpc.d.ts",
@@ -502,13 +502,13 @@
     },
     {
       "path": "dist/support.js",
-      "bytes": 58208,
-      "sha256": "8a288c8b6691a5590ee4d7ceddb46362748cc5732643a52003161366159a577c"
+      "bytes": 62903,
+      "sha256": "2b5c2ec2251736089d379682a23395e068f642ae8fe0ec4af04aa6a78af41acb"
     },
     {
       "path": "dist/support.js.map",
-      "bytes": 47713,
-      "sha256": "42dbe3ac79f5eb961f6e983f11dbcf09295cba293abf11165fc6d920aad6964e"
+      "bytes": 50830,
+      "sha256": "4cdb036a211e6c05a05dc3742bc5678a12593c12fe3ce72e9d2f98a379cdcf0b"
     },
     {
       "path": "dist/types.d.ts",
@@ -572,13 +572,13 @@
     },
     {
       "path": "docs/PUBLIC_STATUS.md",
-      "bytes": 24377,
-      "sha256": "1c27d5d90bc2ae7ca27cce6c160496e97b558f1a5fc39516e4def9a8e29ef7ca"
+      "bytes": 25167,
+      "sha256": "4ac0e26ac05db3532051fec8547743df94b3120f12878d267049168bdd0c4ee4"
     },
     {
       "path": "docs/RELEASE_COMPLETION_PLAN.md",
-      "bytes": 9774,
-      "sha256": "2e6a48627e42317f19f108e08027b1b431f58a37d06d4321bf969598a2cc6dcb"
+      "bytes": 10582,
+      "sha256": "8a9cdfbc4af7d123b6e3d3728c3fdc687005817afc92164e7a2b02a4ee14e5dc"
     },
     {
       "path": "docs/SECURITY.md",
@@ -587,8 +587,8 @@
     },
     {
       "path": "docs/TEST_RESULTS.md",
-      "bytes": 21618,
-      "sha256": "2e9d96912c13456efc9797eadbaddf1c9503c8fb54d77243514ee99673c6d849"
+      "bytes": 22408,
+      "sha256": "c79fdcd61def228f0bb6c08bc3e39ae9249987b6a1da39d9ec25c6f3fdd47bf8"
     },
     {
       "path": "docs/TEST_SUITES.md",
@@ -677,8 +677,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 11980,
-      "sha256": "ae11ad6fb6806d59d94f06bcfe5d2977851c31dbfa644151023c226a58713519"
+      "bytes": 11503,
+      "sha256": "ae35214c2ccd9eb044e665b97fba7de540076d943ec75c01471abe9ce22b747f"
     },
     {
       "path": "Restore-Backup.bat",
@@ -787,8 +787,8 @@
     },
     {
       "path": "src/api-context.ts",
-      "bytes": 7069,
-      "sha256": "6a13f10bc9679462200f6ff38bf617085337a9a9cb04846620c7bf669b0b847e"
+      "bytes": 9650,
+      "sha256": "a6b0df27f2733042316630c4c4c0eb98f7823662c201c8e10d55a8afd3211bb7"
     },
     {
       "path": "src/checks.ts",
@@ -852,8 +852,8 @@
     },
     {
       "path": "src/grounded.ts",
-      "bytes": 26495,
-      "sha256": "dd68cf56328bee22d28b20bc1a84c5c3a72531219e8b4ca7c55f9f5fcfecbf58"
+      "bytes": 27073,
+      "sha256": "447bd28536816ad7e10ba6aec67ef609f4f75aff78242de43f39ff3f6d634a84"
     },
     {
       "path": "src/integration.ts",
@@ -887,8 +887,8 @@
     },
     {
       "path": "src/retrieval.ts",
-      "bytes": 46289,
-      "sha256": "ef838c0ceedb923ec847a247d64ec3c0b10e23b8937e36cb2138b8514bb7e885"
+      "bytes": 48740,
+      "sha256": "3532e11a501f05490df3a030a77ad71b48187d487177f31f5b31a3543d4eb2d6"
     },
     {
       "path": "src/rpc.ts",
@@ -937,8 +937,8 @@
     },
     {
       "path": "src/support.ts",
-      "bytes": 54106,
-      "sha256": "9ee2d740945fc27570d702aabeb569c0ae66305d72c160b5e7e7d491ba1bfdbf"
+      "bytes": 58263,
+      "sha256": "f804e52b8b2d09479d159575c00337e6f08a467c39a68c76ea08ad4cc46e81a1"
     },
     {
       "path": "src/types.ts",
@@ -971,9 +971,19 @@
       "sha256": "3ca486d01f29c11899fe6a3a08f3d4893548f42c6c98be07f72da21e755bb41f"
     },
     {
+      "path": "tests/action-stemming.test.mjs",
+      "bytes": 1451,
+      "sha256": "f712dbeb9de0e542e705e184e7f6b1a07eba6899eb1b5236e5fac2bd1f56d11a"
+    },
+    {
       "path": "tests/agenda-word-order.test.mjs",
       "bytes": 1098,
       "sha256": "a32d0ce66d892616acf4ebd693cff220a557ef01af17cc44bf9ec98a7443ef2a"
+    },
+    {
+      "path": "tests/api-concept-reference.test.mjs",
+      "bytes": 1245,
+      "sha256": "d37e3440d20bf4f5c8093c749939224812ac7c17748fcb5f4ec42609f8f24d27"
     },
     {
       "path": "tests/api-condition.test.mjs",
@@ -986,14 +996,34 @@
       "sha256": "490cc91315926e4cb6a6752a2b6f408d60378cd1cca7895af5058e44cf6e67cc"
     },
     {
+      "path": "tests/api-definition-navigation.test.mjs",
+      "bytes": 2963,
+      "sha256": "72b28c2e4f74782de8dc21e11bbc5e770afe88312ee1a806243d7e1f2c929c05"
+    },
+    {
+      "path": "tests/api-language-scope.test.mjs",
+      "bytes": 6359,
+      "sha256": "386f4c2f5620bb4a0e6632fc22eaf67540deb23129d27e975692a7fdc1f2f1cc"
+    },
+    {
       "path": "tests/api-operation-role.test.mjs",
       "bytes": 3498,
       "sha256": "77d39c1785144730a3f2b3b73c041063014e771e7d9550f7cadb9e8b3bb4988c"
     },
     {
+      "path": "tests/api-overview.test.mjs",
+      "bytes": 2898,
+      "sha256": "177c4e27503a389803cbab2fd8006a0cc7018563012604712fdc316460344617"
+    },
+    {
       "path": "tests/api-section-context.test.mjs",
       "bytes": 2221,
       "sha256": "4a2c498b66874cedfe4b8eb11db0da68071dbe2358ba039141d16e9906d49a12"
+    },
+    {
+      "path": "tests/api-window-context.test.mjs",
+      "bytes": 1344,
+      "sha256": "b935f215e14fbd6bc0ecc3fe5b21f555db3b0e32afcc0c65f5db4f01c695c655"
     },
     {
       "path": "tests/behavioral-context.test.mjs",
@@ -2392,8 +2422,8 @@
     },
     {
       "path": "tests/suites.json",
-      "bytes": 1469,
-      "sha256": "89788b56518999081a116c59d6fe568b7c005fdeb4315e1c8f7aa1e356f7a8f8"
+      "bytes": 1680,
+      "sha256": "a75d1357841ba3e163a6a8128b849331d56ce5a16fd28e303e8c539882821e36"
     },
     {
       "path": "tests/support-scoping.test.mjs",
