@@ -10,7 +10,7 @@ Created 2026-10-13. Execute one phase at a time, in this order. Check an item on
 - [x] Published baseline: build, 203 baseline/241 diagnostic checks, unchanged documentation replay 12/12, support-v4 frozen holdout 16/16 per layout, scoped GUI/runtime/model/format/install receipts. These are bounded checks, not full release acceptance.
 - [x] User authorization for native GUI test automation recorded in AGENTS.md; desktop activation/capture verified. No manual test-prompt submission is required by skill guidance in this authorized scope.
 
-## Phase 1 — Retrieval correctness and source coverage (active)
+## Phase 1 — Retrieval correctness and source coverage (complete)
 
 - [x] Seal current original tests, fixtures and evidence; verify working implementation against published code; establish one current failure ledger. Baseline seal protects 9,871 files and confirms 487 production files match main 045781e; receipts are in tmp/release-phases-20261013.
 - [x] Replay unchanged broader development/known regression inputs in isolated homes with the installed real Grounded/model runtimes; classify remaining misses as source coverage, extraction, compatibility, ranking, support filtering or delivery.
@@ -18,7 +18,7 @@ Created 2026-10-13. Execute one phase at a time, in this order. Check an item on
 - [x] Implement and verify the three independently reproduced API repairs described in the checkpoint below; append meaningful regression checks without altering original tests/assertions. Build and synchronize dist; run baseline, diagnostics and the affected real workflow. This completes those three repairs, not all Phase 1 retrieval work.
 - [x] Repair the remaining ordinary API-comparison and caller-purpose language gaps using independent primary-document development. Preserve explicit state/domain/identifier obligations and previously supported cases; reject regressing candidates. Keep the exposed 11/13 acceptance and rejected experiment unchanged as historical evidence.
 - [x] Freeze implementation and an independent acceptance protocol before execution. Run both source layouts, validate citations/versions and strict abstention, preserve all results, and make no outcome-driven changes after holdout exposure.
-- [ ] Run the unchanged daily/keyword regressions, reconcile remaining broader failures, record limitations and publish the reviewed phase checkpoint. Proceed to Phase 2 only when this phase's agreed finite gate passes.
+- [x] Run the unchanged daily/keyword regressions, reconcile remaining broader failures, record limitations and publish the reviewed phase checkpoint. Proceed to Phase 2 only when this phase's agreed finite gate passes.
 
 ## Phase 2 — Sustained delivery, refresh and memory reliability
 
@@ -74,6 +74,18 @@ Remaining Phase 1 work: repair genuine ordinary API-comparison and caller-purpos
 
 The remaining repair, acceptance verification and regression/publication items are separate obligations. Checking off verification cannot repair code. Phases 2–6 address reliability, document fidelity, native integration, distribution clearance and release rehearsal; they do not automatically resolve these Phase 1 language-support failures. The first 11/13 receipt remains historical even if a later candidate passes a new gate.
 
-## Execution record
+## Phase 1 completion checkpoint
+
+Phase 1 is complete for the declared finite retrieval gate; Phases 2–6 have not started. Build, **227/227 baseline** and **265/265 diagnostic** checks pass with zero failures, skips or cancellations. The repairs restore supported API comparisons, bounded caller-purpose requests, action inflections and actual API definitions hidden behind history/overload headings. Original tests/assertions and failure evidence remain intact; 16 independent checks were appended in six new files. Existing conversion/storage ownership, version filters, model thresholds and authorization remain unchanged.
+
+The final implementation and fifth primary-document acceptance protocol were frozen before execution. This fresh acceptance passes **10/10 in each layout**, with original-file hashes, citations, version controls and unsupported-question abstention checked against Python 3.12.8 and Node.js 24.21.0 documentation. Earlier exposed acceptance sets now replay **13/13, 10/10, 10/10 and 10/10 per layout**; their original **11/13 and 9/10 FAIL** receipts remain historical. These are author-generated finite controls, not external blind certification or general language entailment.
+
+Final-candidate unchanged broader replays pass **224/224** across both layouts (support-v4 development 16/16, support-v3 development 48/48 and exposed holdout 48/48 in each). The initial corpus passes **65/65 per layout**, including its 25 older holdout cases. Daily documentation and keyword replays pass **12/12** and **3/3**. Known replays are regression evidence, not new benchmarks. Earlier deadline cancellations under concurrent evaluators and interrupted runs remain preserved; full sequential replays use the unchanged 90-second limit. Continuous reliability remains a Phase 2 gate.
+
+The seal protects **10,128 original test, fixture and historical-evidence files**, including the previous 9,871-file set; it does not prevent repairs to active source/dist. Private complete receipts, indexed documents, caches, runtimes and model weights are excluded from publication. Full release acceptance remains **FAIL** for sustained reliability, document fidelity/OCR, native LM Studio integration, distribution clearance and the final release rehearsal.
+
+See the [curated execution summary](../evidence/phase1-retrieval-completion.json). Independent development used separate primary-document requests; no tuning of exposed acceptance inputs/assertions. Phase 2 remains unstarted.
+
+## Historical execution record
 
 Initial status: three requested code repairs are already merged at main 045781e. Phases 1–6 remain incomplete. Older unchecked items in IMPLEMENTATION_CHECKLIST.md are historical unless confirmed by the current failure ledger. Private execution receipts belong under ignored tmp/release-phases-20261013; do not publish application data or raw chat transcripts.

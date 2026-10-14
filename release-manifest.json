@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "context-companion",
   "version": "1.1.0-rc.1",
-  "createdAt": "2026-10-14T03:53:07.100Z",
+  "createdAt": "2026-10-14T05:09:02.828Z",
   "note": "Allowlisted source, compiled app, synthetic fixtures and execution evidence only. The manifest itself is excluded from its file list. Hashes detect changes; they are not a publisher signature.",
   "files": [
     {
@@ -572,13 +572,13 @@
     },
     {
       "path": "docs/PUBLIC_STATUS.md",
-      "bytes": 25167,
-      "sha256": "4ac0e26ac05db3532051fec8547743df94b3120f12878d267049168bdd0c4ee4"
+      "bytes": 27610,
+      "sha256": "6e75c03c6caf57b73492c952387792153ae266648e96457bdaabaa4c1dbc2653"
     },
     {
       "path": "docs/RELEASE_COMPLETION_PLAN.md",
-      "bytes": 10582,
-      "sha256": "8a9cdfbc4af7d123b6e3d3728c3fdc687005817afc92164e7a2b02a4ee14e5dc"
+      "bytes": 13086,
+      "sha256": "4f17b655990bdc498a0a4f4fe404ae79308122ef349774906c356df9d670c81b"
     },
     {
       "path": "docs/SECURITY.md",
@@ -587,18 +587,23 @@
     },
     {
       "path": "docs/TEST_RESULTS.md",
-      "bytes": 22408,
-      "sha256": "c79fdcd61def228f0bb6c08bc3e39ae9249987b6a1da39d9ec25c6f3fdd47bf8"
+      "bytes": 24851,
+      "sha256": "cb85c1ab066399b96daf8819bf72c06fc078f24ef343780f083b4664186a9ac0"
     },
     {
       "path": "docs/TEST_SUITES.md",
-      "bytes": 3515,
-      "sha256": "73f03845ba864a3871b78a1184080222eda57f4db64da2bae1ce483f772dc6e4"
+      "bytes": 3944,
+      "sha256": "2124d8e0da018f97447692c95328c69666dc7bdc09c55e521a79074d377b5c89"
     },
     {
       "path": "docs/USAGE.md",
       "bytes": 7241,
       "sha256": "5e0b14b9e9290a85939116b4bb8d3c4fb5c263961978d5746ec6e94eca93dd5b"
+    },
+    {
+      "path": "evidence/phase1-retrieval-completion.json",
+      "bytes": 5193,
+      "sha256": "1af3b71da47be6ce18d413e9997128fc6c361e84a781e3189696e2876b58e13d"
     },
     {
       "path": "evidence/windows-independent-retrieval-repair/primary/async-sync/async-sync.rst",
@@ -677,8 +682,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 11503,
-      "sha256": "ae35214c2ccd9eb044e665b97fba7de540076d943ec75c01471abe9ce22b747f"
+      "bytes": 11577,
+      "sha256": "de317397e6261ce759c95ac83bbedc25b961ff4365ba48c6d224ac3797e8b9fd"
     },
     {
       "path": "Restore-Backup.bat",

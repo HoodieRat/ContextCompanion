@@ -1,0 +1,92 @@
+{
+  "schema": 1,
+  "at": "2026-10-14T05:07:41.015Z",
+  "scope": "Phase 1 finite retrieval gate; later release phases unstarted and full release acceptance FAIL.",
+  "sourceHashConvention": "Public source LF line endings; original working bytes are committed separately in the candidate snapshot.",
+  "implementationSha256": {
+    "src/api-context.ts": "a6b0df27f2733042316630c4c4c0eb98f7823662c201c8e10d55a8afd3211bb7",
+    "src/grounded.ts": "447bd28536816ad7e10ba6aec67ef609f4f75aff78242de43f39ff3f6d634a84",
+    "src/retrieval.ts": "3532e11a501f05490df3a030a77ad71b48187d487177f31f5b31a3543d4eb2d6",
+    "src/support.ts": "f804e52b8b2d09479d159575c00337e6f08a467c39a68c76ea08ad4cc46e81a1"
+  },
+  "candidateCommitmentSha256": "a31a9ad658674d6af64feeb2c5ad4d8c6d5a8a6b9b4dd5e35d9574cfb2b2b97f",
+  "freshAcceptance": {
+    "protocolSha256": "3c25d3131570febb7bd4e0d297f75ec7b0dd88323bbfb32b01690706e059d969",
+    "commitmentSha256": "554fb706658754e6dafd9751d52409bf6b43ef179bb9ede82debb13959129eef",
+    "sources": [
+      {
+        "library": "Python",
+        "version": "3.12.8",
+        "url": "https://raw.githubusercontent.com/python/cpython/v3.12.8/Doc/library/operator.rst",
+        "sha256": "22cdd91ab578514af76a9a20aebb1173c583285fa2147e1505ecb38cf7923324"
+      },
+      {
+        "library": "Node.js",
+        "version": "24.21.0",
+        "url": "https://raw.githubusercontent.com/nodejs/node/v24.21.0/doc/api/console.md",
+        "sha256": "bc2e0cd59d0d6e9a62ca26e1417cef8ca60f5ef6adf24646cf98917e8ce33e1f"
+      }
+    ],
+    "grouped": 10,
+    "perFile": 10,
+    "totalPerLayout": 10,
+    "scope": "Author-generated and frozen before execution; no implementation changes after exposure. Citation/hash/version and zero-hit negative controls."
+  },
+  "regressions": {
+    "baseline": 227,
+    "diagnostic": 265,
+    "broaderBothLayouts": 224,
+    "initialCorpusPerLayout": 65,
+    "daily": 12,
+    "keyword": 3,
+    "exposedProfessionalAcceptancePerLayout": [
+      13,
+      10,
+      10,
+      10
+    ]
+  },
+  "preservation": {
+    "originalFiles": 10128,
+    "changedOriginalFiles": 0,
+    "originalAssertions": "unchanged",
+    "originalSuiteMembershipAndOrder": "preserved; six new files appended"
+  },
+  "retainedFailures": [
+    "Original first professional acceptance 11/13 in each layout",
+    "Original second and fourth acceptance 9/10 in each layout",
+    "Rejected development candidates and source/test snapshots",
+    "Concurrent evaluator deadline cancellations and interrupted runs",
+    "Final-replay harness errors before any query execution",
+    "Initial final daily replay 11/12: stale additional code citation after promotion, followed by approved-source refresh and unchanged 12/12 replay"
+  ],
+  "receiptSha256": {
+    "a5g": "2a36115303da4a44a2aae43ec324145be5a9836cd3118f7a46f6c367b20a80d1",
+    "a5p": "4ff70cbecf24be00441b02c9865fdba566e68b1d2657507c75d5b0d2d2fa1424",
+    "a1g5-corrected": "d5dbdb5470bffa2923cb8795b4a0980098508f8bb39e6c0425571490b1993f1e",
+    "a1p5-corrected": "0a89ffe46a1c5be27f150265c26548fc269b4556bd398b726a9ef4d95fe37728",
+    "a2g5": "e3dbab940e1fe86ee548d6375ba479cc494dcd9ab1f797849cf8ad5db0c7c7dd",
+    "a2p5": "c3a36ca89c578a57c570d2b45f634bbbee6b1fbe236024bd5fe62c422d546824",
+    "a3g5-corrected": "66fe3f3af584369adf74913b021e66ef143aa6e3c222f53363c9a796286778f5",
+    "a3p5-corrected": "5e06de31bf93e43f6b4997c124fc37e175e98878a6b28c428cfab0d4e3cb917c",
+    "a4g5": "ed209e0c14bf5582f6573a48adac11539f2d3b60d985d4c60a624add9f4c2f0f",
+    "a4p5": "a9d6082a654cbddf85477ddb2f56ff1949a04d722839579aa835ab99883221f0",
+    "daily-final-refreshed": "2a8344d732c0ef5cc34cd29e1fd28f5ded35ee396cfc2333cf5de676521c8843",
+    "normal-source-final": "4ab5a71c1a38ea52df013e3081c71f8ef360467d7c3717c6b95d57fe12df4a67",
+    "keyword-final": "71a5ad109f135858f6c755d393502f6d09a3ea0fd968af2f610e531c43b74972",
+    "preservation-final5": "0e87ab80b057285acadedce2c17d55915563812e0c99395af0e16971eea84ba2",
+    "final5-support-v4-development-grouped": "258d8716619ea0d9c9956c711f2a5980c2f81ba9e4d621630225569550292e5c",
+    "final5-support-v3-development-grouped": "c83b1be19c023d4788c15f6ef7815c6f0abdbbbffeb16da2f01bf999bb8c6194",
+    "final5-support-v3-holdout-grouped": "62d2f9ce48f112fc15eb4e08aa8a544d1a082331fe2646b845f367fe2dd164db",
+    "original5-grouped": "34148e3dce686d159565e73690b39f2124cdf6c89bcea5549118336936e71514",
+    "final5-support-v4-development-per-file": "0dd93aefb752ff8a27feef22b9e85c37dd871d5bda9b33887c0d203cd0e8b9d7",
+    "final5-support-v3-development-per-file": "1f2f96e7aa8a03535a4e4e537f6ebb17d7ab8b317c95eb961b9855bd2699c686",
+    "final5-support-v3-holdout-per-file": "ba5c170d6ba63f33184344e20966adcb6af4ee6828325985da1ede6511cb2fcf",
+    "original5-per-file": "ba851b6b8c19d5d3e8712bd13b8c2ca998224dc0a13fdb2ef28dbfa76411d281"
+  },
+  "limitations": [
+    "Finite same-author controls and known regression replays do not establish universal retrieval correctness.",
+    "Continuous reliability, fidelity/OCR, native integration, licensing and release rehearsal remain open.",
+    "Complete private receipts and indexed documentation are intentionally excluded from this public summary."
+  ]
+}
