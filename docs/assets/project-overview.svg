@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="350" viewBox="0 0 1080 350" role="img" aria-labelledby="title desc">
+  <title id="title">Context Companion: your project's reference library</title>
+  <desc id="desc">Approved sources are indexed and refreshed, searched for compatible evidence, and supplied to your coding assistant with citations. Fresh retrieval acceptance passed 10 of 10 checks per layout, baseline tests passed 227 of 227, and full release acceptance remains open.</desc>
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#0f172a"/><stop offset="1" stop-color="#153047"/></linearGradient>
+    <linearGradient id="accent"><stop stop-color="#38bdf8"/><stop offset="1" stop-color="#2dd4bf"/></linearGradient>
+    <marker id="arrow" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7" fill="none" stroke="#7dd3fc" stroke-width="1.5"/></marker>
+  </defs>
+  <rect width="1080" height="350" rx="20" fill="url(#bg)"/>
+  <rect x="32" y="30" width="5" height="54" rx="2" fill="url(#accent)"/>
+  <g font-family="Segoe UI,Arial,sans-serif">
+    <text x="52" y="52" fill="#5eead4" font-size="12" font-weight="700" letter-spacing="2">CONTEXT COMPANION</text>
+    <text x="52" y="84" fill="#f8fafc" font-size="29" font-weight="700">Your project's reference library for AI coding.</text>
+    <text x="34" y="116" fill="#cbd5e1" font-size="16">Choose the sources. Keep them refreshed. Give your assistant evidence it can cite.</text>
+    <g fill="#172d43" stroke="#3d6077">
+      <rect x="34" y="145" width="230" height="70" rx="12"/>
+      <rect x="295" y="145" width="230" height="70" rx="12"/>
+      <rect x="556" y="145" width="230" height="70" rx="12"/>
+      <rect x="817" y="145" width="230" height="70" rx="12"/>
+    </g>
+    <g stroke="#7dd3fc" stroke-width="2" marker-end="url(#arrow)"><path d="M270 180H287"/><path d="M531 180H548"/><path d="M792 180H809"/></g>
+    <g font-size="17" font-weight="700" fill="#f1f5f9" text-anchor="middle">
+      <text x="149" y="173">APPROVED SOURCES</text><text x="410" y="173">REFRESH + INDEX</text><text x="671" y="173">SEARCH + CITE</text><text x="932" y="173">YOUR ASSISTANT</text>
+    </g>
+    <g font-size="13" fill="#cbd5e1" text-anchor="middle">
+      <text x="149" y="197">Docs, repositories, files, notes</text><text x="410" y="197">Your project's reference library</text><text x="671" y="197">Version-aware evidence retrieval</text><text x="932" y="197">Your existing app and model</text>
+    </g>
+    <path d="M34 236H1047" stroke="#355167"/>
+    <text x="34" y="266" fill="#5eead4" font-size="29" font-weight="700">100%</text>
+    <text x="135" y="255" fill="#f1f5f9" font-size="14" font-weight="700">Fresh retrieval checks</text>
+    <text x="135" y="276" fill="#cbd5e1" font-size="13">10/10 per layout · finite acceptance set</text>
+    <text x="470" y="266" fill="#7dd3fc" font-size="29" font-weight="700">227/227</text>
+    <text x="623" y="255" fill="#f1f5f9" font-size="14" font-weight="700">Baseline checks passed</text>
+    <text x="623" y="276" fill="#cbd5e1" font-size="13">Diagnostic suite: 265/265</text>
+    <rect x="855" y="246" width="192" height="36" rx="18" fill="#49351c" stroke="#a77b39"/>
+    <text x="951" y="269" fill="#fde68a" font-size="14" font-weight="700" text-anchor="middle">BETA · RELEASE OPEN</text>
+    <text x="34" y="321" fill="#a9bdcf" font-size="13">Test pass rates describe the listed cases, not universal accuracy. Windows x64 package. Remaining release gates are documented below.</text>
+  </g>
+</svg>

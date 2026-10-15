@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "context-companion",
   "version": "1.1.0-rc.1",
-  "createdAt": "2026-10-15T20:09:07.822Z",
+  "createdAt": "2026-10-15T20:17:36.557Z",
   "note": "Allowlisted source, compiled app, synthetic fixtures and execution evidence only. The manifest itself is excluded from its file list. Hashes detect changes; they are not a publisher signature.",
   "files": [
     {
@@ -556,6 +556,11 @@
       "sha256": "b4414066870cecda7103506d65a2cc845b87c001e606f9dbb09e28de26d09c0f"
     },
     {
+      "path": "docs/assets/project-overview.svg",
+      "bytes": 3576,
+      "sha256": "251793e9fea4ae4535351b43ce837ad65c2fbe6d8ccb87e515684a8e216425a1"
+    },
+    {
       "path": "docs/DEPENDENCIES.md",
       "bytes": 3264,
       "sha256": "847b38d5c89cde80c128ec898b1648bc66bcf49a7c527f80873fb6942705efed"
@@ -682,8 +687,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 14182,
-      "sha256": "3aea5fc43b0781600ca50528571a3c95f91c0d7e748907e9b2471db8926a9afa"
+      "bytes": 12859,
+      "sha256": "63b3c14ca8f2b810ce03985d7e48a1d2f9066c47d2a21a9760630fedccd6c738"
     },
     {
       "path": "Restore-Backup.bat",
