@@ -1,5 +1,29 @@
 # Tests and acceptance results
 
+## Phase 1 completion — 2026-10-14
+
+Phase 1 is complete for the declared finite retrieval gate; Phases 2–6 have not started. Build, **227/227 baseline** and **265/265 diagnostic** checks pass with zero failures, skips or cancellations. The repairs restore supported API comparisons, bounded caller-purpose requests, action inflections and actual API definitions hidden behind history/overload headings. Original tests/assertions and failure evidence remain intact; 16 independent checks were appended in six new files. Existing conversion/storage ownership, version filters, model thresholds and authorization remain unchanged.
+
+The final implementation and fifth primary-document acceptance protocol were frozen before execution. This fresh acceptance passes **10/10 in each layout**, with original-file hashes, citations, version controls and unsupported-question abstention checked against Python 3.12.8 and Node.js 24.21.0 documentation. Earlier exposed acceptance sets now replay **13/13, 10/10, 10/10 and 10/10 per layout**; their original **11/13 and 9/10 FAIL** receipts remain historical. These are author-generated finite controls, not external blind certification or general language entailment.
+
+Final-candidate unchanged broader replays pass **224/224** across both layouts (support-v4 development 16/16, support-v3 development 48/48 and exposed holdout 48/48 in each). The initial corpus passes **65/65 per layout**, including its 25 older holdout cases. Daily documentation and keyword replays pass **12/12** and **3/3**. Known replays are regression evidence, not new benchmarks. Earlier deadline cancellations under concurrent evaluators and interrupted runs remain preserved; full sequential replays use the unchanged 90-second limit. Continuous reliability remains a Phase 2 gate.
+
+The seal protects **10,128 original test, fixture and historical-evidence files**, including the previous 9,871-file set; it does not prevent repairs to active source/dist. Private complete receipts, indexed documents, caches, runtimes and model weights are excluded from publication. Full release acceptance remains **FAIL** for sustained reliability, document fidelity/OCR, native LM Studio integration, distribution clearance and the final release rehearsal.
+
+See the [phase plan](RELEASE_COMPLETION_PLAN.md) and [curated execution summary](../evidence/phase1-retrieval-completion.json). Every earlier checkpoint below is historical.
+
+## Verified Phase 1 repair checkpoint — 2026-10-14
+
+The current candidate passes build, **227/227 baseline** and **265/265 diagnostic** checks. The final frozen primary-document acceptance passes **10/10 in both layouts**, including citation/hash/version and unsupported-question controls. Earlier failed acceptance inputs and receipts remain intact. The unchanged keyword replay passes **3/3**; after refreshing the existing approved project-code index, the unchanged daily replay passes **12/12**. Its initial stale-code citation mismatch is preserved. Final broader replays are still running; Phase 1 remains active pending their reconciliation and publication checks. Phases 2–6 have not started; full release acceptance remains **FAIL**. Earlier checkpoints below are historical.
+
+## Phase 1 completion work — 2026-10-13
+
+[Phased plan](RELEASE_COMPLETION_PLAN.md): Phase 1 remains active; Phases 2–6 have not started. Three independently reproduced repairs distinguish API caller roles from named owners, withhold unrelated direct named-API operations, and retain adjacent qualifications in a short uniquely bound API section. Build, **211/211 baseline** and **249/249 diagnostic** checks pass, with zero failures/skips/cancellations. Every original test/assertion remains intact.
+
+Unchanged support-v4 development passes 16/16 in both layouts; support-v3 development and exposed holdout replays each pass 48/48 in both layouts (**224 known-case executions**). These close stale checklist entries within their measured scope; historical failures remain unchanged. Independent version-pinned primary-document development passes **13/13 per layout**, after a separately preserved marker-only harness correction.
+
+The frozen professional acceptance remains **11/13 FAIL in both layouts**. No tuning follows that exposed split. Separate primary-document language development scores **7/10**; the subsequent experiment regressed supported cases and was rejected, with its full source/new tests/failures archived and the verified candidate restored. A second acceptance protocol is recorded but **UNEXECUTED**. The pending gate and broader phases remain open. **Full release acceptance remains FAIL.** Private receipts, indexed documents, cache/model/runtime data and raw chat transcripts are excluded from publication.
+
 ## Current verified repairs — 2026-10-13
 
 Build PASS; **203/203 baseline** and **241/241 diagnostic**, zero failures/skips/cancellations. All original tests/assertions and failure evidence remain intact. The keyword-only bypass is repaired using bounded literal support: lifecycle requests require their object and condition in one passage, and separately proved API identifiers retain declaration proof. Default bare-topic navigation remains available; explicit lexical mode remains strict. Lifecycle expiration events no longer become duration-field requests. These rules do not establish general entailment or synonym coverage. [Retrieval](../src/retrieval.ts), [support](../src/evidence-support.ts), [request parsing](../src/support.ts).

@@ -14,5 +14,11 @@ export type ApiContext = {
         start: number;
         end: number;
     };
+    overview?: boolean;
 };
 export declare function declaredApiContext(source: string, passage: string, requestedIdentifiers?: string[]): ApiContext | undefined;
+/** Exact declaration navigation within an already returned immutable file.
+ * It neither crawls nor indexes: the existing scope parser must corroborate
+ * one actual requested API declaration before its bounded definition is quoted.
+ */
+export declare function declaredApiDefinition(source: string, requestedIdentifiers: string[]): ApiContext | undefined;

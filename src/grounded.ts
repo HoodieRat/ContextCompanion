@@ -8,7 +8,7 @@ import { snapshot, scan } from './scanner.js';
 import { cleanEnvironment, run } from './process.js';
 import { Embeddings } from './embeddings.js';
 import { publicUrl } from './security.js';
-import { declaredApiContext, type ApiContext } from './api-context.js';
+import { declaredApiContext, declaredApiDefinition, type ApiContext } from './api-context.js';
 import { createRequire } from 'node:module';
 import { declaredCodeContext, type CodeNode } from './code-context.js';
 import { requiredIdentifiers } from './support.js';
@@ -351,7 +351,10 @@ export class Grounded {
                     const bytes=fs.readFileSync(local);
                     if(isUtf8(bytes)&&hash(bytes)===mapped.hash){
                         const source=bytes.toString('utf8');
-                        apiContext=/\.(?:ts|js|mjs|cjs)$/i.test(mapped.stagedPath)?this.codeContext(source,hit.content,request):declaredApiContext(source,hit.content,requiredIdentifiers(request));
+                        const requested=requiredIdentifiers(request),target=requested.filter(id=>/[.:]/.test(id));
+                        const overview=target.length===1&&new RegExp('^(?:how\\s+does\\s+'+target[0]!.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'(?:\\(\\))?\\s+differ\\b|what\\s+does\\s+'+target[0]!.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'(?:\\(\\))?\\s+do\\b)','i').test(request);
+                        apiContext=/\.(?:ts|js|mjs|cjs)$/i.test(mapped.stagedPath)?this.codeContext(source,hit.content,request):declaredApiContext(source,hit.content,requested);
+                        if(overview&&collection.metadata?.kind==='api'&&!/\.(?:ts|js|mjs|cjs)$/i.test(mapped.stagedPath))apiContext=declaredApiDefinition(source,target)||apiContext;
                         if(apiContext?.sourceExcerpt)content=source.slice(apiContext.sourceExcerpt.start,apiContext.sourceExcerpt.end);
                     }
                 }

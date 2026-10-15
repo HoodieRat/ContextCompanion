@@ -211,7 +211,13 @@ export function requestPlan(query: string): { attributes: Attribute[]; subjects:
  if(agendaRequest(query))attributes.push({name:'plan',ask:/$^/,marker:/\bhandoff\b[^.!?\n]{0,160}\b(?:says?\s+to|next\s+steps?|finish|complete|continue|resume)\b/i});
  if(agendaRequest(query)&&/\b(?:verified|successful)\s+(?:result|check)\b/i.test(query))attributes.push({name:'verification',ask:/$^/,marker:/\b(?:last|prior|previous)\s+(?:verified|successful)\s+(?:result|check)\b/i});
  if(agendaRequest(query))return {attributes,subjects:[],semanticSubjects:[],semanticContexts:{}};
- const identity=supportText(query).replace(/[’‘]/g,"'").replace(/\b(what|it|that|there|which)'s\b/gi,'$1 is');
+ let identity=supportText(query).replace(/[’‘]/g,"'").replace(/\b(what|it|that|there|which)'s\b/gi,'$1 is');
+ // In a named API question, lowercase the caller's is a grammatical role.
+ // Quoted/capitalized owners and the actual object/field remain explicit.
+ if(requiredIdentifiers(query).some(id=>/[.:]/.test(id)))identity=identity.replace(/(`+[^`\n]*`+|"[^"\n]*")|\bthe caller's\b/g,(match,quoted:string|undefined)=>quoted||'the');
+ // The complete bounded caller-purpose clause is grammatical scaffolding,
+ // not an extra named input. Full condition/operation checks retain it.
+ if(requiredIdentifiers(query).some(id=>/[.:]/.test(id)))identity=identity.replace(/\bwhen\s+(?:using|calling|handling|processing|checking|selecting|choosing|computing|calculating|managing|validating|implementing|performing|producing)\s+(?:(?:a|an|the|its)\s+)?(?:data|input|inputs|value|values|item|items|element|elements|record|records|entry|entries|result|results|output|outputs|argument|arguments|parameter|parameters|option|options|request|requests|response|responses|file|files|buffer|buffers)(?=[?!.]*$)/g,'');
  // Unknown factual fields still need actual evidence; a known entity cannot
  // turn a request for an absent temperature into a version or size answer.
  if(!attributes.length){const slot=identity.match(/\b(?:what|which)\s+(?:is|are)\s+(?:(?:the|its|our|current|default|latest|maximum|minimum)\s+)*([\p{L}\p{N}_-]+)(?:\s+(?:of|for|in|on)\b|[?.!]*$)/iu);if(slot&&!BEHAVIOR_REFERENTS.has(slot[1]!.toLowerCase())&&!/^(?:purpose|benefit)$/i.test(slot[1]!))attributes.push({name:slot[1]!.toLowerCase(),ask:/$^/,marker:new RegExp('\\b'+slot[1]!.replace(ESCAPE,'\\$&')+'\\b','i')});}
@@ -265,10 +271,36 @@ export function requestPlan(query: string): { attributes: Attribute[]; subjects:
   const words=fieldQuestion[1]!.split(/\s+/),field=words.findIndex(word=>ATTRIBUTES.some(attribute=>attribute.ask.test(normalize(word))));
   if(field>0){const head=words.slice(0,field).find(word=>!GRAMMAR.has(word.toLowerCase())&&!fieldModifier(word))?.match(/^[\p{L}\p{N}_-]+/u)?.[0];if(head)add(head);}
  }
- for(const m of identity.matchAll(/\b(?:of|about|in|on|for|by|supports?|measures?|keep)\s+([^?.!;]+)/gi))add(m[1]!,/^(?:of|for|by|keep)\b/i.test(m[0]),!attributes.length&&m[1]!.trim().split(/\s+/).length>=3&&/\b\p{L}+(?:ed|ing)\b/iu.test(m[1]!));
+ for(const m of identity.matchAll(/\b(?:of|about|in|on|for|by|supports?|measures?|keep)\s+([^?.!;]+)/gi)){
+  // In an explicit API do-support question, an activity after "support" is
+  // the operation's object, not a new compound entity name. Its complete
+  // goals stay bound by operationSupportsRequest; keep each literal object.
+  if(!attributes.length&&/^supports?\b/i.test(m[0])&&/^how\s+(?:does|do|did)\s+[\w]+(?:(?:\.|::)[\w]+)+\s*$/i.test(identity.slice(0,m.index))&&/^[a-z]+ing\s+/.test(m[1]!)){
+   for(const word of m[1]!.trim().split(/\s+/).slice(1))add(word);continue;
+  }
+  add(m[1]!,/^(?:of|for|by|keep)\b/i.test(m[0]),!attributes.length&&m[1]!.trim().split(/\s+/).length>=3&&/\b\p{L}+(?:ed|ing)\b/iu.test(m[1]!));
+ }
  // A source/location noun after "from" retains its own evidence. A bare
  // gerund in "prevent ... from expiring" is a behavior clause, not a place.
- for(const m of identity.matchAll(/\bfrom\s+([^?.!;]+)/gi))if(attributes.length||!/^(?:being\s+)?\p{L}+(?:ed|ing)(?:\s+(?:\p{L}+ly|early|late|soon|now|again))*\s*$/iu.test(m[1]!.trim()))add(m[1]!,/^being\b/i.test(m[1]!.trim()));
+ for(const m of identity.matchAll(/\bfrom\s+([^?.!;]+)/gi)){
+  // Coordinated gerunds share their object: "adding and accumulating values"
+  // is an activity, not an entity named "accumulating values". Contextual
+  // objects retain whole-query support; other objects need same-passage
+  // semantic proof. Explicit modifiers still require their own spelling.
+  const activity=!attributes.length&&requiredIdentifiers(query).some(id=>/[.:]/.test(id))&&/\bdiffers?\s*$/i.test(identity.slice(0,m.index))
+   ?m[1]!.trim().match(/^([a-z]+ing(?:\s+(?:and|or)\s+[a-z]+ing)*)\s+(.+)$/):null;
+  if(activity){
+   const object=activity[2]!.trim().split(/\s+/).filter(word=>!GRAMMAR.has(word.toLowerCase()));
+   // An unquoted lowercase compound such as "errorname" can refer to the
+   // named API's own concept (getSystemErrorName), rather than a new owner.
+   // The entire activity still needs independent same-passage semantic proof;
+   // quoted/capitalized fields and unrelated domains keep literal obligations.
+   const apiWords:string[]=normalize(requiredIdentifiers(query).join(' ')).match(/[a-z]+/g)||[];
+   const apiReference=(word:string)=>/^[a-z]+names?$/.test(word)&&apiWords.includes(word.replace(/names?$/,''));
+   for(const modifier of object.slice(0,-1))if(!CONTEXT_REFERENTS.has(modifier.toLowerCase())&&!descriptiveWord(modifier)&&!apiReference(modifier))add(modifier);
+   if(object.length&&!object.every(word=>CONTEXT_REFERENTS.has(word.toLowerCase()))){const phrase=activity[0];subjects.push(phrase);semanticSubjects.push(phrase);semanticContexts[phrase]=phrase.replace(/\b[a-z]+names?\b/g,word=>apiReference(word)?word.replace(/(names?)$/,' $1'):word);}
+  }else if(attributes.length||!/^(?:being\s+)?\p{L}+(?:ed|ing)(?:\s+(?:\p{L}+ly|early|late|soon|now|again))*\s*$/iu.test(m[1]!.trim()))add(m[1]!,/^being\b/i.test(m[1]!.trim()));
+ }
  // Each side of an explicit comparison retains its own referent. A known
  // behavior cannot lend evidence to an unrelated second comparison object.
  if(!attributes.length){
@@ -429,7 +461,7 @@ export function operationSupportsRequest(query: string, evidence: string): boole
  const tail=query.match(new RegExp('\\b'+anchor.replace(ESCAPE,'\\$&')+'\\s+([a-z]+)\\s*([^?!;]*)','i'));
  if(!tail)return true;
  const intentVerbs=new Set('use enable implement perform provide produce select choose configure check validate compute calculate handle manage process support work do'.split(' '));
- const stem=(word:string)=>word.toLowerCase().replace(/ion$/,'').replace(/(?:ance|ence)$/,'').replace(/ing$/,'').replace(/ed$/,'').replace(/(?<!s)s$/,'').replace(/e$/,'');
+ const stem=(word:string)=>word.toLowerCase().replace(/ion$/,'').replace(/(?:ance|ence)$/,'').replace(/ing$/,'').replace(/ed$/,'').replace(/(?<!s)s$/,'').replace(/e$/,'').replace(/([bcdfghjklmnpqrstvwxyz])\1$/,'$1');
  const verb=tail[1]!.toLowerCase();
  const goals=(normalize(tail[2]!).match(/[\p{L}\p{N}_-]+/gu)||[])
   .filter(word=>!GRAMMAR.has(word)&&!GENERIC.has(word)&&!CONTEXT_REFERENTS.has(word));
@@ -453,10 +485,17 @@ export function assertedOperationSupport(query: string, evidence: string): boole
  // semantic support path. The actor check binds an explicitly requested
  // condition/state to its behavior, rather than demanding verb spelling for
  // every "which operation" question.
- const request=causative||(actor && /\b(?:while|when|if|unless|until)\b/i.test(actor[3]!) ? actor : null);if(!request)return true;
+ const direct=requiredIdentifiers(query).some(id=>/[.:]/.test(id)) ? query.trim().match(new RegExp('^how\\s+(?:do|can|could|should)\\s+(i|we|you)\\s+((?:automatically\\s+)?(?:'+operation+'))\\s+([^?!;]+)','i')) : null;
+ const request=causative||direct||(actor && /\b(?:while|when|if|unless|until)\b/i.test(actor[3]!) ? actor : null);if(!request)return true;
  const stem=(word:string)=>word.toLowerCase().replace(/ies$/,'y').replace(/s$/,'').replace(/(?:ed|ing)$/,'').replace(/e$/,'');
  const tokens=(text:string)=>(normalize(text).match(/[\p{L}\p{N}_-]+/gu)||[]).filter(w=>!GRAMMAR.has(w)&&!GENERIC.has(w)).map(stem);
- const goals=tokens(request.slice(1).join(' '));
+ // Identity is independently checked; retain arguments and extra operations.
+ let task=request.slice(1).join(' ');
+ if(direct){
+  const next=query.trim().slice(direct[0].length).match(new RegExp('^[?!;.]\\s+(?:then\\s+)?((?:'+operation+')\\s+[^?!;]+)','i'));if(next)task+=' '+next[1];
+  for(const identifier of requiredIdentifiers(query).sort((a,b)=>b.length-a.length))task=task.replaceAll(identifier,' ');
+ }
+ const goals=tokens(task);
  return topicText(evidence).split(/\n|(?<=[.!?;])\s+/).some(sentence=>{
   // An until/without qualification can document a legitimate restriction,
   // but cannot prove an affirmative operation in this bounded request form.
@@ -469,15 +508,21 @@ export function assertedOperationSupport(query: string, evidence: string): boole
  * punctuation spelling and negative conditions; it is not general entailment.
  */
 export function conditionSupportsRequest(query:string,evidence:string):boolean {
- const anchors=requiredIdentifiers(query).map(id=>({id,at:query.indexOf(id)})).filter(a=>a.at>=0);
+ const conditionAt=query.search(/\b(?:when|if|unless)\s+/i);
+ const anchors=requiredIdentifiers(query).map(id=>({id,at:query.indexOf(id)})).filter(a=>a.at>=0&&(conditionAt<0||a.at<conditionAt));
  if(!anchors.length)return true;
  const last=anchors.sort((a,b)=>b.at-a.at)[0]!;
  const tail=query.slice(last.at+last.id.length);
- const conditions=[...tail.matchAll(/\b(?:when|if|unless)\s+([^?;]+)/gi)].map(m=>m[1]!);
+ const conditions=[...tail.matchAll(/\b(when|if|unless)\s+([^?;]+)/gi)];
  const stem=(word:string)=>word.replace(/(?:ing|ed)$/,'').replace(/s$/,'').replace(/e$/,'');
  const body=topicText(evidence),bodyWords=new Set((normalize(body).match(/[\p{L}\p{N}_-]+/gu)||[]).map(stem));
- return conditions.every(condition=>{
+ return conditions.every(match=>{
+  const condition=match[2]!;
   const state=normalize(condition).replace(/\s+/g,' ').trim();
+  // A complete lowercase caller-purpose clause introduces no external state.
+  // Extra modifiers, quotations, owners and predicates stay on the strict
+  // condition path; the requested API and return field remain independent.
+  if(match[1]!.toLowerCase()==='when'&&condition===condition.toLowerCase()&&/^(?:using|calling|handling|processing|checking|selecting|choosing|computing|calculating|managing|validating|implementing|performing|producing)\s+(?:(?:a|an|the|its)\s+)?(?:data|input|inputs|value|values|item|items|element|elements|record|records|entry|entries|result|results|output|outputs|argument|arguments|parameter|parameters|option|options|request|requests|response|responses|file|files|buffer|buffers)$/.test(condition.trim()))return true;
   const emptyRequest=/^(?:empty|it is empty|(?:(?:there (?:is|are)|it (?:has|contains)) )?no (?:items|elements|entries|records)(?: (?:are )?(?:present|available|remaining|left))?)$/.test(state);
   if(emptyRequest){
    // Occupancy paraphrases retain the complete bounded predicate. An added
@@ -488,6 +533,11 @@ export function conditionSupportsRequest(query:string,evidence:string):boolean {
     return empty||/\bno (?:items|elements|entries|records) (?:are )?(?:present|available|remaining|left)\b/.test(text);
    });
   }
+  // Quoted identifiers and named condition owners cannot become contextual
+  // resource words merely because normalization removes their capitalization.
+  if(missingIdentifiers(condition,[body]).length)return false;
+  if([...condition.matchAll(/"([^"\n]+)"/g)].some(match=>!contains(normalize(body),normalize(match[1]!))))return false;
+  if((condition.match(/\b[A-Z][\p{L}\p{N}_-]*\b/gu)||[]).some(word=>!contains(supportText(body).toLowerCase(),word.toLowerCase())))return false;
   const goals=(normalize(condition).match(/[\p{L}\p{N}_-]+/gu)||[]).filter(word=>!GRAMMAR.has(word)&&!GENERIC.has(word)&&!CONTEXT_REFERENTS.has(word));
   if(!goals.every(word=>bodyWords.has(stem(word))||(word==='dot'&&/`+\.`+/.test(body))))return false;
   if(/\b(?:no|not|without|never)\b/i.test(condition))return body.split(/\n\s*\n/).some(paragraph=>/\b(?:no|not|without|never)\b/i.test(paragraph)&&goals.every(word=>contains(normalize(paragraph),word)||(word==='dot'&&/`+\.`+/.test(paragraph))));

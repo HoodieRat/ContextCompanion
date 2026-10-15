@@ -31,7 +31,15 @@
     "grounded-cold-start.test.mjs",
     "keyword-support.test.mjs",
     "serena-runtime.test.mjs",
-    "embedding-priority.test.mjs"
+    "embedding-priority.test.mjs",
+    "api-operation-role.test.mjs",
+    "api-section-context.test.mjs",
+    "api-language-scope.test.mjs",
+    "action-stemming.test.mjs",
+    "api-overview.test.mjs",
+    "api-concept-reference.test.mjs",
+    "api-window-context.test.mjs",
+    "api-definition-navigation.test.mjs"
   ],
   "research": [
     "abstention.test.mjs",

@@ -3,24 +3,34 @@ export function declaredApiContext(source, passage, requestedIdentifiers = []) {
     if (source.length > 200000)
         return;
     const fragments = passage.split(/\n\s*\n|\n|(?<=[.!?])\s+/).map(normalized).filter(s => s.length >= 32);
-    const declarationOnly = /^\s*\.\.\s+(?:class|method|coroutinemethod|function|attribute)::[^\n]+\s*$/.test(passage);
+    const declarationOnly = /^\s*\.\.\s+(?:class|method|coroutinemethod|function|attribute|data)::[^\n]+\s*$/.test(passage) || /^##+\s+`?[\w]+(?:\.[\w]+)+(?:\([^`\n]*\))?`?\s*$/.test(passage.trim());
     if (!fragments.length && !declarationOnly)
         return;
     const declarations = [];
     let module = '', owner = '', member = '';
     let moduleDecl, ownerDecl, memberDecl;
+    let overloads = [];
     let ownerRst = false, ownerIndent = -1, memberIndent = -1;
     const contexts = [];
     let offset = 0, blockStart = 0;
     const flush = (end) => { if (owner && end > blockStart)
-        contexts.push({ owner, member, module, declarations: [moduleDecl, ownerDecl, memberDecl].filter((d) => !!d), start: blockStart, end }); };
+        contexts.push({ owner, member, module, declarations: [moduleDecl, ownerDecl, ...overloads, memberDecl].filter((d) => !!d), start: blockStart, end }); };
     for (const line of source.split(/(?<=\n)/)) {
-        const directive = line.match(/^(\s*)\.\.\s+(module|currentmodule|class|method|coroutinemethod|function|attribute)::\s*([\w.]+)/);
+        const directive = line.match(/^(\s*)\.\.\s+(module|currentmodule|class|method|coroutinemethod|function|attribute|data)::\s*([\w.]+)/);
         const heading = line.match(/^##+\s+`?([\w]+(?:\.[\w]+)+)(?:\(|`|\s|$)/);
         const section = /^[=~-]{3,}\s*$/.test(line) && !/^\s/.test(line);
         if (directive || heading || section) {
+            // Consecutive signatures of the same Markdown API share one definition.
+            // Any intervening prose or different owner remains a separate context.
+            const prior = overloads.at(-1) || ownerDecl;
+            if (heading && !ownerRst && heading[1] === owner && prior && !source.slice(prior.end, offset).trim()) {
+                overloads.push({ text: line.trimEnd(), start: offset, end: offset + line.trimEnd().length });
+                offset += line.length;
+                continue;
+            }
             flush(offset);
             blockStart = offset;
+            overloads = [];
             const d = { text: line.trimEnd(), start: offset, end: offset + line.trimEnd().length };
             if (heading) {
                 owner = heading[1];
@@ -148,14 +158,53 @@ export function declaredApiContext(source, passage, requestedIdentifiers = []) {
             if (!declarations.some(d => d.start === declaration.start))
                 declarations.push(declaration);
     }
-    let sourceExcerpt;
-    if (declarationOnly && matches.length === 1) {
-        const context = matches[0];
-        let end = Math.min(context.end, context.start + 1600);
-        if (/[\uD800-\uDBFF]/.test(source[end - 1] || ''))
-            end--;
-        sourceExcerpt = { start: context.start, end };
+    let sourceExcerpt, overview;
+    if (matches.length === 1) {
+        const context = matches[0], qualified = [context.module, context.owner, context.member].filter(Boolean).join('.');
+        const aliases = context.member ? [qualified, context.owner + '.' + context.member] : [qualified];
+        // A unique explicitly requested API section can retain nearby qualifications.
+        // Generic/ambiguous hits and oversized sections keep their original excerpt.
+        const requested = aliases.some(id => id.includes('.') && requestedIdentifiers.includes(id));
+        if (declarationOnly || (requested && context.end - context.start <= 1600)) {
+            let end = Math.min(context.end, context.start + 1600);
+            if (/[\uD800-\uDBFF]/.test(source[end - 1] || ''))
+                end--;
+            sourceExcerpt = { start: context.start, end };
+        }
+        if (requested) {
+            const declaration = context.declarations.at(-1);
+            const definition = source.slice(declaration.end, context.end).replace(/<!--[\s\S]*?-->/g, '').split(/\n\s*\n/).find(block => block.trim() && !/^(?:\.\.|#|[*+-]\s|```|~~~)/.test(block.trim()));
+            if (declarationOnly && sourceExcerpt && definition && !normalized(source.slice(sourceExcerpt.start, sourceExcerpt.end)).includes(normalized(definition))) {
+                const start = source.indexOf(definition, declaration.end);
+                if (start >= declaration.end && start < context.end) {
+                    let end = Math.min(context.end, start + 1600);
+                    if (/[\uD800-\uDBFF]/.test(source[end - 1] || ''))
+                        end--;
+                    sourceExcerpt = { start, end };
+                }
+            }
+            overview = !!(definition && (sourceExcerpt ? normalized(source.slice(sourceExcerpt.start, sourceExcerpt.end)) : whole).includes(normalized(definition)));
+        }
     }
-    return { identifiers: [...ids], declarations, ...(sourceExcerpt ? { sourceExcerpt } : {}) };
+    return { identifiers: [...ids], declarations, ...(sourceExcerpt ? { sourceExcerpt } : {}), ...(overview === undefined ? {} : { overview }) };
+}
+/** Exact declaration navigation within an already returned immutable file.
+ * It neither crawls nor indexes: the existing scope parser must corroborate
+ * one actual requested API declaration before its bounded definition is quoted.
+ */
+export function declaredApiDefinition(source, requestedIdentifiers) {
+    if (source.length > 200000 || requestedIdentifiers.length !== 1 || !/[.:]/.test(requestedIdentifiers[0]))
+        return;
+    const wanted = requestedIdentifiers[0], member = wanted.split(/\.|::/).at(-1);
+    const matches = [];
+    for (const line of source.split('\n')) {
+        const declaration = line.match(/^\s*\.\.\s+(?:class|method|coroutinemethod|function|attribute|data)::\s*([\w.]+)/)?.[1] || line.match(/^##+\s+`?([\w]+(?:\.[\w]+)+)(?:\(|`|\s|$)/)?.[1];
+        if (!declaration || declaration.split('.').at(-1) !== member)
+            continue;
+        const context = declaredApiContext(source, line, requestedIdentifiers);
+        if (context?.identifiers.includes(wanted) && context.sourceExcerpt && !matches.some(other => other.sourceExcerpt?.start === context.sourceExcerpt.start))
+            matches.push(context);
+    }
+    return matches.length === 1 ? matches[0] : undefined;
 }
 //# sourceMappingURL=api-context.js.map

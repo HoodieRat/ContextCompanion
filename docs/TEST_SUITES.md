@@ -1,5 +1,9 @@
 # Test suites
 
+Current Phase 1 candidate: build PASS, **227 baseline/265 diagnostic**, zero failures/skips/cancellations. Six new regression files append sixteen checks to the 211/249 checkpoint; original membership, order and assertions remain intact. Controlled adapters are separate from actual Grounded/model/primary-document checks and delivery verification. See [TEST_RESULTS](TEST_RESULTS.md). Earlier checkpoints below are historical.
+
+Current Phase 1 candidate: build PASS, baseline **211/211**, diagnostic **249/249**, zero skipped/cancelled/failed. Eight new checks extend original suite membership/assertions. Professional acceptance remains FAIL; see [phase plan](RELEASE_COMPLETION_PLAN.md).
+
 Current executed candidate: build PASS, baseline **203/203**, diagnostic **241/241**, zero failures/skips/cancellations. New keyword, managed Serena-runtime and embedding-priority checks extend the original suite membership and assertions. Windows/Linux CI passes; fresh real Windows installation and runtime-removal retention pass [38475106206](https://github.com/HoodieRat/ContextCompanion/actions/runs/38475106206). Controlled adapters remain separate from live upstream verification. See [TEST_RESULTS](TEST_RESULTS.md) for executed scopes and unresolved gates.
 
 ## Historical checkpoints
