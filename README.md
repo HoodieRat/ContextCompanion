@@ -1,152 +1,166 @@
 # Context Companion
 
-**Keep the documentation your project needs current, and give your AI agent relevant passages with citations.**
+**Give your AI coding assistant the right project references, keep them refreshed, and see where its evidence came from.**
 
-Context Companion is a Windows-first, local documentation and engineering-context service for existing projects. It collects references from sources you choose, indexes them through Grounded Docs, and exposes project-bound search, reading and memory tools through the Model Context Protocol (MCP).
+![Context Companion: approved sources flow through refresh and search to your coding assistant. Fresh retrieval checks passed 10/10 in each layout; the release remains a beta.](docs/assets/project-overview.svg)
 
-Your AI app chooses the model. Context Companion supplies reference material. The existing Codex integration also attempts automatic context delivery at session start and before substantive prompts. Other compatible MCP hosts can connect to the same tools; their configuration, tool calling and automatic delivery must be verified separately.
+[Get started](#get-started-on-windows) · [What it does](#what-you-get) · [How it works](#how-it-works) · [Results](#measured-results) · [Release readiness](#release-readiness)
 
-**Status: 1.1.0-rc.1, beta/release candidate. Full release acceptance remains FAIL.** Phase 1 passes its finite retrieval gate: build, 227 baseline/265 diagnostic checks, fresh professional acceptance 10/10 in both source layouts, and unchanged daily/keyword replays 12/12 and 3/3. Original tests and failed receipts remain preserved. Phases 2–6 cover sustained reliability, fidelity/OCR, native LM Studio integration, distribution clearance and release rehearsal; they have not started. See [verification results](docs/TEST_RESULTS.md) and the [release completion plan](docs/RELEASE_COMPLETION_PLAN.md).
+## What is it?
 
-## What "refreshing context" means
+Context Companion is a **local reference library for your AI coding assistant**. Add documentation websites, public Git repositories, local files or team notes. It indexes those sources, refreshes them when configured, and gives your assistant relevant excerpts with citations.
 
-Context Companion keeps a searchable documentation library for each project. You approve the documentation URLs, repositories or local files. It gathers and indexes that material, refreshes enabled sources at your chosen interval, and supplies relevant excerpts and citations to your AI agent when you work.
+**Why use it?** When a project depends on a particular library version or internal procedure, the assistant can consult those references instead of relying only on its training or repeatedly asking you to paste documentation. Your existing AI app and model still do the coding and answering.
 
-A refresh updates the stored documentation. A chat request retrieves selected evidence from that library. The 24-hour schedule is for source updates; context delivery can happen on each substantive prompt through the Codex hooks, or through an explicit MCP search.
+| At a glance | Current position |
+|---|---|
+| Package | **1.1.0-rc.1 · Windows x64 · beta/release candidate** |
+| Retrieval | **🟢 Phase 1's defined retrieval gate passed** |
+| Full release | **🔴 Not accepted yet — five verification phases remain** |
+| Hardware | No mandatory GPU, Docker, WSL or paid embedding service |
+| Data | Local indexes and memory; your AI host may send retrieved excerpts to its model provider |
 
-### How version requirements are used
+## What you get
 
-The project profile can read supported dependency manifests and lockfiles, distinguishing declared requirements from resolved versions. You can review or supply the profile manually. Retrieval compares the required library/version, language and platform with the source's metadata. Unresolved or conflicting versions need clarification; a declared compatibility range is not a runtime test.
+Ranked by the main practical benefits for a coding workflow. This is an editorial priority order, not a benchmark ranking against other products.
 
-You still select the source to gather: a version-specific documentation URL, repository tag/commit or approved local folder. Labelling a source with a version does not change its URL or prove its contents match. Refreshing a pinned commit keeps that commit pinned. Finding additional primary documentation is work the AI agent can do with its research tools; saving a finding does not automatically attach or crawl its URL.
+| Rank | Capability | What it helps you do |
+|---:|---|---|
+| **1** | **Find project documentation** | Ask a concrete question and retrieve relevant passages from the sources you approved. |
+| **2** | **Use the intended versions** | Match library/version, language and platform requirements against source metadata, reducing accidental mixing of incompatible references. |
+| **3** | **Keep the library current** | Refresh sources manually or on a schedule, such as every 24 hours, while the controller runs. |
+| **4** | **Check the evidence** | Inspect excerpts, original source locations, version information and timestamps before trusting a suggestion. |
+| **5** | **Retain project knowledge** | Store reviewable findings, decisions and failed approaches so later sessions can retrieve them. Memory remains advisory. |
+| **6** | **Navigate existing code** | Use the project-bound, read-only Serena bridge for supported definitions and references. |
+| **7** | **Reduce repeated context setup** | Supported Codex hooks retrieve context at session start and before substantive prompts; other hosts can request it through MCP tools. |
 
-For example, a team maintaining a Python 3.12 service can attach the official documentation for that version and its local architecture guides. When investigating a queue or threading API, the agent can retrieve the matching reference and cite the original passage. A documentation refresh keeps those selected sources current while preserving the team's version requirement. It does not upgrade the project to a newer Python release.
+**Supported inputs:** approved public documentation sites, public HTTPS Git repositories, local folders/files, uploaded documents and pasted notes. Document support varies; broad fidelity and scanned OCR remain under verification.
 
-## What it does
+## How it works
 
-- Collects approved public documentation websites, public HTTPS Git repositories, local folders/files, uploaded documents and pasted notes.
-- Refreshes enabled sources on a schedule while the controller runs.
-- Uses Grounded Docs conversion, structural indexing, keyword search and optional embedding-based semantic retrieval.
-- Reads supported project manifests/lockfiles and filters sources by project attachment and declared library/version/language/platform compatibility.
-- Returns bounded excerpts with original source locations, version metadata, timestamps and provenance.
-- Preserves reviewable engineering findings, decisions, failed approaches and handoffs.
-- Provides a project-bound, read-only Serena bridge for supported code definitions and references.
-
-```text
-Approved sources -> gathering and refresh -> Grounded Docs indexes
-                                             |
-                                   Context Companion MCP
-                                             |
-                                    Your AI app or agent
-                                             |
-                                      Its chosen model
+```mermaid
+flowchart TD
+    A["1 · You approve documentation, files or repositories"] --> B["2 · Gather and index the selected sources"]
+    B --> C[(Project reference library)]
+    R["Manual refresh or scheduled update"] --> B
+    D["3 · You ask your coding assistant a question"] --> E["4 · Match project/version metadata and search"]
+    C --> E
+    E --> F["5 · Return relevant excerpts and source citations"]
+    F --> G["6 · Your assistant uses the evidence in its answer"]
+    classDef source fill:#e0f2fe,stroke:#0284c7,color:#0c4a6e
+    classDef library fill:#ccfbf1,stroke:#0d9488,color:#134e4a
+    classDef agent fill:#ede9fe,stroke:#7c3aed,color:#4c1d95
+    class A,R source
+    class B,C,E library
+    class D,F,G agent
 ```
 
-Knowledge is an accelerator. Missing indexed evidence should prompt further investigation, not prevent your agent from researching other solutions. Retrieval relevance and citations do not establish that a proposed fix works; execution still matters.
+**Refresh and search are different:** refreshing updates the stored library; asking a question searches the current index. A search does not automatically refresh a source. Scheduled updates require the controller to be running.
 
-## Verified results and current limits
+**Versions are explicit:** supported manifests and lockfiles help identify project requirements. You still choose a matching documentation URL, repository tag/commit or local folder. A version label does not prove the content matches, and refreshing a pinned commit keeps it pinned. The service does not automatically discover every correct source.
 
-The practical benefit is a project-specific reference library: your coding assistant can find documentation for the versions you use, cite the evidence and retrieve recorded project findings. Refreshes reduce stale references; they do not upgrade your dependencies or guarantee a correct answer.
+### A professional example
 
-The completed Phase 1 retrieval work has the following recorded results:
+| Step | Example |
+|---|---|
+| **Supply references** | Attach Python 3.12 documentation and your team's service architecture guide. |
+| **Ask a question** | “Which queue API fits this worker design? Use the Python 3.12 references and cite the relevant limitations.” |
+| **Retrieve evidence** | Context Companion filters eligible sources and returns relevant passages with their original citations. |
+| **Make a decision** | Your assistant uses those passages to explain a proposal. You still verify the code and its behavior. |
 
-| Check | Result | What it demonstrates |
+## Measured results
+
+**These percentages are test pass rates for the listed cases. They are not an overall accuracy score, a performance guarantee or a comparison with other products.**
+
+| Verification | Passed / executed | Pass rate | Evidence scope |
+|---|---:|---:|---|
+| Fresh version-specific retrieval acceptance | **10/10 per layout** | **🟢 100%** | Frozen Python 3.12.8 / Node.js 24.21.0 tasks; citations, source hashes, version controls and unsupported questions. |
+| Previously failing professional retrieval set | **13/13 per layout** | **🟢 100%** | Unchanged replay; the original result was **11/13 (84.6%)**. |
+| Broader known retrieval regressions | **354/354** across both layouts | **🟢 100%** | Retained development and previously exposed holdout cases; regression evidence. |
+| Everyday documentation replay | **12/12** | **🟢 100%** | Unchanged questions and criteria; original result **9/12 (75%)**. |
+| Keyword-only abstention replay | **3/3** | **🟢 100%** | Known support/unsupported controls; original result **2/3 (66.7%)**. |
+| Controller baseline | **227/227** | **🟢 100%** | Automated regression checks. |
+| Full diagnostic suite | **265/265** | **🟢 100%** | Includes the baseline; do not add these suite counts together. |
+
+**Build: PASS.** Windows and Ubuntu controller CI passed for the Phase 1 publication. “Both layouts” means grouping documents into sources versus using a source per file. The fresh checks were author-generated and frozen before execution; they are not an external blind evaluation. Previously exposed cases are labelled as replays.
+
+Earlier bounded checks also demonstrated Codex automatic context delivery, a correlated reused-GUI turn, local model/API retrieval, five document-format fixtures and a fresh Windows install/runtime-removal check. Those checks ran on the candidates recorded in the report; they do not certify every session, document or later release gate.
+
+[Read the full results and historical failures](docs/TEST_RESULTS.md) · [Inspect the Phase 1 evidence summary](evidence/phase1-retrieval-completion.json)
+
+## Release readiness
+
+**🟢 Passed within stated scope → 🟡 Partial evidence → 🔴 Open release gate**
+
+**1 of 6 planned release phases is closed: 16.7% by phase count.** This is a checklist measure, **not** the percentage of features built, engineering effort completed or overall product quality. The phases differ in size.
+
+| Phase | What it proves | Status |
+|---:|---|---|
+| **1** | Retrieve supported documentation and reject the tested unsupported requests | **🟢 Complete for the defined finite gate** |
+| **2** | Reliable delivery, refresh and memory across repeated use, restarts and failures | **🟡 Bounded earlier checks; phase not started** |
+| **3** | Representative document fidelity and the actual scope of scanned OCR | **🟡 Five format fixtures passed; phase not started** |
+| **4** | MCP searches and cited answers inside native LM Studio | **🟡 API/SDK proof exists; native phase not started** |
+| **5** | Exact release payload, dependency/model license and notice clearance | **🟡 Partial provenance exists; phase not started** |
+| **6** | Final installation, upgrade, backup/restore, normal-use and uninstall rehearsal | **🔴 Final gate open; phase not started** |
+
+**Full release acceptance remains FAIL.** Existing successful checks do not close these remaining gates. Original tests, assertions and failed receipts are preserved; earlier failures were not rewritten into passes. [See the phased completion plan](docs/RELEASE_COMPLETION_PLAN.md).
+
+## Which assistants and platforms?
+
+| Environment | What is available | Limit |
 |---|---|---|
-| Controller build and regression suites | Build PASS; 227/227 baseline and 265/265 diagnostic checks | The tested controller behavior passes; the diagnostic suite includes the baseline, so these counts are not additive. |
-| Fresh version-pinned documentation acceptance | 10/10 in each of two source layouts | The frozen Python 3.12.8 and Node.js 24.21.0 tasks pass citation, source-hash, version and unsupported-question checks. |
-| Previously failing professional documentation acceptance | 13/13 in each layout on unchanged replay | The original 11/13 failures are repaired for these known cases; original failed receipts remain preserved. |
-| Broader known retrieval regressions | 354/354 executions across both layouts | The retained development and previously exposed holdout cases pass; these are regression replays, not fresh benchmarks. |
-| Everyday documentation and keyword-only replays | 12/12 and 3/3 | The unchanged daily documentation tasks and keyword abstention controls pass within their tested scope. |
+| **Windows x64 + Codex** | Managed connection, project instructions, MCP tools and automatic hooks | Scoped live proof; continuous reliability remains open. |
+| **Other MCP hosts** | Project-bound local stdio tools for searching, reading and memory | Configure and verify each host; automatic injection needs host-specific orchestration. |
+| **LM Studio** | Scoped Nomic embedding and local-chat API/MCP checks | Native GUI setup and recovery remain a release gate. |
+| **Linux** | Ubuntu controller build/regression CI | No supported Linux installer or full installed-workflow proof yet. |
+| **Pi + Gufo** | Plausible MCP/model-provider combination | Not integrated or verified end to end in this project. |
 
-These are finite, author-generated checks, not an independent accuracy rating or a guarantee for every document and question. Earlier scoped Windows checks also demonstrate automatic Codex context delivery, a correlated reused-GUI turn, installed dependency operation and model-generated MCP retrieval; their exact candidate versions and limits are recorded in [test results](docs/TEST_RESULTS.md). Original tests, assertions and failure evidence are preserved. A [curated execution summary](evidence/phase1-retrieval-completion.json) records the Phase 1 source and receipt hashes without publishing private data.
+MCP is the connection that lets an assistant request tools. Context Companion uses **local stdio MCP**, not its internal HTTP API as a remote MCP endpoint. Chat models and embedding models serve different roles. [Connection examples and verification](docs/MCP.md).
 
-**Full release acceptance remains FAIL.** Sustained refresh/delivery/memory reliability, representative document fidelity and scanned OCR, native LM Studio GUI integration, complete distribution-license clearance and the final release rehearsal remain open. Phases 2–6 have not started. The package targets Windows x64; Ubuntu controller CI does not establish a supported Linux installer, and Pi/Gufo integration has not been verified. See the [completion plan](docs/RELEASE_COMPLETION_PLAN.md).
+## Get started on Windows
 
-## Install on Windows
+1. **Download or clone** this repository. Extract the whole folder to a permanent location such as `C:\ContextCompanion`; compiled `dist` files are included.
+2. **Run `Install.bat`** on Windows x64. Internet access is needed for the isolated dependencies and initial checks.
+3. **Add your project** in the dashboard, then attach a small set of relevant documentation sources.
+4. **Confirm indexing** and inspect a real passage in **Search & evidence**. Set a refresh interval if wanted; zero means manual refresh.
+5. **Connect your assistant.** For Codex, review/trust its managed configuration and hooks, then start a fresh chat. Use `Start.bat` on later runs.
 
-1. Download this repository with **Code > Download ZIP**, or clone it. Extract the whole folder to a permanent location such as `C:\ContextCompanion`. The compiled `dist` application is included.
-2. On **Windows x64**, double-click **Install.bat**. Initial installation requires Internet access. It installs isolated Node, Grounded Docs, uv/Python/Serena and the optional local embedding runtime, then runs live installation checks.
-3. When the dashboard opens, choose **Add project**, enter an existing project folder, and select whether to connect Codex and index eligible project files.
-4. Add a small set of relevant sources under **Knowledge sources**, then confirm indexing and inspect a real passage in **Search & evidence**.
-5. For Codex, open that same project folder and review/trust its managed configuration and hooks. Start a fresh chat after integration changes.
+Optional public Git imports require Git for Windows in `PATH`. For a changed local document, click **Refresh / retry**, confirm **Indexed** and a recent **Last good index**, then search for the changed passage.
 
-On later runs, use **Start.bat**. Keep the controller running for scheduled refreshes; it is not installed as a Windows startup service.
-
-No mandatory Docker, WSL, GPU, cloud database or paid embedding service is required. Your AI app/account is separate. Optional public Git source ingestion requires Git for Windows in PATH.
-
-See the [installation and troubleshooting guide](docs/INSTALLATION.md) for browser support, keyword-only mode, data location and recovery.
-
-## Use it day to day
-
-1. Attach documentation for the versions you actually use. Supply compatibility metadata for API references.
-2. Set a refresh interval, for example 24 hours for a website or 1 hour for frequently edited local docs. Zero means manual refresh.
-3. Ask your AI app a concrete question with the library, version, API/error and platform where relevant.
-4. Inspect supporting excerpts and citations. If automatic delivery misses, ask the agent to call `context_search` explicitly.
-5. Record validated discoveries and failed attempts so the next session can retrieve them.
-
-Example prompt:
-
-> Use context_search for this library version and error. Show the original supporting excerpt and citation before proposing a change. If evidence is missing or stale, research primary sources and explain the gap.
-
-For local documentation changes, select the source and click **Refresh / retry**, confirm **Indexed** and a recent **Last good index**, then search for a changed passage.
-
-Follow the [usage walkthrough](docs/USAGE.md). A manual source refresh and an explicit chat search are separate operations: searching does not by itself update a source's index.
-
-## MCP hosts and models
-
-The documentation server uses **local stdio MCP**, launched with `dist/cli.js mcp --home DATA_HOME --project PROJECT_ID`. Each connection remains bound to that project. The controller's internal HTTP API is not a Streamable HTTP MCP endpoint.
-
-| Integration | Current scope |
+| Daily task | Control |
 |---|---|
-| Codex | Managed MCP entries, project instructions and automatic hooks; scoped Windows proofs, with reliability limits still open |
-| Other stdio MCP hosts | Existing server/interface; manual configuration and end-to-end verification required |
-| LM Studio chat models / an app using Flash | Possible through a compatible MCP host; not yet verified as complete chat workflows here |
-| LM Studio embedding server | Existing local embedding endpoint supported; scoped live Nomic indexing/search proof |
+| Start / stop | `Start.bat` / `Stop.bat` |
+| Inspect problems / verify dependencies | `Diagnose.bat` / `Verify-Installation.bat` |
+| Run regression tests | `Run-Tests.bat` |
+| Verify actual model/MCP use | `Verify-Codex.bat` — explicit model-use confirmation |
+| Back up / restore / uninstall | `Backup.bat` / `Restore-Backup.bat` / `Uninstall.bat` — review retention options |
 
-Embeddings support retrieval; they are separate from the chat model generating an answer. See [MCP setup](docs/MCP.md) for a configuration example and verification steps.
+[Installation and troubleshooting](docs/INSTALLATION.md) · [Usage walkthrough](docs/USAGE.md)
 
-## Components
+<details>
+<summary><strong>Architecture and contributor checks</strong></summary>
 
-| Component | Responsibility |
-|---|---|
-| TypeScript controller and local dashboard | Projects, source permissions, jobs, refreshes, evidence, memory and recovery |
-| Grounded Docs | Document conversion, structural chunking, SQLite FTS/vector storage and upstream search |
-| Optional local embedding worker | Managed CPU embeddings or an existing loopback embedding endpoint |
-| Serena bridge | Read-only definitions/references in supported languages, bound to one project |
+The TypeScript controller and dashboard manage projects, permissions, jobs, refreshes and memory. **Grounded Docs** owns conversion, chunking and SQLite FTS/vector storage. The optional worker supplies local CPU or existing loopback embeddings. **Serena** supplies project-bound, read-only code navigation.
 
-This project integrates those components. It does not train chat models or guarantee that retrieved documentation resolves a runtime defect.
-
-## Controls
-
-| Launcher | Purpose |
-|---|---|
-| Install.bat | Install dependencies and verify them |
-| Start.bat / Stop.bat | Open or stop the local controller |
-| Diagnose.bat | Save installation/runtime diagnostics |
-| Verify-Installation.bat | Exercise the installed retrieval, embedding and Serena workflow |
-| Run-Tests.bat | Run the production baseline using managed Node after installing the pinned development dependencies |
-| Verify-Codex.bat | Run an actual model/MCP verification with explicit model-use confirmation |
-| Backup.bat / Restore-Backup.bat | Back up private application data or restore a verified snapshot |
-| Uninstall.bat | Remove managed integration; review options for retaining/removing app data |
-
-## Development
-
-The compiled controller has no production npm dependencies. The regression suite requires the pinned development dependencies, including TypeScript for an independent parser test adapter. Install them before running `npm test` or `Run-Tests.bat`. With a compatible Node installation (the Windows installer pins Node 24.21.0):
+The compiled controller has no production npm dependencies. With compatible Node (the Windows installer pins 24.21.0), install the pinned development dependencies and run:
 
 ```powershell
 npm ci --ignore-scripts
 npm run build
 npm test
+npm run test:diagnostic
 ```
 
-`npm test` selects the production baseline. `npm run test:research` selects the preserved research checks; `npm run test:diagnostic` selects both. The [verification report](docs/TEST_RESULTS.md) distinguishes the published snapshot, later local candidate, GitHub CI and live Windows checks. Controlled tests do not substitute for live upstream, native Windows or AI-host verification. Keep `dist` synchronized with `src`.
+Keep `dist` synchronized with `src`. Controlled tests do not substitute for actual upstream, native Windows or AI-host verification. Preserved research checks remain available through `npm run test:research`.
 
-The source includes synthetic fixtures and the specifically licensed upstream documentation snapshots required by the tests. Private local investigation artifacts and original failure receipts are excluded from this publication and retained in the development workspace. The [status page](docs/PUBLIC_STATUS.md) summarizes those limits without publishing user data.
+[Test suites](docs/TEST_SUITES.md) · [Public status](docs/PUBLIC_STATUS.md)
 
-## Privacy, dependencies and license
+</details>
 
-Application data defaults to `%LOCALAPPDATA%\ContextCompanion`, outside the source folder. It contains private indexes, tokens, memories, logs, backups, downloaded runtimes and model caches. **Do not commit or upload that directory.** Local embeddings/storage do not prevent an AI host from sending retrieved excerpts to its configured provider.
+## Privacy and license
 
-Source approval and credential detection are bounded safeguards, not a complete security sandbox. Read [security and privacy](docs/SECURITY.md), [dependency details](docs/DEPENDENCIES.md) and [third-party notices](THIRD_PARTY_NOTICES.md).
+Application data defaults to `%LOCALAPPDATA%\ContextCompanion`, outside this repository. **Do not upload that directory:** it can contain private indexes, tokens, memories, logs, backups, runtimes and model caches. Source approval and credential detection are bounded safeguards. Local storage does not prevent your AI host from sending excerpts to its provider.
 
-Original Context Companion code is [MIT licensed](LICENSE). Independently licensed dependencies and upstream documentation retain their own licenses.
+Original Context Companion code is **MIT licensed**. Dependencies, model weights and upstream documentation retain their own terms. The publication excludes private raw receipts, indexed user documents, runtimes and model weights; the exact payload is recorded in `release-manifest.json`.
+
+[Security and privacy](docs/SECURITY.md) · [Dependencies](docs/DEPENDENCIES.md) · [Third-party notices](THIRD_PARTY_NOTICES.md) · [License](LICENSE)
