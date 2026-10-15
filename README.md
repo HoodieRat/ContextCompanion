@@ -44,6 +44,24 @@ Approved sources -> gathering and refresh -> Grounded Docs indexes
 
 Knowledge is an accelerator. Missing indexed evidence should prompt further investigation, not prevent your agent from researching other solutions. Retrieval relevance and citations do not establish that a proposed fix works; execution still matters.
 
+## Verified results and current limits
+
+The practical benefit is a project-specific reference library: your coding assistant can find documentation for the versions you use, cite the evidence and retrieve recorded project findings. Refreshes reduce stale references; they do not upgrade your dependencies or guarantee a correct answer.
+
+The completed Phase 1 retrieval work has the following recorded results:
+
+| Check | Result | What it demonstrates |
+|---|---|---|
+| Controller build and regression suites | Build PASS; 227/227 baseline and 265/265 diagnostic checks | The tested controller behavior passes; the diagnostic suite includes the baseline, so these counts are not additive. |
+| Fresh version-pinned documentation acceptance | 10/10 in each of two source layouts | The frozen Python 3.12.8 and Node.js 24.21.0 tasks pass citation, source-hash, version and unsupported-question checks. |
+| Previously failing professional documentation acceptance | 13/13 in each layout on unchanged replay | The original 11/13 failures are repaired for these known cases; original failed receipts remain preserved. |
+| Broader known retrieval regressions | 354/354 executions across both layouts | The retained development and previously exposed holdout cases pass; these are regression replays, not fresh benchmarks. |
+| Everyday documentation and keyword-only replays | 12/12 and 3/3 | The unchanged daily documentation tasks and keyword abstention controls pass within their tested scope. |
+
+These are finite, author-generated checks, not an independent accuracy rating or a guarantee for every document and question. Earlier scoped Windows checks also demonstrate automatic Codex context delivery, a correlated reused-GUI turn, installed dependency operation and model-generated MCP retrieval; their exact candidate versions and limits are recorded in [test results](docs/TEST_RESULTS.md). Original tests, assertions and failure evidence are preserved. A [curated execution summary](evidence/phase1-retrieval-completion.json) records the Phase 1 source and receipt hashes without publishing private data.
+
+**Full release acceptance remains FAIL.** Sustained refresh/delivery/memory reliability, representative document fidelity and scanned OCR, native LM Studio GUI integration, complete distribution-license clearance and the final release rehearsal remain open. Phases 2–6 have not started. The package targets Windows x64; Ubuntu controller CI does not establish a supported Linux installer, and Pi/Gufo integration has not been verified. See the [completion plan](docs/RELEASE_COMPLETION_PLAN.md).
+
 ## Install on Windows
 
 1. Download this repository with **Code > Download ZIP**, or clone it. Extract the whole folder to a permanent location such as `C:\ContextCompanion`. The compiled `dist` application is included.

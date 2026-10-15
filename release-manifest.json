@@ -2,7 +2,7 @@
   "schema": 1,
   "name": "context-companion",
   "version": "1.1.0-rc.1",
-  "createdAt": "2026-10-14T05:09:02.828Z",
+  "createdAt": "2026-10-15T20:09:07.822Z",
   "note": "Allowlisted source, compiled app, synthetic fixtures and execution evidence only. The manifest itself is excluded from its file list. Hashes detect changes; they are not a publisher signature.",
   "files": [
     {
@@ -682,8 +682,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 11577,
-      "sha256": "de317397e6261ce759c95ac83bbedc25b961ff4365ba48c6d224ac3797e8b9fd"
+      "bytes": 14182,
+      "sha256": "3aea5fc43b0781600ca50528571a3c95f91c0d7e748907e9b2471db8926a9afa"
     },
     {
       "path": "Restore-Backup.bat",
